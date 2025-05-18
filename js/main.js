@@ -1,18 +1,33 @@
-// Main JavaScript file
+// Import des composants
+import { ProductManager } from './components/ProductManager.js';
+
+// Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     initializeNavigation();
-    initializeProductGrid();
+    initializeProducts();
+    setupAnimations();
 });
 
 function initializeNavigation() {
-    // Add scroll behavior
+    const nav = document.querySelector('nav');
+    
+    // Gestion du scroll
     window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
         if (window.scrollY > 100) {
             nav.classList.add('nav-scrolled');
         } else {
             nav.classList.remove('nav-scrolled');
         }
+    });
+
+    // Menu mobile
+    const menuToggle = document.createElement('button');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.innerHTML = '☰';
+    nav.prepend(menuToggle);
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
     });
 }
 
