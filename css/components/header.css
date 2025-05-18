@@ -1,0 +1,21 @@
+/* Header Component Styles */
+.logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    padding: 1rem;
+}
+
+.logo-header img {
+    width: auto;
+    height: 100px;
+    object-fit: contain;
+}
+
+.header-title {
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}

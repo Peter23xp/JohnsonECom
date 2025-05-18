@@ -1,0 +1,31 @@
+/* Grid Layout System */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem;
+}
+
+.col {
+    flex: 1;
+    padding: 1rem;
+}
+
+/* Grid columns */
+.col-12 { width: 100%; }
+.col-6 { width: 50%; }
+.col-4 { width: 33.333333%; }
+.col-3 { width: 25%; }
+
+/* Responsive grid */
+@media (max-width: 768px) {
+    .col-6, .col-4, .col-3 {
+        width: 100%;
+    }
+}

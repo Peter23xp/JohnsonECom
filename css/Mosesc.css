@@ -1,0 +1,293 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  
+  
+  /* General section styling */
+  #contact {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+  }
+  
+  .card {
+    max-width: 900px; /* Increase width */
+    width: 100%;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: #000;
+  }
+  
+  .logo-header img {
+    width: 100%;  /* Makes the image span the full width of its container */
+    height: 200px; /* Maintains the aspect ratio of the image */
+}
+
+  
+  /* Navigation */
+  nav {
+    background-color: #222;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  nav li {
+    margin: 0 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #f4b400;
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+  
+  .hero-item {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+  }
+  
+  .hero-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .hero-item h2 {
+    margin-top: 10px;
+    color: #444;
+  }
+  
+  /* Featured Sections */
+  .featured {
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  
+  .featured h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #222;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .product img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .product img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* CEO Section */
+  #team {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  #team h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .Ceo-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Ceo img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .Ceo p {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  /* Contact Section */
+  #contact {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .card {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #f4b400;
+    border-radius: 10px;
+    background-color: #111;
+  }
+  
+  .card h2 {
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    margin: 5px 0;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #000;
+    color: #aaa;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .product img {
+    width: 220px;           /* or whatever size you prefer */
+    height: 220px;
+    border-radius: 50%;     /* makes the image circular */
+    object-fit: cover;      /* ensures the image covers the container */
+    border: 2px solid #ccc; /* optional: adds a nice border */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* optional: subtle shadow */
+    margin: 5px;           /* spacing between items */
+}
+
+#about {
+  padding: 100px 20px; /* Add vertical space */
+  background-color: #f5f5f5; /* Optional: light background */
+  min-height: 600px; /* Extend section height */
+}
+
+#about .card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#about .card h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#about .card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+#about .card h3 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #041d66;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  max-height: 150px;
+  width: 200px;
+}
+
+.header-content {
+  text-align: center;
+  flex: 1;
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.header-content p {
+  margin: 0.3rem 0;
+}
+
+.contact-button {
+  background-color: red;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.shoe-image {
+  max-height: 80px;
+}
+
+.info-bar {
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+  color: #333;
+}

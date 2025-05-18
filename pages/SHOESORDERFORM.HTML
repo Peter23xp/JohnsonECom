@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOES ORDER FORM</title>
+    <link rel="stylesheet" href="SHOESORDERFORM.CSS">
+</head>
+<body>
+    
+
+    <form action="submit your order" method="">
+
+        <center><h2>PUT IN YOUR ORDER </h2></center>
+
+        <label for="color">Color:</label>
+        <select id="color" name="color" required>
+         <option value="" disabled selected>Select a color</option>
+        <option value="Black">Black</option>
+        <option value="Blue">Blue</option>
+        <option value="Gray">Gray</option>
+        <option value="White">White</option>
+        <option value="Red">Red</option>
+        <option value="Brown">Brown</option>
+        </select><br>
+
+
+
+        <label for="SIZE">SIZE:</label>
+        <input type="number" id="SIZE" name="SIZE" min="37" max="45" required><br>
+        
+        
+        <label for="quantity">QUANTITY:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="100" required><br>
+
+        <label for="customerName">Your Name:</label>
+        <input type="text" id="customerName" name="customerName" required><br>
+
+        <label for="contact">Contact Info (Phone/WhatsApp):</label>
+        <input type="text" id="contact" name="contact" required><br>
+
+        <button type="submit">Place Order</button>
+    </form>
+
+    <script>
+        // Automatically fill in the product name from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get('product');
+        if(productName) {
+            document.getElementById('product').value = decodeURIComponent(productName);
+        }
+    </script>
+</body>
+</html>
