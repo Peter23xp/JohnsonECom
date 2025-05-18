@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="../css/components/buttons.css">
     <link rel="stylesheet" href="../css/layout/footer.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <!-- Added meta tags for SEO -->
+    <meta name="description" content="Order form for Moses Shoes & Clothing Line products. Place your order for quality shoes and suits.">
+    <meta name="keywords" content="Moses, clothing, shoes, order, form, purchase, Liberia, fashion">
+    <!-- Added favicon -->
+    <link rel="shortcut icon" href="../assets/images/logo/logo.jpg" type="image/x-icon">
     <style>
         .order-form-section {
             padding: 4rem 0;
@@ -110,8 +115,10 @@
     <header class="header">
         <div class="container header-container">
             <div class="logo">
-                <img src="../assets/images/Moses Logo.1.jpg" alt="Moses Logo" />
-                <span class="logo-text">Moses</span>
+                <a href="../index.html">
+                    <img src="../assets/images/logo/logo.jpg" alt="Moses Logo" />
+                    <span class="logo-text">Moses</span>
+                </a>
             </div>
             
             <nav>
@@ -120,10 +127,10 @@
                 </button>
                 
                 <ul class="nav-menu">
-                    <li><a href="home.html" class="nav-link">Home</a></li>
-                    <li><a href="home.html#products" class="nav-link">Products</a></li>
-                    <li><a href="home.html#about" class="nav-link">About</a></li>
-                    <li><a href="home.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <span class="nav-close"><i class="ri-close-line"></i></span>
                 </ul>
                 
@@ -134,7 +141,7 @@
                     <a href="#" class="nav-icon">
                         <i class="ri-user-line"></i>
                     </a>
-                    <a href="#" class="nav-icon">
+                    <a href="cart.html" class="nav-icon">
                         <i class="ri-shopping-bag-line"></i>
                         <span class="cart-count">1</span>
                     </a>
@@ -142,6 +149,20 @@
             </nav>
         </div>
     </header>
+
+    <!-- Page Header -->
+    <section class="page-header bg-primary text-white">
+        <div class="container">
+            <h1 class="page-title">Place Your Order</h1>
+            <div class="breadcrumb">
+                <a href="../index.html" class="text-white">Home</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <a href="products.html" class="text-white">Products</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <span>Order Form</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Order Form Section -->
     <section class="order-form-section">
@@ -235,7 +256,7 @@
                     </button>
                     
                     <div class="form-footer">
-                        <p>Need help? <a href="home.html#contact">Contact our support team</a></p>
+                        <p>Need help? <a href="contact.html">Contact our support team</a></p>
                     </div>
                 </form>
             </div>
@@ -245,10 +266,85 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-top">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="../assets/images/logo/logo.jpg" alt="Moses Logo">
+                        </div>
+                        <p class="footer-slogan">Quality fashion for all occasions, combining style and sophistication.</p>
+                        <div class="footer-socials">
+                            <a href="https://www.facebook.com/mosesshoesandclothingline" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                            <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+                            <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
+                            <a href="https://wa.me/231770680204" class="social-icon"><i class="ri-whatsapp-line"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links-wrapper">
+                        <h3 class="footer-title">Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="../index.html" class="footer-link"><i class="ri-arrow-right-s-line"></i> Home</a></li>
+                            <li><a href="products.html" class="footer-link"><i class="ri-arrow-right-s-line"></i> Products</a></li>
+                            <li><a href="about.html" class="footer-link"><i class="ri-arrow-right-s-line"></i> About</a></li>
+                            <li><a href="contact.html" class="footer-link"><i class="ri-arrow-right-s-line"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div id="contact" class="footer-links-wrapper">
+                        <h3 class="footer-title">Contact</h3>
+                        <div class="footer-contact-item">
+                            <span class="contact-icon"><i class="ri-map-pin-line"></i></span>
+                            <span class="contact-text">Red-Light Plaza Building, Upper Floor — Store #23. Near Lonestar office, opposite GT Bank.</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="contact-icon"><i class="ri-phone-line"></i></span>
+                            <span class="contact-text">+231 7706 80204</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="contact-icon"><i class="ri-mail-line"></i></span>
+                            <span class="contact-text">mosesgaymore29@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
                 <p class="copyright">&copy; 2025 Moses Shoes & Clothing Line. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Use</a>
+                </div>
             </div>
         </div>
     </footer>
 
-        <script>        // Extract product information from URL parameters        const urlParams = new URLSearchParams(window.location.search);        const productId = urlParams.get('product_id');        const productName = urlParams.get('product_name');                if (productId) {            document.getElementById('product_id').value = productId;        }                if (productName) {            document.title = `Order ${decodeURIComponent(productName)} | Moses Shoes & Clothing Line`;        }    </script>        <!-- Modern JavaScript -->    <script src="../js/modern-main.js"></script></body></html>
+    <!-- Floating Cart Button -->
+    <a href="cart.html" class="btn-float" aria-label="Cart">
+        <i class="ri-shopping-cart-line"></i>
+    </a>
+    
+    <!-- JavaScript -->
+    <script src="../js/modern-main.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get cart data from localStorage
+            const cart = JSON.parse(localStorage.getItem('mosesCart')) || [];
+            
+            // If cart is not empty, pre-fill product ID field
+            if (cart.length > 0) {
+                // We could take the first item or provide a selection interface
+                // For simplicity, we'll just use the first item
+                const firstItem = cart[0];
+                
+                // Set hidden product ID
+                document.getElementById('product_id').value = firstItem.id;
+                
+                // Update page title with product name
+                document.title = `Order ${firstItem.title} | Moses Shoes & Clothing Line`;
+            }
+        });
+    </script>
+</body>
+</html>

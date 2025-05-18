@@ -36,10 +36,12 @@ function initializeNavigation() {
     if (mobileToggle && navMenu && navClose) {
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
         
         navClose.addEventListener('click', () => {
             navMenu.classList.remove('active');
+            document.body.style.overflow = '';
         });
         
         // Close menu when clicking outside
