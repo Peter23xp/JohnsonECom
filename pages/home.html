@@ -3,216 +3,556 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moses Shoes & Clothesing Line</title>
-    <link rel="stylesheet" href="Mosesc.css">
-</head>
-<body>
-    <header>
-        <div class="logo"></div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moses Shoes & Clothing Line</title>
-    <link rel="stylesheet" href="Mosesc.css">
+    <link rel="stylesheet" href="../css/modern-theme.css">
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/components/products.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/layout/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
 </head>
 <body>
-    <header>
-        <div class="logo-header">
-            <img src="Moses Logo.1.jpg" alt="Logo" />
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../assets/images/Moses Logo.1.jpg" alt="Moses Logo" />
+                <span class="logo-text">Moses</span>
         </div>
         
         <nav>
-            <ul>
-                <li><a href="#body">HOME</a></li> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                <li><a href="#about">ABOUT</a></li> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                <li><a href="#contact">CONTACT US</a></li>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <i class="ri-menu-line"></i>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <span class="nav-close"><i class="ri-close-line"></i></span>
             </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" class="nav-icon">
+                        <i class="ri-search-line"></i>
+                    </a>
+                    <a href="#" class="nav-icon">
+                        <i class="ri-user-line"></i>
+                    </a>
+                    <a href="#" class="nav-icon">
+                        <i class="ri-shopping-bag-line"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
         </nav>
+        </div>
     </header>
-    <center><h2>Visit Us and Get The Best Of Offers</h2></center>
-    <section class="hero">
-        <div class="hero-item">
-            <img src="StylishFor Woman.1.jpg" alt="Stylish for Women">
-            <h2>Stylish for Women</h2>
-        </div>
-        <div class="hero-item">
-            <img src="Sport Wear.1.jpg" alt="Sports Wear">
-            <h2>Sports Wear</h2>
-        </div>
-        <div class="hero-item">
-            <img src="Wholesale & Retail.5.jpg" alt="Wholesale & Retails">
-            <h2>Wholesale & Retails</h2>
-        </div>
-        <div class="hero-item">
-            <img src="Perfect Quality.1.jpg" alt="Perfect Quality Sneaker">
-            <h2>Perfect Quality Sneakers</h2>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Elite Fashion For Every Occasion</h1>
+                <p class="hero-subtitle">Quality suits, shoes and sneakers for wholesale and retail</p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary btn-lg btn-ripple">Shop Now</a>
+                    <a href="#about" class="btn btn-outline btn-lg">Learn More</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="featured">
-        <h2>For Quality Men Coat Suits</h2>
-        <div class="product-grid">
+    <!-- Features Section -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="grid grid-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-women-line"></i>
+                    </div>
+                    <h3>Stylish for Women</h3>
+                    <p>High quality shoes and clothing designed for the modern woman</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-basketball-line"></i>
+                    </div>
+                    <h3>Sports Wear</h3>
+                    <p>Performance sports apparel for athletes and casual wear</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-store-2-line"></i>
+                    </div>
+                    <h3>Wholesale & Retail</h3>
+                    <p>Flexible purchasing options for businesses and individuals</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-award-line"></i>
+                    </div>
+                    <h3>Perfect Quality</h3>
+                    <p>Premium materials and craftsmanship in every product</p>
+        </div>
+        </div>
+        </div>
+    </section>
 
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.1.jpg" alt="Running Shoes">
-            </a> </div>
-
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.2.jpg" alt="Trendy Sneakers">
-            </a> </div>
+    <!-- Products Section -->
+    <section id="products" class="section products-section">
+        <div class="container">
+            <h2 class="section-title">Quality Men Coat Suits</h2>
             
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.3.jpg" alt="Casual Wear">
-            </a> </div>
-
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.4.jpg" alt="White Sneakers">
-            </a> </div>
-
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.5.jpg" alt="Running Shoes">
-            </a> </div>
-
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.6.jpg" alt="Trendy Sneakers">
-            </a> </div>
-
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.7.jpg" alt="Casual Wear">
-            </a> </div>
-
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.8.jpg" alt="White Sneakers">
-            </a> </div>
-
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.9.jpg" alt="Running Shoes">
-            </a> </div>
-
-            <div class="product"> <a href="Order form.html">
-                <img src="Moses Coat.10.jpg" alt="Trendy Sneakers">
-            </a> </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/Moses Coat.1.jpg" alt="Men's Coat Suit">
+                        <div class="product-badge">New</div>
+                        <div class="product-actions">
+                            <button class="product-action-btn"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn"><i class="ri-eye-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Suits</div>
+                        <h3 class="product-title">Premium Business Suit</h3>
+                        <div class="product-price">
+                            <span class="current-price">$189.99</span>
+                            <span class="old-price">$239.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="rating-count">(24)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="Order form.html" class="add-to-cart">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Add to Cart</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/Moses Coat.2.jpg" alt="Men's Coat Suit">
+                        <div class="product-actions">
+                            <button class="product-action-btn"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn"><i class="ri-eye-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Suits</div>
+                        <h3 class="product-title">Classic Formal Suit</h3>
+                        <div class="product-price">
+                            <span class="current-price">$199.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span class="rating-count">(18)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="Order form.html" class="add-to-cart">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Add to Cart</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/Moses Coat.3.jpg" alt="Men's Coat Suit">
+                        <div class="product-badge">Sale</div>
+                        <div class="product-actions">
+                            <button class="product-action-btn"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn"><i class="ri-eye-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Suits</div>
+                        <h3 class="product-title">Slim Fit Business Suit</h3>
+                        <div class="product-price">
+                            <span class="current-price">$169.99</span>
+                            <span class="old-price">$209.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <span class="rating-count">(31)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="Order form.html" class="add-to-cart">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Add to Cart</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/Moses Coat.4.jpg" alt="Men's Coat Suit">
+                        <div class="product-actions">
+                            <button class="product-action-btn"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn"><i class="ri-eye-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Suits</div>
+                        <h3 class="product-title">Executive Formal Suit</h3>
+                        <div class="product-price">
+                            <span class="current-price">$219.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="rating-count">(27)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="Order form.html" class="add-to-cart">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Add to Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
             
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-secondary btn-lg">View All Suits</a>
+            </div>
         </div>
     </section>
 
-    <section class="featured">
-        <h2>For Quality Men Shoes</h2>
-        <div class="product-grid">
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Moses Shoes.5.jpg" alt="Moses Shoes.5">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Moses Shoes.8.jpg" alt="Moses Shoes.8">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Moses Shoes.3.jpg" alt="Moses Shoes.3">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Moses Shoes.7.jpg" alt="Moses Shoes.7">
-            </a> </div>
+    <!-- Men's Shoes Section -->
+    <section class="section products-section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Quality Men's Shoes</h2>
+            
+            <div class="products-grid">
+                <!-- Shoes Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/Moses Shoes.5.jpg" alt="Men's Shoes">
+                        <div class="product-badge">Bestseller</div>
+                        <div class="product-actions">
+                            <button class="product-action-btn"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn"><i class="ri-eye-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Footwear</div>
+                        <h3 class="product-title">Elegant Leather Shoes</h3>
+                        <div class="product-price">
+                            <span class="current-price">$129.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span class="rating-count">(42)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="SHOESORDERFORM.HTML" class="add-to-cart">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Add to Cart</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Shoes Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/Moses Shoes.8.jpg" alt="Men's Shoes">
+                        <div class="product-actions">
+                            <button class="product-action-btn"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn"><i class="ri-eye-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Footwear</div>
+                        <h3 class="product-title">Classic Oxford Shoes</h3>
+                        <div class="product-price">
+                            <span class="current-price">$149.99</span>
+                            <span class="old-price">$179.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="rating-count">(36)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="SHOESORDERFORM.HTML" class="add-to-cart">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Add to Cart</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Shoes Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/Moses Shoes.3.jpg" alt="Men's Shoes">
+                        <div class="product-actions">
+                            <button class="product-action-btn"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn"><i class="ri-eye-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Footwear</div>
+                        <h3 class="product-title">Premium Formal Shoes</h3>
+                        <div class="product-price">
+                            <span class="current-price">$159.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span class="rating-count">(29)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="SHOESORDERFORM.HTML" class="add-to-cart">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Add to Cart</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Shoes Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/Moses Shoes.7.jpg" alt="Men's Shoes">
+                        <div class="product-badge">New</div>
+                        <div class="product-actions">
+                            <button class="product-action-btn"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn"><i class="ri-eye-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Men's Footwear</div>
+                        <h3 class="product-title">Business Casual Shoes</h3>
+                        <div class="product-price">
+                            <span class="current-price">$139.99</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="rating-stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <span class="rating-count">(52)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="SHOESORDERFORM.HTML" class="add-to-cart">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span>Add to Cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-secondary btn-lg">View All Shoes</a>
+            </div>
         </div>
     </section>
 
-    <section class="featured">
-        <h2>For Quality Ladies Sneakers & Shoes</h2>
-        <div class="product-grid">
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Quality Ladies Material.1.jpg" alt="Running Shoes">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Quality Ladie Material.2.jpg" alt="Running Shoes">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Quality Ladie Material.3.jpg" alt="Running Shoes">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Quality Ladie Material.4.jpg" alt="Running Shoes">
-            </a> </div>
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="about-content">
+                    <h2 class="section-title text-left">About Us</h2>
+                    <p class="about-text">We are Liberia's #1 destination for high-quality wholesale and retail distribution of coat suits, shoes, and sneakers. Our products are made from durable materials designed to last.</p>
+                    
+                    <p class="about-text">Whether you're preparing for a wedding, graduation, or any special event, we've got you covered with the finest apparel options in the market.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="ri-check-line"></i>
+                            <span>Premium Quality Materials</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="ri-check-line"></i>
+                            <span>Wholesale & Retail Options</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="ri-check-line"></i>
+                            <span>Competitive Pricing</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="ri-check-line"></i>
+                            <span>Excellent Customer Service</span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-location">
+                        <h3>Visit us at:</h3>
+                        <p><i class="ri-map-pin-line"></i> Red-Light Plaza Building, Upstairs — Store #23</p>
+                        <p>Adjacent to the Lonestar office, Opposite GT Bank.</p>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary mt-3">Contact Us</a>
         </div>
-    </section>
-
-    <section class="featured">
-        <h2>For Quality Sneakers & Our Brand T-Shirt</h2>
-        <div class="product-grid">
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Quality Men Sneakers.1.jpg" alt="Running Shoes">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Quality Men Sneakers.2.jpg" alt="Trendy Sneakers">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Quality Men Sneakers.3.jpg" alt="Causual Wear">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Brand T Shirt.1.jpg" alt="White Sneakers">
-            </a> </div>
+                
+                <div class="about-image">
+                    <img src="../assets/images/CEO.1.jpg" alt="Our CEO - Moses Gayetaye More Sr.">
+                    <div class="about-image-caption">
+                        <h3>Moses Gayetaye More Sr.</h3>
+                        <p>Founder & CEO</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
-    <section class="featured">
-        <h2>Wholesale & Retails Best Price in Liberia</h2>
-        <div class="product-grid">
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Wholesale & Retail.1.jpg" alt="Running Shoes">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Wholesale & Retail.5.jpg" alt="Trendy Sneakers">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Wholesale & Retail.3.jpg" alt="Causual Wear">
-            </a> </div>
-            <div class="product"> <a href="SHOESORDERFORM.HTML">
-                <img src="Wholesale & Retail.4.jpg" alt="White Sneakers">
-            </a> </div>
-        </div>
-    </section>
-
-
-    <section>
-        
-    </section>
-
-    <section id="about">
-        <div class="card">
-          <h2>About US</h2>
-          <p>
-            We are Liberia’s #1 destination for high-quality wholesale and retail distribution of coat suits, shoes, and sneakers.
-            Our products are made from durable materials designed to last. Whether you're preparing for a wedding, graduation, or any special event, we’ve got you covered.
-            
-            <h3>Visit us at:</h3>
-            Red-Light Plaza Building, Upstairs — Store #23
-            Adjacent to the Lonestar office, Opposite GT Bank.
-          </p>
-        </div>
-      </section>
-
-    <footer>
-
-        <section id="team">
-            <h2>MEET OUR CEO</h2>
-        
-            <div class="Ceo-container">
-              
-                <div class="Ceo">
-                    <img src="CEO.1.jpg" alt="Chairman">
-                    <h3><p><strong>CEO</strong><br>Moses GayetayeMore Sr.</p></h3>
+    <!-- Newsletter Section -->
+    <section class="section newsletter-section">
+        <div class="container">
+            <div class="newsletter-card">
+                <div class="newsletter-content">
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Stay updated with our latest products, promotions and fashion tips.</p>
+                    
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
                 </div>
-                </section>
+            </div>
+        </div>
+    </section>
 
-                <section id="contact">
-                    <div class="card">
-                      <h2>Contact Us:</h2>
-                        <p>Email: <a href="https://mosesgaymore29@gmail.com">mosesgaymore29@gmail.com</a></p>
-                        <p>Phone/WhatsApp: <a href="https://wa.me/231770680204" target="_blank">+231 7706 80204</a></p>
-                        <p>Facebook: <a href="https://www.facebook.com/mosesshoesandclothingline" target="_blank">mosesshoesandclothingline</a></p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="../assets/images/Moses Logo.1.jpg" alt="Moses Logo">
+                        </div>
+                        <p class="footer-slogan">Quality fashion for every occasion, delivering style and sophistication.</p>
+                        <div class="footer-socials">
+                            <a href="https://www.facebook.com/mosesshoesandclothingline" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                            <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+                            <a href="#" class="social-icon"><i class="ri-twitter-x-line"></i></a>
+                            <a href="https://wa.me/231770680204" class="social-icon"><i class="ri-whatsapp-line"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links-wrapper">
+                        <h3 class="footer-title">Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link"><i class="ri-arrow-right-s-line"></i> Home</a></li>
+                            <li><a href="#products" class="footer-link"><i class="ri-arrow-right-s-line"></i> Products</a></li>
+                            <li><a href="#about" class="footer-link"><i class="ri-arrow-right-s-line"></i> About Us</a></li>
+                            <li><a href="#contact" class="footer-link"><i class="ri-arrow-right-s-line"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-wrapper">
+                        <h3 class="footer-title">Product Categories</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link"><i class="ri-arrow-right-s-line"></i> Men's Suits</a></li>
+                            <li><a href="#" class="footer-link"><i class="ri-arrow-right-s-line"></i> Men's Shoes</a></li>
+                            <li><a href="#" class="footer-link"><i class="ri-arrow-right-s-line"></i> Ladies Sneakers</a></li>
+                            <li><a href="#" class="footer-link"><i class="ri-arrow-right-s-line"></i> Sports Wear</a></li>
+                            <li><a href="#" class="footer-link"><i class="ri-arrow-right-s-line"></i> Brand T-Shirts</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div id="contact" class="footer-links-wrapper">
+                        <h3 class="footer-title">Contact Us</h3>
+                        <div class="footer-contact-item">
+                            <span class="contact-icon"><i class="ri-map-pin-line"></i></span>
+                            <span class="contact-text">Red-Light Plaza Building, Upstairs — Store #23 Adjacent to the Lonestar office, Opposite GT Bank.</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="contact-icon"><i class="ri-phone-line"></i></span>
+                            <span class="contact-text">+231 7706 80204</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <span class="contact-icon"><i class="ri-mail-line"></i></span>
+                            <span class="contact-text">mosesgaymore29@gmail.com</span>
+                        </div>
+                        
+                        <div class="footer-newsletter">
+                            <p>Subscribe to our newsletter:</p>
+                            <form class="newsletter-form">
+                                <input type="email" class="newsletter-input" placeholder="Your email" required>
+                                <button type="submit" class="newsletter-btn"><i class="ri-send-plane-fill"></i></button>
+                            </form>
+                        </div>
+        </div>
+                </div>
                       </div>
                       
-                  </section>
-        <p>&copy; 2025 Moses Shoes & Clothing Line. All Rights Reserved.</p>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Moses Shoes & Clothing Line. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="#" class="footer-bottom-link">Terms of Service</a>
+                    <a href="#" class="footer-bottom-link">Shipping Info</a>
+                </div>
+            </div>
+        </div>
     </footer>
-</body>
-</html>
+
+    <!-- Floating Cart Button -->
+    <a href="#" class="btn-float" aria-label="Shopping Cart">
+        <i class="ri-shopping-cart-line"></i>
+    </a>
+    
+    <!-- JavaScript -->
 

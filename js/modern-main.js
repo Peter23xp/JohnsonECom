@@ -23,8 +23,8 @@ function initializeNavigation() {
     
     // Sticky header on scroll
     if (header) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
                 header.classList.add('header-scrolled');
             } else {
                 header.classList.remove('header-scrolled');
@@ -75,8 +75,8 @@ function initializeProductGrid() {
     // Image lazy loading
     if ('loading' in HTMLImageElement.prototype) {
         productImages.forEach(img => {
-        img.loading = 'lazy';
-    });
+            img.loading = 'lazy';
+        });
     } else {
         // Fallback for browsers that don't support native lazy loading
         const lazyLoadScript = document.createElement('script');
@@ -692,4 +692,4 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     
     document.head.appendChild(style);
-});
+}); 

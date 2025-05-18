@@ -2,87 +2,253 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Order Form</title>
-    <link rel="stylesheet" href="order form style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form | Moses Shoes & Clothing Line</title>
+    <link rel="stylesheet" href="../css/modern-theme.css">
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/layout/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <style>
+        .order-form-section {
+            padding: 4rem 0;
+            background-color: var(--background-alt);
+            min-height: 80vh;
+        }
+        
+        .order-form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--background);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .form-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            background-color: #f8f8f8;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(230, 196, 120, 0.2);
+        }
+        
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z' fill='rgba(75,75,75,0.9)'/%3E%3C/svg%3E");
+            background-position: right 1rem center;
+            background-repeat: no-repeat;
+            padding-right: 2.5rem;
+        }
+        
+        .btn-order {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .form-footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+        
+        .form-footer a {
+            color: var(--secondary);
+            font-weight: 500;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .order-form-container {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="../assets/images/Moses Logo.1.jpg" alt="Moses Logo" />
+                <span class="logo-text">Moses</span>
+            </div>
+            
+            <nav>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <i class="ri-menu-line"></i>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="home.html" class="nav-link">Home</a></li>
+                    <li><a href="home.html#products" class="nav-link">Products</a></li>
+                    <li><a href="home.html#about" class="nav-link">About</a></li>
+                    <li><a href="home.html#contact" class="nav-link">Contact</a></li>
+                    <span class="nav-close"><i class="ri-close-line"></i></span>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" class="nav-icon">
+                        <i class="ri-search-line"></i>
+                    </a>
+                    <a href="#" class="nav-icon">
+                        <i class="ri-user-line"></i>
+                    </a>
+                    <a href="#" class="nav-icon">
+                        <i class="ri-shopping-bag-line"></i>
+                        <span class="cart-count">1</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-    <form action="submit your order" method="">
+    <!-- Order Form Section -->
+    <section class="order-form-section">
+        <div class="container">
+            <div class="order-form-container">
+                <h2 class="form-title">Place Your Order</h2>
+                
+                <form action="submit_order.php" method="POST">
+                    <input type="hidden" name="product_id" id="product_id" value="">
+                    
+                    <div class="form-group">
+                        <label for="color" class="form-label">Select Color</label>
+                        <select id="color" name="color" class="form-control form-select" required>
+                            <option value="" disabled selected>Choose a color</option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Navy Blue</option>
+                            <option value="Gray">Charcoal Gray</option>
+                            <option value="White">Crisp White</option>
+                            <option value="Red">Burgundy Red</option>
+                            <option value="Brown">Classic Brown</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="size" class="form-label">Select Size</label>
+                        <select id="size" name="size" class="form-control form-select" required>
+                            <option value="" disabled selected>Choose your size</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity" class="form-label">Quantity</label>
+                        <select id="quantity" name="quantity" class="form-control form-select" required>
+                            <option value="" disabled selected>Select quantity</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerName" class="form-label">Your Full Name</label>
+                        <input type="text" id="customerName" name="customerName" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact" class="form-label">Contact Information</label>
+                        <input type="text" id="contact" name="contact" class="form-control" placeholder="Phone number or WhatsApp" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address" class="form-label">Delivery Address (Optional)</label>
+                        <textarea id="address" name="address" class="form-control" rows="3" placeholder="Enter your delivery address if needed"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-secondary btn-order">
+                        <i class="ri-shopping-cart-2-line"></i>
+                        Place Order
+                    </button>
+                    
+                    <div class="form-footer">
+                        <p>Need help? <a href="home.html#contact">Contact our support team</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-        <h2><center>PUT IN YOUR ORDER</center></h2>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Moses Shoes & Clothing Line. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-        <label for="color">Color:</label>
-        <select id="color" name="color" required>
-         <option value="" disabled selected>Select a color</option>
-        <option value="Black">Black</option>
-        <option value="Blue">Blue</option>
-        <option value="Gray">Gray</option>
-        <option value="White">White</option>
-        <option value="Red">Red</option>
-        <option value="Brown">Brown</option>
-        </select><br>
-
-
-        <label for="size">SIZE:</label>
-        <select id="size" name="size" required>
-         <option value="" disabled selected>Select the Size </option>
-        <option value="44">44</option>
-        <option value="45">45</option>
-        <option value="46">46</option>
-        <option value="47">47</option>
-        <option value="48">48</option>
-        <option value="49">49</option>
-        <option value="50">50</option>
-        <option value="51">51</option>
-        <option value="52">53</option>
-        <option value="54">54</option>
-        <option value="55">55</option>
-        <option value="56">56</option>
-        <option value="57">57</option>
-        <option value="58">58</option>
-        </select><br>
-
-        <label for="Quantity">Quantity:</label>
-        <select id="Quantity" name="Quantity" required>
-         <option value="" disabled selected>Select the Quantity </option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        </select><br>
-
-        <label for="customerName">Your Name:</label>
-        <input type="text" id="customerName" name="customerName" required><br>
-
-        <label for="contact">Contact Info (Phone/WhatsApp):</label>
-        <input type="text" id="contact" name="contact" required><br>
-
-        <button type="submit">Place Order</button>
-    </form>
-
-    <script>
-        // Automatically fill in the product name from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const productName = urlParams.get('product');
-        if(productName) {
-            document.getElementById('product').value = decodeURIComponent(productName);
-        }
-    </script>
-</body>
-</html>
+        <script>        // Extract product information from URL parameters        const urlParams = new URLSearchParams(window.location.search);        const productId = urlParams.get('product_id');        const productName = urlParams.get('product_name');                if (productId) {            document.getElementById('product_id').value = productId;        }                if (productName) {            document.title = `Order ${decodeURIComponent(productName)} | Moses Shoes & Clothing Line`;        }    </script>        <!-- Modern JavaScript -->    <script src="../js/modern-main.js"></script></body></html>
