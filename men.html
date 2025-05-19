@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moses - Men's Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #FCFCFC;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(to right, rgba(12, 12, 12, 0.7) 0%, rgba(12, 12, 12, 0.4) 100%), url('https://readdy.ai/api/search-image?query=elegant%2520men%2520fashion%2520photoshoot%2520with%2520models%2520wearing%2520premium%2520suits%2520and%2520formal%2520wear%252C%2520professional%2520studio%2520lighting%252C%2520high-end%2520fashion%2520photography%252C%2520minimalist%2520aesthetic%252C%2520soft%2520shadows%252C%2520masculine%2520luxury%2520fashion%2520brand%2520photoshoot%2520with%2520sage%2520green%2520accents&width=1920&height=800&seq=101&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        input:focus, select:focus {
+            outline: none;
+        }
+        .custom-checkbox {
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: transparent;
+            border: 2px solid #8A9A5B;
+            border-radius: 4px;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #8A9A5B;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-radio {
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-radio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .radiomark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: transparent;
+            border: 2px solid #8A9A5B;
+            border-radius: 50%;
+        }
+        .custom-radio input:checked ~ .radiomark {
+            background-color: transparent;
+        }
+        .custom-radio input:checked ~ .radiomark:after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #8A9A5B;
+        }
+        .custom-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%238A9A5B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.5em;
+        }
+        .price-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            outline: none;
+            border-radius: 4px;
+        }
+        .price-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #8A9A5B;
+            cursor: pointer;
+        }
+        .price-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #8A9A5B;
+            cursor: pointer;
+            border: none;
+        }
+        .pagination-btn.active {
+            background-color: #8A9A5B;
+            color: white;
+            border-color: #8A9A5B;
+        }
+        .filter-dropdown {
+            display: none;
+            position: absolute;
+            z-index: 10;
+        }
+        .filter-dropdown.active {
+            display: block;
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e0e0e0;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .switch-slider {
+            background-color: #8A9A5B;
+        }
+        input:checked + .switch-slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="https://readdy.ai/home/53bed6ad-338e-456f-89b0-1a536587ea02/c3bb5dc5-36d0-4b3e-816a-d97e75a82ba6" data-readdy="true" class="text-3xl font-['Pacifico'] text-secondary">Moses</a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="men.html" class="text-secondary hover:text-secondary transition-colors font-medium border-b-2 border-secondary">Men</a>
+                <a href="woman.html" class="text-primary hover:text-secondary transition-colors font-medium">Women</a>
+                <a href="suit.html" class="text-primary hover:text-secondary transition-colors font-medium">Suits</a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors font-medium">Shoes</a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors font-medium">Accessories</a>
+            </nav>
+            
+            <div class="flex items-center space-x-6">
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-200 bg-gray-50 text-sm focus:border-secondary">
+                    <div class="absolute left-3 top-2.5 w-5 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+                
+                <div class="w-10 h-10 flex items-center justify-center text-primary hover:text-secondary cursor-pointer relative">
+                    <i class="ri-shopping-bag-line ri-lg"></i>
+                    <span class="absolute -top-1 -right-1 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+                </div>
+                
+                <div class="w-10 h-10 flex items-center justify-center text-primary hover:text-secondary cursor-pointer md:hidden">
+                    <i class="ri-menu-line ri-lg"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-24 pb-16">
+        <div class="container mx-auto px-4 py-12 w-full">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">Men's Collection</h1>
+                <p class="text-lg text-gray-100 mb-8 max-w-xl">Discover our exclusive selection of men's clothing and accessories, combining timeless elegance with contemporary style.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-button font-medium text-base transition-all whitespace-nowrap">Discover New Arrivals</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center text-sm text-gray-500">
+                <a href="#" class="hover:text-secondary">Home</a>
+                <span class="mx-2">/</span>
+                <span class="text-secondary font-medium">Men</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters and Products Section -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Filters Section -->
+            <div class="flex flex-wrap items-center justify-between mb-8 gap-4">
+                <div class="flex flex-wrap items-center gap-4">
+                    <!-- Category Filter -->
+                    <div class="relative">
+                        <button id="categoryFilterBtn" class="flex items-center px-4 py-2 border border-gray-300 rounded-button bg-white text-sm hover:border-secondary">
+                            Categories
+                            <i class="ri-arrow-down-s-line ml-2"></i>
+                        </button>
+                        <div id="categoryDropdown" class="filter-dropdown mt-2 bg-white border border-gray-200 rounded shadow-lg w-64 p-4">
+                            <div class="mb-4">
+                                <label class="custom-checkbox flex items-center text-sm mb-2">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark mr-3"></span>
+                                    All articles
+                                </label>
+                                <label class="custom-checkbox flex items-center text-sm mb-2">
+                                    <input type="checkbox">
+                                    <span class="checkmark mr-3"></span>
+                                    Suits
+                                </label>
+                                <label class="custom-checkbox flex items-center text-sm mb-2">
+                                    <input type="checkbox">
+                                    <span class="checkmark mr-3"></span>
+                                    Shirts
+                                </label>
+                                <label class="custom-checkbox flex items-center text-sm mb-2">
+                                    <input type="checkbox">
+                                    <span class="checkmark mr-3"></span>
+                                    Pants
+                                </label>
+                                <label class="custom-checkbox flex items-center text-sm mb-2">
+                                    <input type="checkbox">
+                                    <span class="checkmark mr-3"></span>
+                                    Shoes
+                                </label>
+                                <label class="custom-checkbox flex items-center text-sm">
+                                    <input type="checkbox">
+                                    <span class="checkmark mr-3"></span>
+                                    Accessories
+                                </label>
+                            </div>
+                            <button class="w-full bg-secondary text-white py-2 rounded-button text-sm whitespace-nowrap">Apply</button>
+                        </div>
+                    </div>
+
+                    <!-- Size Filter -->
+                    <div class="relative">
+                        <button id="sizeFilterBtn" class="flex items-center px-4 py-2 border border-gray-300 rounded-button bg-white text-sm hover:border-secondary">
+                            Sizes
+                            <i class="ri-arrow-down-s-line ml-2"></i>
+                        </button>
+                        <div id="sizeDropdown" class="filter-dropdown mt-2 bg-white border border-gray-200 rounded shadow-lg w-64 p-4">
+                            <div class="grid grid-cols-3 gap-2 mb-4">
+                                <button class="px-3 py-2 border border-gray-200 rounded text-sm hover:border-secondary">XS</button>
+                                <button class="px-3 py-2 border border-gray-200 rounded text-sm hover:border-secondary">S</button>
+                                <button class="px-3 py-2 border border-gray-200 rounded text-sm hover:border-secondary">M</button>
+                                <button class="px-3 py-2 border border-gray-200 rounded text-sm hover:border-secondary">L</button>
+                                <button class="px-3 py-2 border border-gray-200 rounded text-sm hover:border-secondary">XL</button>
+                                <button class="px-3 py-2 border border-gray-200 rounded text-sm hover:border-secondary">XXL</button>
+                            </div>
+                            <button class="w-full bg-secondary text-white py-2 rounded-button text-sm whitespace-nowrap">Apply</button>
+                        </div>
+                    </div>
+
+                    <!-- Color Filter -->
+                    <div class="relative">
+                        <button id="colorFilterBtn" class="flex items-center px-4 py-2 border border-gray-300 rounded-button bg-white text-sm hover:border-secondary">
+                            Colors
+                            <i class="ri-arrow-down-s-line ml-2"></i>
+                        </button>
+                        <div id="colorDropdown" class="filter-dropdown mt-2 bg-white border border-gray-200 rounded shadow-lg w-64 p-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <button class="w-8 h-8 rounded-full bg-black border-2 border-transparent hover:border-secondary"></button>
+                                <button class="w-8 h-8 rounded-full bg-gray-800 border-2 border-transparent hover:border-secondary"></button>
+                                <button class="w-8 h-8 rounded-full bg-blue-900 border-2 border-transparent hover:border-secondary"></button>
+                                <button class="w-8 h-8 rounded-full bg-gray-500 border-2 border-transparent hover:border-secondary"></button>
+                                <button class="w-8 h-8 rounded-full bg-white border-2 border-gray-300 hover:border-secondary"></button>
+                                <button class="w-8 h-8 rounded-full bg-red-800 border-2 border-transparent hover:border-secondary"></button>
+                                <button class="w-8 h-8 rounded-full bg-yellow-700 border-2 border-transparent hover:border-secondary"></button>
+                                <button class="w-8 h-8 rounded-full bg-green-800 border-2 border-transparent hover:border-secondary"></button>
+                                <button class="w-8 h-8 rounded-full bg-blue-500 border-2 border-transparent hover:border-secondary"></button>
+                                <button class="w-8 h-8 rounded-full bg-purple-800 border-2 border-transparent hover:border-secondary"></button>
+                            </div>
+                            <button class="w-full bg-secondary text-white py-2 rounded-button text-sm whitespace-nowrap">Apply</button>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="relative">
+                        <button id="priceFilterBtn" class="flex items-center px-4 py-2 border border-gray-300 rounded-button bg-white text-sm hover:border-secondary">
+                            Price
+                            <i class="ri-arrow-down-s-line ml-2"></i>
+                        </button>
+                        <div id="priceDropdown" class="filter-dropdown mt-2 bg-white border border-gray-200 rounded shadow-lg w-64 p-4">
+                            <div class="mb-4">
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-sm text-gray-600">€0</span>
+                                    <span class="text-sm text-gray-600">€1000</span>
+                                </div>
+                                <input type="range" min="0" max="1000" value="500" class="price-slider mb-2" id="priceRange">
+                                <div class="text-center text-sm text-secondary font-medium">
+                                    Maximum Price: <span id="priceValue">€500</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-secondary text-white py-2 rounded-button text-sm whitespace-nowrap">Apply</button>
+                        </div>
+                    </div>
+
+                    <!-- More Filters -->
+                    <div class="relative">
+                        <button id="moreFilterBtn" class="flex items-center px-4 py-2 border border-gray-300 rounded-button bg-white text-sm hover:border-secondary">
+                            More Filters
+                            <i class="ri-arrow-down-s-line ml-2"></i>
+                        </button>
+                        <div id="moreDropdown" class="filter-dropdown mt-2 bg-white border border-gray-200 rounded shadow-lg w-64 p-4">
+                            <div class="mb-4">
+                                <h4 class="font-medium mb-2">Material</h4>
+                                <label class="custom-checkbox flex items-center text-sm mb-2">
+                                    <input type="checkbox">
+                                    <span class="checkmark mr-3"></span>
+                                    Cotton
+                                </label>
+                                <label class="custom-checkbox flex items-center text-sm mb-2">
+                                    <input type="checkbox">
+                                    <span class="checkmark mr-3"></span>
+                                    Wool
+                                </label>
+                                <label class="custom-checkbox flex items-center text-sm mb-2">
+                                    <input type="checkbox">
+                                    <span class="checkmark mr-3"></span>
+                                    Linen
+                                </label>
+                                <label class="custom-checkbox flex items-center text-sm mb-2">
+                                    <input type="checkbox">
+                                    <span class="checkmark mr-3"></span>
+                                    Leather
+                                </label>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="font-medium mb-2">Availability</h4>
+                                <label class="custom-switch flex items-center justify-between">
+                                    <span class="text-sm">Only in stock</span>
+                                    <div class="ml-2">
+                                        <input type="checkbox" checked>
+                                        <span class="switch-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <button class="w-full bg-secondary text-white py-2 rounded-button text-sm whitespace-nowrap">Apply</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sort and View Options -->
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <select class="custom-select pl-4 pr-10 py-2 border border-gray-300 rounded-button bg-white text-sm appearance-none">
+                            <option>Sort by: New Arrivals</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Popularity</option>
+                            <option>Best Sellers</option>
+                        </select>
+                    </div>
+                    <div class="flex border border-gray-300 rounded-button overflow-hidden">
+                        <button class="w-10 h-10 flex items-center justify-center bg-white hover:bg-gray-100">
+                            <i class="ri-layout-grid-line"></i>
+                        </button>
+                        <button class="w-10 h-10 flex items-center justify-center bg-white hover:bg-gray-100 border-l border-gray-300">
+                            <i class="ri-list-check-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Filters -->
+            <div class="flex flex-wrap items-center gap-2 mb-8">
+                <span class="text-sm text-gray-600">Active Filters:</span>
+                <div class="flex items-center bg-gray-100 rounded-full px-3 py-1 text-sm">
+                    Suits
+                    <button class="ml-2 text-gray-500 hover:text-gray-700">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+                <div class="flex items-center bg-gray-100 rounded-full px-3 py-1 text-sm">
+                    Size: L
+                    <button class="ml-2 text-gray-500 hover:text-gray-700">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+                <div class="flex items-center bg-gray-100 rounded-full px-3 py-1 text-sm">
+                    Price: < €500
+                    <button class="ml-2 text-gray-500 hover:text-gray-700">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+                <button class="text-secondary text-sm hover:underline ml-2">Clear All</button>
+            </div>
+
+            <!-- New Arrivals Section -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-6">New Arrivals</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%20mens%20suit%20in%20dark%20blue%2C%20professional%20studio%20lighting%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20detailed%20fabric%20texture%2C%20luxury%20clothing%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=17&orientation=portrait" alt="Elegant Suit" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">New</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Navy Blue Elegant Suit</h3>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xl font-bold">€349.00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%20mens%20leather%20shoes%20in%20brown%2C%20professional%20studio%20lighting%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20detailed%20leather%20texture%2C%20luxury%20footwear%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=18&orientation=portrait" alt="Leather Shoes" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">-15%</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Oxford Leather Shoes</h3>
+                            <div class="flex justify-between items-center mb-4">
+                                <div>
+                                    <span class="text-xl font-bold">€189.00</span>
+                                    <span class="text-sm text-gray-500 line-through ml-2">€219.00</span>
+                                </div>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%20mens%20white%20dress%20shirt%2C%20professional%20studio%20lighting%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20detailed%20fabric%20texture%2C%20luxury%20clothing%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=19&orientation=portrait" alt="White Shirt" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Classic White Shirt</h3>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xl font-bold">€89.00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-line text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%20mens%20leather%20belt%20in%20brown%2C%20professional%20studio%20lighting%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20detailed%20leather%20texture%2C%20luxury%20accessories%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=20&orientation=portrait" alt="Leather Belt" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">Popular</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Classic Leather Belt</h3>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xl font-bold">€59.00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Products Section -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-6">Articles Populaires</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520charcoal%2520grey%2520mens%2520suit%2520on%2520mannequin%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=205&orientation=portrait" alt="Costume Gris Anthracite" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">Populaire</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Costume Gris Anthracite</h3>
+                            <p class="text-sm text-gray-500 mb-2">Laine mérinos</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€599,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs text-gray-500">Vendu 128 fois ce mois</span>
+                                <div class="flex space-x-1">
+                                    <button class="w-5 h-5 rounded-full bg-gray-200 border border-gray-300"></button>
+                                    <button class="w-5 h-5 rounded-full bg-blue-900 border border-gray-300"></button>
+                                    <button class="w-5 h-5 rounded-full bg-black border border-gray-300"></button>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520light%2520blue%2520mens%2520dress%2520shirt%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=206&orientation=portrait" alt="Chemise Bleu Ciel" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">Populaire</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Chemise Bleu Ciel</h3>
+                            <p class="text-sm text-gray-500 mb-2">Coton bio</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€119,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs text-gray-500">Vendu 96 fois ce mois</span>
+                                <div class="flex space-x-1">
+                                    <button class="w-5 h-5 rounded-full bg-blue-200 border border-gray-300"></button>
+                                    <button class="w-5 h-5 rounded-full bg-white border border-gray-300"></button>
+                                    <button class="w-5 h-5 rounded-full bg-pink-100 border border-gray-300"></button>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520black%2520leather%2520belt%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520leather%2520texture%252C%2520luxury%2520accessory%2520display&width=600&height=800&seq=207&orientation=portrait" alt="Ceinture Cuir Noir" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">Populaire</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Ceinture Cuir Noir</h3>
+                            <p class="text-sm text-gray-500 mb-2">Cuir véritable</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€79,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs text-gray-500">Vendu 215 fois ce mois</span>
+                                <div class="flex space-x-1">
+                                    <button class="w-5 h-5 rounded-full bg-black border border-gray-300"></button>
+                                    <button class="w-5 h-5 rounded-full bg-yellow-800 border border-gray-300"></button>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520wool%2520trousers%2520in%2520dark%2520grey%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=208&orientation=portrait" alt="Pantalon Laine Gris" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">Populaire</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Pantalon Laine Gris</h3>
+                            <p class="text-sm text-gray-500 mb-2">Laine vierge</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€189,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs text-gray-500">Vendu 87 fois ce mois</span>
+                                <div class="flex space-x-1">
+                                    <button class="w-5 h-5 rounded-full bg-gray-700 border border-gray-300"></button>
+                                    <button class="w-5 h-5 rounded-full bg-blue-900 border border-gray-300"></button>
+                                    <button class="w-5 h-5 rounded-full bg-black border border-gray-300"></button>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Offers Section -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-6">Promotions</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520black%2520mens%2520suit%2520on%2520mannequin%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=209&orientation=portrait" alt="Costume Noir" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-red-600 text-white text-xs px-2 py-1 rounded">-20%</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Costume Noir Classique</h3>
+                            <p class="text-sm text-gray-500 mb-2">Laine et cachemire</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <div>
+                                    <span class="text-lg font-bold">€559,00</span>
+                                    <span class="text-sm text-gray-500 line-through ml-2">€699,00</span>
+                                </div>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-line text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                    <div class="bg-red-600 h-1.5 rounded-full w-1/4"></div>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">Stock limité: 5 restants</div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520striped%2520dress%2520shirt%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=210&orientation=portrait" alt="Chemise Rayée" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-red-600 text-white text-xs px-2 py-1 rounded">-15%</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Chemise Rayée Business</h3>
+                            <p class="text-sm text-gray-500 mb-2">Coton double retors</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <div>
+                                    <span class="text-lg font-bold">€109,00</span>
+                                    <span class="text-sm text-gray-500 line-through ml-2">€129,00</span>
+                                </div>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                    <div class="bg-red-600 h-1.5 rounded-full w-1/2"></div>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">Stock limité: 12 restants</div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520black%2520leather%2520loafers%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520leather%2520texture%252C%2520luxury%2520footwear%2520display&width=600&height=800&seq=211&orientation=portrait" alt="Mocassins Cuir" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-red-600 text-white text-xs px-2 py-1 rounded">-25%</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Mocassins Cuir Noir</h3>
+                            <p class="text-sm text-gray-500 mb-2">Cuir de veau</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <div>
+                                    <span class="text-lg font-bold">€209,00</span>
+                                    <span class="text-sm text-gray-500 line-through ml-2">€279,00</span>
+                                </div>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                    <div class="bg-red-600 h-1.5 rounded-full w-3/4"></div>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">Stock limité: 8 restants</div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520cashmere%2520sweater%2520in%2520dark%2520green%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=212&orientation=portrait" alt="Pull Cachemire" class="w-full h-full object-cover object-top">
+                            <div class="absolute top-4 right-4 bg-red-600 text-white text-xs px-2 py-1 rounded">-30%</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Pull Cachemire Vert</h3>
+                            <p class="text-sm text-gray-500 mb-2">Cachemire pur</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <div>
+                                    <span class="text-lg font-bold">€139,00</span>
+                                    <span class="text-sm text-gray-500 line-through ml-2">€199,00</span>
+                                </div>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                    <div class="bg-red-600 h-1.5 rounded-full w-1/3"></div>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">Stock limité: 3 restants</div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Products Section -->
+            <div>
+                <h2 class="text-2xl font-bold mb-6">Tous les Produits</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520beige%2520linen%2520suit%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=213&orientation=portrait" alt="Costume Lin Beige" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Costume Lin Beige</h3>
+                            <p class="text-sm text-gray-500 mb-2">Lin irlandais</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€499,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-line text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520pink%2520dress%2520shirt%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=214&orientation=portrait" alt="Chemise Rose Pâle" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Chemise Rose Pâle</h3>
+                            <p class="text-sm text-gray-500 mb-2">Coton Oxford</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€119,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520leather%2520wallet%2520in%2520brown%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520leather%2520texture%252C%2520luxury%2520accessory%2520display&width=600&height=800&seq=215&orientation=portrait" alt="Portefeuille Cuir" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Portefeuille Cuir Marron</h3>
+                            <p class="text-sm text-gray-500 mb-2">Cuir pleine fleur</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€129,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520chinos%2520in%2520beige%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=216&orientation=portrait" alt="Chino Beige" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Chino Beige Classique</h3>
+                            <p class="text-sm text-gray-500 mb-2">Coton stretch</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€149,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-line text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520watch%2520with%2520leather%2520strap%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520watch%2520face%252C%2520luxury%2520accessory%2520display&width=600&height=800&seq=217&orientation=portrait" alt="Montre Cuir" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Montre Bracelet Cuir</h3>
+                            <p class="text-sm text-gray-500 mb-2">Mouvement suisse</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€349,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 6 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520cufflinks%2520in%2520silver%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520metal%2520texture%252C%2520luxury%2520accessory%2520display&width=600&height=800&seq=218&orientation=portrait" alt="Boutons de Manchette" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Boutons de Manchette Argent</h3>
+                            <p class="text-sm text-gray-500 mb-2">Argent 925</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€99,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-line text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 7 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520bow%2520tie%2520in%2520black%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520accessory%2520display&width=600&height=800&seq=219&orientation=portrait" alt="Nœud Papillon" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Nœud Papillon Noir</h3>
+                            <p class="text-sm text-gray-500 mb-2">Soie pure</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€69,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 8 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520mens%2520leather%2520gloves%2520in%2520brown%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520leather%2520texture%252C%2520luxury%2520accessory%2520display&width=600&height=800&seq=220&orientation=portrait" alt="Gants Cuir" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-1">Gants Cuir Marron</h3>
+                            <p class="text-sm text-gray-500 mb-2">Cuir d'agneau</p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold">€119,00</span>
+                                <div class="flex">
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
+                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-button transition-colors text-sm whitespace-nowrap">Ajouter au Panier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center mt-12">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-secondary hover:text-secondary mr-2">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full border border-secondary bg-secondary text-white mx-1 pagination-btn active">1</button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-secondary hover:text-secondary mx-1 pagination-btn">2</button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-secondary hover:text-secondary mx-1 pagination-btn">3</button>
+                <span class="mx-2 text-gray-400">...</span>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-secondary hover:text-secondary mx-1 pagination-btn">8</button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-secondary hover:text-secondary ml-2">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+            
+            <div class="flex justify-between items-center mt-6">
+                <div class="text-sm text-gray-500">Affichage de 1-16 sur 124 articles</div>
+                <div class="flex items-center">
+                    <span class="text-sm text-gray-600 mr-2">Afficher:</span>
+                    <select class="custom-select pl-3 pr-8 py-1 border border-gray-300 rounded-button bg-white text-sm appearance-none">
+                        <option>16</option>
+                        <option>32</option>
+                        <option>48</option>
+                        <option>Tous</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-secondary bg-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Restez Informé</h2>
+                <p class="text-gray-600 mb-8">Inscrivez-vous à notre newsletter pour recevoir en avant-première nos nouvelles collections et offres exclusives pour hommes.</p>
+                
+                <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Votre adresse email" class="flex-grow px-6 py-3 rounded-button border-none focus:ring-2 focus:ring-secondary">
+                    <button type="submit" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-button font-medium transition-colors whitespace-nowrap">S'inscrire</button>
+                </form>
+                
+                <div class="mt-6 flex items-center justify-center">
+                    <label class="custom-checkbox flex items-center text-sm text-gray-600">
+                        <input type="checkbox" class="hidden">
+                        <span class="checkmark mr-3"></span>
+                        J'accepte de recevoir des communications marketing de Moses.
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- About -->
+                <div>
+                    <h3 class="text-2xl font-['Pacifico'] text-secondary mb-6">Moses</h3>
+                    <p class="text-gray-300 mb-6">Discover our exclusive collection of men's clothing and accessories, where timeless elegance meets contemporary style.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-colors">
+                            <i class="ri-facebook-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-colors">
+                            <i class="ri-instagram-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-colors">
+                            <i class="ri-twitter-fill ri-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-colors">
+                            <i class="ri-pinterest-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors">Size Guide</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors">FAQs</a></li>
+                    </ul>
+                </div>
+                <!-- Customer Service -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Customer Service</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors">Shipping Information</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-300 mb-4">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-l-button text-gray-900">
+                        <button class="bg-secondary hover:bg-opacity-90 px-6 py-2 rounded-r-button transition-colors whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Moses Shoes & Clothing Line. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle filter dropdowns
+        document.querySelectorAll('[id$="FilterBtn"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const dropdown = document.getElementById(button.id.replace('Btn', 'Dropdown'));
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Price range slider
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        priceRange.addEventListener('input', () => {
+            priceValue.textContent = `€${priceRange.value}`;
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('[id$="FilterBtn"]') && !e.target.closest('.filter-dropdown')) {
+                document.querySelectorAll('.filter-dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

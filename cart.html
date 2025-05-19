@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Moses Shoes & Clothing Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0C0C0C',
+                        secondary: '#8A9A5B',
+                        tertiary: '#BEBD7F',
+                        neutral: '#F5F5DC'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-3xl font-['Pacifico'] text-secondary">Moses</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="men.html" class="text-primary hover:text-secondary transition-colors font-medium">Men</a>
+                <a href="woman.html" class="text-primary hover:text-secondary transition-colors font-medium">Women</a>
+                <a href="suit.html" class="text-primary hover:text-secondary transition-colors font-medium">Suits</a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors font-medium">Shoes</a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors font-medium">Accessories</a>
+            </nav>
+            <div class="flex items-center space-x-6">
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-200 bg-gray-50 text-sm focus:border-secondary">
+                    <div class="absolute left-3 top-2.5 w-5 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+                <div class="w-10 h-10 flex items-center justify-center text-secondary cursor-pointer relative">
+                    <i class="ri-shopping-bag-line ri-lg"></i>
+                    <span class="cart-count absolute -top-1 -right-1 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-8">Shopping Cart</h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Cart Items -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-lg shadow-sm p-6" id="cartItems">
+                        <!-- Cart items will be dynamically inserted here -->
+                        <div class="text-center text-gray-500 py-8" id="emptyCart">
+                            Your cart is empty
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Subtotal</span>
+                                <span class="font-medium" id="subtotal">€0.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Shipping</span>
+                                <span class="font-medium" id="shipping">€0.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Tax</span>
+                                <span class="font-medium" id="tax">€0.00</span>
+                            </div>
+                            <div class="border-t pt-3">
+                                <div class="flex justify-between">
+                                    <span class="font-semibold">Total</span>
+                                    <span class="font-semibold" id="total">€0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-secondary text-white py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors" id="checkoutBtn">
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Cart Page Specific JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = new Cart();
+            const cartItemsContainer = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCart');
+            const subtotalElement = document.getElementById('subtotal');
+            const shippingElement = document.getElementById('shipping');
+            const taxElement = document.getElementById('tax');
+            const totalElement = document.getElementById('total');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            function updateCartDisplay() {
+                if (cart.items.length === 0) {
+                    emptyCartMessage.style.display = 'block';
+                    cartItemsContainer.innerHTML = '';
+                    updateOrderSummary(0);
+                    return;
+                }
+
+                emptyCartMessage.style.display = 'none';
+                let cartHTML = '';
+                let subtotal = 0;
+
+                cart.items.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+
+                    cartHTML += `
+                        <div class="flex items-center justify-between border-b pb-4 mb-4" data-product-id="${item.id}">
+                            <div class="flex items-center space-x-4">
+                                <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded">
+                                <div>
+                                    <h3 class="font-medium">${item.name}</h3>
+                                    <p class="text-gray-500">€${item.price.toFixed(2)}</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center border rounded">
+                                    <button class="px-3 py-1 hover:bg-gray-100 decrease-quantity">-</button>
+                                    <span class="px-3 py-1 border-x">${item.quantity}</span>
+                                    <button class="px-3 py-1 hover:bg-gray-100 increase-quantity">+</button>
+                                </div>
+                                <button class="text-red-500 hover:text-red-700 remove-item">
+                                    <i class="ri-delete-bin-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                cartItemsContainer.innerHTML = cartHTML;
+                updateOrderSummary(subtotal);
+
+                // Add event listeners for quantity buttons and remove buttons
+                document.querySelectorAll('.decrease-quantity').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const productId = e.target.closest('[data-product-id]').dataset.productId;
+                        const item = cart.items.find(item => item.id === productId);
+                        if (item && item.quantity > 1) {
+                            item.quantity--;
+                            cart.saveCart();
+                            updateCartDisplay();
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.increase-quantity').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const productId = e.target.closest('[data-product-id]').dataset.productId;
+                        const item = cart.items.find(item => item.id === productId);
+                        if (item) {
+                            item.quantity++;
+                            cart.saveCart();
+                            updateCartDisplay();
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.remove-item').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const productId = e.target.closest('[data-product-id]').dataset.productId;
+                        cart.removeItem(productId);
+                        updateCartDisplay();
+                    });
+                });
+            }
+
+            function updateOrderSummary(subtotal) {
+                const shipping = subtotal > 0 ? 10 : 0;
+                const tax = subtotal * 0.2; // 20% tax
+                const total = subtotal + shipping + tax;
+
+                subtotalElement.textContent = `€${subtotal.toFixed(2)}`;
+                shippingElement.textContent = `€${shipping.toFixed(2)}`;
+                taxElement.textContent = `€${tax.toFixed(2)}`;
+                totalElement.textContent = `€${total.toFixed(2)}`;
+
+                checkoutBtn.disabled = subtotal === 0;
+                checkoutBtn.classList.toggle('opacity-50', subtotal === 0);
+            }
+
+            // Initialize cart display
+            updateCartDisplay();
+
+            // Checkout button click handler
+            checkoutBtn.addEventListener('click', () => {
+                if (cart.items.length > 0) {
+                    // Implement checkout logic here
+                    alert('Proceeding to checkout...');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

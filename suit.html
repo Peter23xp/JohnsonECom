@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suits Collection - Moses Shoes & Clothing Line</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<link href="assets/css/animations.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FAFAFA;
+  color: #333;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+.nav-link {
+  position: relative;
+}
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #8A9A5B;
+  transition: width 0.3s;
+}
+.nav-link:hover:after, .nav-link.active:after {
+  width: 100%;
+}
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.custom-checkbox input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #8A9A5B;
+  border-radius: 4px;
+}
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #8A9A5B;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.custom-checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.custom-radio {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.custom-radio input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.radio-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #8A9A5B;
+  border-radius: 50%;
+}
+.custom-radio input:checked ~ .radio-mark {
+  background-color: #fff;
+}
+.radio-mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #8A9A5B;
+}
+.custom-radio input:checked ~ .radio-mark:after {
+  display: block;
+}
+.color-option {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.color-option:hover {
+  transform: scale(1.1);
+}
+.color-option input {
+  opacity: 0;
+  position: absolute;
+}
+.color-option input:checked + .color-circle {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #8A9A5B;
+}
+.color-circle {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+.price-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #E5E7EB;
+  border-radius: 5px;
+  outline: none;
+}
+.price-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #8A9A5B;
+  cursor: pointer;
+}
+.price-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #8A9A5B;
+  cursor: pointer;
+  border: none;
+}
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.custom-select-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+}
+.custom-select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin-top: 0.5rem;
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+.custom-select-option {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.custom-select-option:hover {
+  background-color: #F3F4F6;
+}
+.custom-select-option.selected {
+  background-color: #F3F4F6;
+  font-weight: 500;
+}
+.custom-select.open .custom-select-options {
+  display: block;
+}
+</style>
+</head>
+<body class="page-transition">
+<!-- Header -->
+<header class="bg-white shadow-sm">
+<div class="container mx-auto px-4 py-4">
+<div class="flex items-center justify-between">
+<a href="index.html" class="text-3xl font-['Pacifico'] text-primary">Moses</a>
+<nav class="hidden md:flex space-x-8">
+<a href="men.html" class="nav-link text-primary hover:text-secondary transition-colors">Men</a>
+<a href="woman.html" class="nav-link text-primary hover:text-secondary transition-colors">Women</a>
+<a href="suit.html" class="nav-link active text-secondary hover:text-secondary transition-colors">Suits</a>
+<a href="#" class="nav-link text-primary hover:text-secondary transition-colors">Shoes</a>
+<a href="#" class="nav-link text-primary hover:text-secondary transition-colors">Accessories</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-search-line text-primary ri-lg"></i>
+</div>
+<div class="w-10 h-10 flex items-center justify-center relative">
+<i class="ri-shopping-bag-line text-primary ri-lg"></i>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+</div>
+<div class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-primary ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu fixed inset-0 bg-primary bg-opacity-95 z-50 hidden">
+<div class="container mx-auto px-4 py-8">
+<div class="flex justify-end mb-8">
+<button class="text-white text-2xl" id="closeMenu">
+<i class="ri-close-line"></i>
+</button>
+</div>
+<nav class="flex flex-col space-y-6">
+<a href="index.html" class="text-white text-2xl hover:text-secondary transition-colors">Home</a>
+<a href="men.html" class="text-white text-2xl hover:text-secondary transition-colors">Men</a>
+<a href="woman.html" class="text-white text-2xl hover:text-secondary transition-colors">Women</a>
+<a href="suit.html" class="text-white text-2xl hover:text-secondary transition-colors">Suits</a>
+<a href="#" class="text-white text-2xl hover:text-secondary transition-colors">Shoes</a>
+<a href="#" class="text-white text-2xl hover:text-secondary transition-colors">Accessories</a>
+</nav>
+<div class="mt-12">
+<div class="flex space-x-4 justify-center">
+<a href="https://facebook.com/mosesshoesandclothingline" class="text-white hover:text-secondary transition-colors">
+<i class="ri-facebook-fill text-2xl"></i>
+</a>
+<a href="https://instagram.com/MosesFashion" class="text-white hover:text-secondary transition-colors">
+<i class="ri-instagram-fill text-2xl"></i>
+</a>
+<a href="https://wa.me/231770680204" class="text-white hover:text-secondary transition-colors">
+<i class="ri-whatsapp-fill text-2xl"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Promotional Banner -->
+<div class="bg-secondary text-white py-3">
+<div class="container mx-auto px-4">
+<div class="flex justify-center items-center">
+<div class="w-6 h-6 flex items-center justify-center mr-2">
+<i class="ri-gift-line"></i>
+</div>
+<p class="text-sm font-medium">SUMMER SALE: Up to 50% off selected items | Free shipping on orders over €100</p>
+</div>
+</div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="bg-white border-b">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center text-sm text-gray-500">
+<a href="#" class="hover:text-secondary">Home</a>
+<span class="mx-2">/</span>
+<span class="text-secondary font-medium">Suits Collection</span>
+</div>
+</div>
+</div>
+
+<!-- Hero Banner -->
+<div class="relative">
+<div class="w-full h-[300px] md:h-[400px] bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=elegant%2520men%2520in%2520premium%2520tailored%2520suits%2520and%2520tuxedos%252C%2520professional%2520models%2520showcasing%2520high-end%2520formal%2520wear%252C%2520sophisticated%2520lighting%252C%2520neutral%2520background%2520with%2520sage%2520green%2520accents%252C%2520luxury%2520menswear%2520fashion%2520photography%252C%2520wide%2520format%2520header%2520image&width=1200&height=400&seq=201&orientation=landscape');">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/70 to-transparent"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative">
+<div class="max-w-lg text-white">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">Suits Collection</h1>
+<p class="text-lg mb-6">Discover our refined selection of suits and tuxedos for all occasions, combining timeless elegance with artisanal craftsmanship.</p>
+<a href="#collection" class="inline-flex items-center bg-secondary text-white px-6 py-3 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Discover
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-12" id="collection">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Sidebar Filters -->
+<div class="lg:w-1/4 space-y-8">
+<div class="bg-white p-6 rounded shadow-sm">
+<h3 class="text-lg font-bold text-primary mb-4">Categories</h3>
+<ul class="space-y-3">
+<li>
+<label class="flex items-center cursor-pointer">
+<span class="custom-checkbox">
+<input type="checkbox" checked>
+<span class="checkmark"></span>
+</span>
+<span>All Suits</span>
+</label>
+</li>
+<li>
+<label class="flex items-center cursor-pointer">
+<span class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</span>
+<span>Complete Suits</span>
+</label>
+</li>
+<li>
+<label class="flex items-center cursor-pointer">
+<span class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</span>
+<span>Tuxedos</span>
+</label>
+</li>
+<li>
+<label class="flex items-center cursor-pointer">
+<span class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</span>
+<span>Ceremony Suits</span>
+</label>
+</li>
+<li>
+<label class="flex items-center cursor-pointer">
+<span class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</span>
+<span>Jackets</span>
+</label>
+</li>
+<li>
+<label class="flex items-center cursor-pointer">
+<span class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</span>
+<span>Trousers</span>
+</label>
+</li>
+<li>
+<label class="flex items-center cursor-pointer">
+<span class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</span>
+<span>Vests</span>
+</label>
+</li>
+<li>
+<label class="flex items-center cursor-pointer">
+<span class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</span>
+<span>Accessories</span>
+</label>
+</li>
+</ul>
+</div>
+
+<div class="bg-white p-6 rounded shadow-sm">
+<h3 class="text-lg font-bold text-primary mb-4">Prix</h3>
+<div class="space-y-4">
+<div>
+<input type="range" class="price-slider" min="0" max="1000" value="500" id="priceRange">
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">0 €</span>
+<span class="text-sm font-medium" id="priceValue">500 €</span>
+<span class="text-sm text-gray-500">1000 €</span>
+</div>
+</div>
+</div>
+
+<div class="bg-white p-6 rounded shadow-sm">
+<h3 class="text-lg font-bold text-primary mb-4">Tailles</h3>
+<div class="grid grid-cols-3 gap-2">
+<button class="border border-gray-300 hover:border-secondary hover:text-secondary px-3 py-2 rounded text-sm font-medium">44</button>
+<button class="border border-gray-300 hover:border-secondary hover:text-secondary px-3 py-2 rounded text-sm font-medium">46</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary px-3 py-2 rounded text-sm font-medium">48</button>
+<button class="border border-gray-300 hover:border-secondary hover:text-secondary px-3 py-2 rounded text-sm font-medium">50</button>
+<button class="border border-gray-300 hover:border-secondary hover:text-secondary px-3 py-2 rounded text-sm font-medium">52</button>
+<button class="border border-gray-300 hover:border-secondary hover:text-secondary px-3 py-2 rounded text-sm font-medium">54</button>
+<button class="border border-gray-300 hover:border-secondary hover:text-secondary px-3 py-2 rounded text-sm font-medium">56</button>
+<button class="border border-gray-300 hover:border-secondary hover:text-secondary px-3 py-2 rounded text-sm font-medium">58</button>
+<button class="border border-gray-300 hover:border-secondary hover:text-secondary px-3 py-2 rounded text-sm font-medium">60</button>
+</div>
+</div>
+
+<div class="bg-white p-6 rounded shadow-sm">
+<h3 class="text-lg font-bold text-primary mb-4">Couleurs</h3>
+<div class="flex flex-wrap gap-3">
+<label class="color-option">
+<input type="radio" name="color" checked>
+<span class="color-circle" style="background-color: #000000;"></span>
+</label>
+<label class="color-option">
+<input type="radio" name="color">
+<span class="color-circle" style="background-color: #1F2937;"></span>
+</label>
+<label class="color-option">
+<input type="radio" name="color">
+<span class="color-circle" style="background-color: #1E3A8A;"></span>
+</label>
+<label class="color-option">
+<input type="radio" name="color">
+<span class="color-circle" style="background-color: #FFFFFF; border: 1px solid #E5E7EB;"></span>
+</label>
+<label class="color-option">
+<input type="radio" name="color">
+<span class="color-circle" style="background-color: #8A9A5B;"></span>
+</label>
+<label class="color-option">
+<input type="radio" name="color">
+<span class="color-circle" style="background-color: #7E5109;"></span>
+</label>
+<label class="color-option">
+<input type="radio" name="color">
+<span class="color-circle" style="background-color: #A52A2A;"></span>
+</label>
+<label class="color-option">
+<input type="radio" name="color">
+<span class="color-circle" style="background-color: #F5F5DC;"></span>
+</label>
+</div>
+</div>
+
+<div class="bg-white p-6 rounded shadow-sm">
+<h3 class="text-lg font-bold text-primary mb-4">Évaluation</h3>
+<div class="space-y-2">
+<label class="flex items-center cursor-pointer">
+<span class="custom-radio">
+<input type="radio" name="rating" checked>
+<span class="radio-mark"></span>
+</span>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<span class="ml-2 text-gray-600">& plus</span>
+</div>
+</label>
+<label class="flex items-center cursor-pointer">
+<span class="custom-radio">
+<input type="radio" name="rating">
+<span class="radio-mark"></span>
+</span>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line text-gray-300"></i>
+<span class="ml-2 text-gray-600">& plus</span>
+</div>
+</label>
+<label class="flex items-center cursor-pointer">
+<span class="custom-radio">
+<input type="radio" name="rating">
+<span class="radio-mark"></span>
+</span>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line text-gray-300"></i>
+<i class="ri-star-line text-gray-300"></i>
+<span class="ml-2 text-gray-600">& plus</span>
+</div>
+</label>
+</div>
+</div>
+
+<div class="bg-white p-6 rounded shadow-sm">
+<button class="w-full bg-primary text-white py-3 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Reset Filters</button>
+</div>
+</div>
+
+<!-- Products Grid -->
+<div class="lg:w-3/4">
+<div class="bg-white p-6 rounded shadow-sm mb-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h2 class="text-2xl font-bold text-primary">Suits Collection</h2>
+<p class="text-gray-500">Showing 1-9 of 27 products</p>
+</div>
+<div class="flex items-center space-x-4">
+<div class="custom-select" id="sortSelect">
+<div class="custom-select-selected">
+<span>Sort by: New Arrivals</span>
+<i class="ri-arrow-down-s-line"></i>
+</div>
+<div class="custom-select-options">
+<div class="custom-select-option selected">New Arrivals</div>
+<div class="custom-select-option">Price: Low to High</div>
+<div class="custom-select-option">Price: High to Low</div>
+<div class="custom-select-option">Popularity</div>
+<div class="custom-select-option">Best Sellers</div>
+</div>
+</div>
+<div class="flex border rounded overflow-hidden">
+<button class="w-10 h-10 flex items-center justify-center bg-secondary text-white">
+<i class="ri-grid-line"></i>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-secondary">
+<i class="ri-list-check"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product 1 -->
+<div class="product-card bg-white rounded overflow-hidden shadow-sm">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=elegant%2520navy%2520blue%2520suit%2520on%2520male%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=202&orientation=portrait" alt="Costume Bleu Marine" class="w-full h-80 object-cover object-top">
+<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+<i class="ri-heart-line text-gray-500"></i>
+</div>
+<div class="absolute top-4 left-4 bg-secondary text-white text-xs px-3 py-1 rounded-full">Nouveau</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-primary">Costume Bleu Marine Prestige</h3>
+<span class="text-secondary font-semibold">349 €</span>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+<span class="text-gray-500 text-sm ml-1">(28)</span>
+</div>
+<div class="flex space-x-2 mb-4">
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+</div>
+<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-shopping-bag-line mr-2"></i>
+Ajouter au panier
+</button>
+</div>
+</div>
+
+<!-- Product 2 -->
+<div class="product-card bg-white rounded overflow-hidden shadow-sm">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=elegant%2520black%2520tuxedo%2520on%2520male%2520model%252C%2520premium%2520satin%2520lapels%252C%2520bow%2520tie%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=203&orientation=portrait" alt="Smoking Noir" class="w-full h-80 object-cover object-top">
+<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+<i class="ri-heart-line text-gray-500"></i>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-primary">Smoking Noir Élégance</h3>
+<span class="text-secondary font-semibold">429 €</span>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<span class="text-gray-500 text-sm ml-1">(35)</span>
+</div>
+<div class="flex space-x-2 mb-4">
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+</div>
+<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-shopping-bag-line mr-2"></i>
+Ajouter au panier
+</button>
+</div>
+</div>
+
+<!-- Product 3 -->
+<div class="product-card bg-white rounded overflow-hidden shadow-sm">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=elegant%2520light%2520gray%2520suit%2520on%2520male%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=204&orientation=portrait" alt="Costume Gris Clair" class="w-full h-80 object-cover object-top">
+<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+<i class="ri-heart-line text-gray-500"></i>
+</div>
+<div class="absolute top-4 left-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full">-20%</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-primary">Costume Gris Clair Signature</h3>
+<div>
+<span class="text-secondary font-semibold">319 €</span>
+<span class="text-gray-400 text-sm line-through ml-2">399 €</span>
+</div>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line text-gray-300"></i>
+<span class="text-gray-500 text-sm ml-1">(22)</span>
+</div>
+<div class="flex space-x-2 mb-4">
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+</div>
+<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-shopping-bag-line mr-2"></i>
+Ajouter au panier
+</button>
+</div>
+</div>
+
+<!-- Product 4 -->
+<div class="product-card bg-white rounded overflow-hidden shadow-sm">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=elegant%2520dark%2520charcoal%2520suit%2520on%2520male%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=205&orientation=portrait" alt="Costume Anthracite" class="w-full h-80 object-cover object-top">
+<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+<i class="ri-heart-line text-gray-500"></i>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-primary">Costume Anthracite Business</h3>
+<span class="text-secondary font-semibold">379 €</span>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+<span class="text-gray-500 text-sm ml-1">(31)</span>
+</div>
+<div class="flex space-x-2 mb-4">
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+</div>
+<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-shopping-bag-line mr-2"></i>
+Ajouter au panier
+</button>
+</div>
+</div>
+
+<!-- Product 5 -->
+<div class="product-card bg-white rounded overflow-hidden shadow-sm">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=elegant%2520beige%2520linen%2520suit%2520on%2520male%2520model%252C%2520premium%2520summer%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=206&orientation=portrait" alt="Costume Lin Beige" class="w-full h-80 object-cover object-top">
+<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+<i class="ri-heart-line text-gray-500"></i>
+</div>
+<div class="absolute top-4 left-4 bg-secondary text-white text-xs px-3 py-1 rounded-full">Nouveau</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-primary">Costume Lin Beige Été</h3>
+<span class="text-secondary font-semibold">299 €</span>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line text-gray-300"></i>
+<span class="text-gray-500 text-sm ml-1">(17)</span>
+</div>
+<div class="flex space-x-2 mb-4">
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+</div>
+<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-shopping-bag-line mr-2"></i>
+Ajouter au panier
+</button>
+</div>
+</div>
+
+<!-- Product 6 -->
+<div class="product-card bg-white rounded overflow-hidden shadow-sm">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=elegant%2520burgundy%2520suit%2520on%2520male%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=207&orientation=portrait" alt="Costume Bordeaux" class="w-full h-80 object-cover object-top">
+<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+<i class="ri-heart-line text-gray-500"></i>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-primary">Costume Bordeaux Distinction</h3>
+<span class="text-secondary font-semibold">389 €</span>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line text-gray-300"></i>
+<span class="text-gray-500 text-sm ml-1">(14)</span>
+</div>
+<div class="flex space-x-2 mb-4">
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+</div>
+<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-shopping-bag-line mr-2"></i>
+Ajouter au panier
+</button>
+</div>
+</div>
+
+<!-- Product 7 -->
+<div class="product-card bg-white rounded overflow-hidden shadow-sm">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=elegant%2520white%2520wedding%2520suit%2520on%2520male%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=208&orientation=portrait" alt="Costume Mariage Blanc" class="w-full h-80 object-cover object-top">
+<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+<i class="ri-heart-line text-gray-500"></i>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-primary">Costume Mariage Blanc</h3>
+<span class="text-secondary font-semibold">459 €</span>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<span class="text-gray-500 text-sm ml-1">(26)</span>
+</div>
+<div class="flex space-x-2 mb-4">
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+</div>
+<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-shopping-bag-line mr-2"></i>
+Ajouter au panier
+</button>
+</div>
+</div>
+
+<!-- Product 8 -->
+<div class="product-card bg-white rounded overflow-hidden shadow-sm">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=elegant%2520navy%2520blue%2520blazer%2520on%2520male%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=209&orientation=portrait" alt="Veste Blazer" class="w-full h-80 object-cover object-top">
+<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+<i class="ri-heart-line text-gray-500"></i>
+</div>
+<div class="absolute top-4 left-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full">-15%</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-primary">Veste Blazer Marine</h3>
+<div>
+<span class="text-secondary font-semibold">229 €</span>
+<span class="text-gray-400 text-sm line-through ml-2">269 €</span>
+</div>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+<span class="text-gray-500 text-sm ml-1">(29)</span>
+</div>
+<div class="flex space-x-2 mb-4">
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+</div>
+<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-shopping-bag-line mr-2"></i>
+Ajouter au panier
+</button>
+</div>
+</div>
+
+<!-- Product 9 -->
+<div class="product-card bg-white rounded overflow-hidden shadow-sm">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=elegant%2520sage%2520green%2520suit%2520on%2520male%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=210&orientation=portrait" alt="Costume Vert Sauge" class="w-full h-80 object-cover object-top">
+<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+<i class="ri-heart-line text-gray-500"></i>
+</div>
+<div class="absolute top-4 left-4 bg-secondary text-white text-xs px-3 py-1 rounded-full">Nouveau</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-primary">Costume Vert Sauge Moderne</h3>
+<span class="text-secondary font-semibold">369 €</span>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line text-gray-300"></i>
+<span class="text-gray-500 text-sm ml-1">(12)</span>
+</div>
+<div class="flex space-x-2 mb-4">
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+</div>
+<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-shopping-bag-line mr-2"></i>
+Ajouter au panier
+</button>
+</div>
+</div>
+</div>
+
+<!-- Pagination -->
+<div class="flex justify-center mt-12">
+<nav class="flex items-center space-x-2">
+<a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">
+<i class="ri-arrow-left-s-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center border border-secondary bg-secondary text-white rounded">1</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">2</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">3</a>
+<span class="w-10 h-10 flex items-center justify-center">...</span>
+<a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">9</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">
+<i class="ri-arrow-right-s-line"></i>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Newsletter Section -->
+<section class="py-16 bg-secondary bg-opacity-10">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold text-primary mb-4">Restez Informé</h2>
+<p class="text-gray-600 mb-8">Inscrivez-vous à notre newsletter pour recevoir en avant-première nos nouvelles collections et offres exclusives.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+<input type="email" placeholder="Votre adresse email" class="flex-1 px-6 py-3 rounded border-none focus:outline-none focus:ring-2 focus:ring-secondary">
+<button type="submit" class="bg-secondary text-white px-8 py-3 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">S'abonner</button>
+</form>
+<div class="mt-6 flex items-center justify-center">
+<label class="flex items-center text-sm text-gray-600">
+<span class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+</span>
+J'accepte de recevoir des emails promotionnels et les dernières nouvelles
+</label>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">Moses</a>
+<p class="text-gray-300 mb-6">Élégance intemporelle et savoir-faire libérien pour une mode qui vous ressemble.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition-colors">
+<i class="ri-facebook-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition-colors">
+<i class="ri-instagram-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition-colors">
+<i class="ri-twitter-x-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition-colors">
+<i class="ri-pinterest-fill text-white"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Liens Rapides</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Accueil</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">À Propos</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Collections</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Vente en Gros</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Service Client</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Livraison & Retours</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Guide des Tailles</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Conditions Générales</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Politique de Confidentialité</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line mt-1 mr-3 text-secondary"></i>
+<span class="text-gray-300">15 Rue de la Mode, 75001 Paris, France</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3 text-secondary"></i>
+<span class="text-gray-300">+33 1 23 45 67 89</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3 text-secondary"></i>
+<span class="text-gray-300">contact@mosesclothing.com</span>
+</li>
+<li class="flex items-center">
+<i class="ri-time-line mr-3 text-secondary"></i>
+<span class="text-gray-300">Lun-Sam: 10h-19h</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Moses Shoes & Clothing Line. Tous droits réservés.</p>
+<div class="flex space-x-4">
+<i class="ri-visa-fill text-gray-400 ri-lg"></i>
+<i class="ri-mastercard-fill text-gray-400 ri-lg"></i>
+<i class="ri-paypal-fill text-gray-400 ri-lg"></i>
+<i class="ri-apple-fill text-gray-400 ri-lg"></i>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
