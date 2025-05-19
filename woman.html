@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Women's Collection - Moses Shoes & Clothing Line</title>
+<title>Moses - Women's Collection</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
-<link href="assets/css/animations.css" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="src/css/tailwind.css">
+<script type="module" src="src/js/main.js"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
@@ -522,111 +522,129 @@ Discover
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Product 1 -->
-<div class="product-card bg-white rounded overflow-hidden shadow-sm">
-<div class="relative">
-<img src="https://readdy.ai/api/search-image?query=elegant%2520black%2520cocktail%2520dress%2520on%2520female%2520model%252C%2520premium%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520clothing%2520catalog%2520style&width=400&height=500&seq=102&orientation=portrait" alt="Robe Cocktail" class="w-full h-80 object-cover object-top">
-<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
-<i class="ri-heart-line text-gray-500"></i>
-</div>
-<div class="absolute top-4 left-4 bg-secondary text-white text-xs px-3 py-1 rounded-full">New</div>
-</div>
-<div class="p-6">
-<div class="flex justify-between items-center mb-2">
-<h3 class="font-medium text-primary">Robe Cocktail Elegance</h3>
-<span class="text-secondary font-semibold">189 €</span>
-</div>
-<div class="flex text-yellow-400 mb-3">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-half-fill"></i>
-<span class="text-gray-500 text-sm ml-1">(24)</span>
-</div>
-<div class="flex space-x-2 mb-4">
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XS</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">S</button>
-<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">M</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">L</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XL</button>
-</div>
-<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
-<i class="ri-shopping-bag-line mr-2"></i>
-Add to Cart
-</button>
-</div>
+<div class="product-card bg-white rounded overflow-hidden shadow-sm"
+    data-product-id="womens-dress-1"
+    data-description="Robe de cocktail élégante en tissu premium, parfaite pour les occasions spéciales."
+    data-stock="12"
+    data-colors="Black,Navy,Red">
+    <div class="relative">
+        <img src="https://readdy.ai/api/search-image?query=elegant%2520black%2520cocktail%2520dress%2520on%2520female%2520model%252C%2520premium%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520clothing%2520catalog%2520style&width=400&height=500&seq=102&orientation=portrait" 
+            alt="Robe Cocktail" 
+            class="w-full h-80 object-cover object-top"
+            data-product-image>
+        <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+            <i class="ri-heart-line text-gray-500"></i>
+        </div>
+        <div class="absolute top-4 left-4 bg-secondary text-white text-xs px-3 py-1 rounded-full">New</div>
+    </div>
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-2">
+            <h3 class="font-medium text-primary" data-product-name>Robe Cocktail Elegance</h3>
+            <span class="text-secondary font-semibold" data-product-price>189</span>
+        </div>
+        <div class="flex text-yellow-400 mb-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-half-fill"></i>
+            <span class="text-gray-500 text-sm ml-1">(24)</span>
+        </div>
+        <div class="flex space-x-2 mb-4">
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XS</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">S</button>
+            <button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">M</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">L</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XL</button>
+        </div>
+        <button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center add-to-cart">
+            <i class="ri-shopping-bag-line mr-2"></i>
+            Add to Cart
+        </button>
+    </div>
 </div>
 <!-- Product 2 -->
-<div class="product-card bg-white rounded overflow-hidden shadow-sm">
-<div class="relative">
-<img src="https://readdy.ai/api/search-image?query=elegant%2520sage%2520green%2520blouse%2520on%2520female%2520model%252C%2520premium%2520silk%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520clothing%2520catalog%2520style&width=400&height=500&seq=103&orientation=portrait" alt="Chemisier Soie" class="w-full h-80 object-cover object-top">
-<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
-<i class="ri-heart-line text-gray-500"></i>
-</div>
-</div>
-<div class="p-6">
-<div class="flex justify-between items-center mb-2">
-<h3 class="font-medium text-primary">Chemisier Soie Naturelle</h3>
-<span class="text-secondary font-semibold">129 €</span>
-</div>
-<div class="flex text-yellow-400 mb-3">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-line text-gray-300"></i>
-<span class="text-gray-500 text-sm ml-1">(18)</span>
-</div>
-<div class="flex space-x-2 mb-4">
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XS</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">S</button>
-<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">M</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">L</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XL</button>
-</div>
-<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
-<i class="ri-shopping-bag-line mr-2"></i>
-Add to Cart
-</button>
-</div>
+<div class="product-card bg-white rounded overflow-hidden shadow-sm"
+    data-product-id="womens-blouse-1"
+    data-description="Chemisier en soie naturelle, coupe élégante et confortable."
+    data-stock="8"
+    data-colors="Sage Green,White,Black">
+    <div class="relative">
+        <img src="https://readdy.ai/api/search-image?query=elegant%2520sage%2520green%2520blouse%2520on%2520female%2520model%252C%2520premium%2520silk%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520clothing%2520catalog%2520style&width=400&height=500&seq=103&orientation=portrait" 
+            alt="Chemisier Soie" 
+            class="w-full h-80 object-cover object-top"
+            data-product-image>
+        <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+            <i class="ri-heart-line text-gray-500"></i>
+        </div>
+    </div>
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-2">
+            <h3 class="font-medium text-primary" data-product-name>Chemisier Soie Naturelle</h3>
+            <span class="text-secondary font-semibold" data-product-price>129</span>
+        </div>
+        <div class="flex text-yellow-400 mb-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-line text-gray-300"></i>
+            <span class="text-gray-500 text-sm ml-1">(18)</span>
+        </div>
+        <div class="flex space-x-2 mb-4">
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XS</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">S</button>
+            <button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">M</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">L</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XL</button>
+        </div>
+        <button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center add-to-cart">
+            <i class="ri-shopping-bag-line mr-2"></i>
+            Add to Cart
+        </button>
+    </div>
 </div>
 <!-- Product 3 -->
-<div class="product-card bg-white rounded overflow-hidden shadow-sm">
-<div class="relative">
-<img src="https://readdy.ai/api/search-image?query=elegant%2520beige%2520womens%2520suit%2520on%2520female%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520clothing%2520catalog%2520style&width=400&height=500&seq=104&orientation=portrait" alt="Tailleur Femme" class="w-full h-80 object-cover object-top">
-<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
-<i class="ri-heart-line text-gray-500"></i>
-</div>
-<div class="absolute top-4 left-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full">-20%</div>
-</div>
-<div class="p-6">
-<div class="flex justify-between items-center mb-2">
-<h3 class="font-medium text-primary">Tailleur Prestige</h3>
-<div>
-<span class="text-secondary font-semibold">239 €</span>
-<span class="text-gray-400 text-sm line-through ml-2">299 €</span>
-</div>
-</div>
-<div class="flex text-yellow-400 mb-3">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<span class="text-gray-500 text-sm ml-1">(32)</span>
-</div>
-<div class="flex space-x-2 mb-4">
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XS</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">S</button>
-<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">M</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">L</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XL</button>
-</div>
-<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
-<i class="ri-shopping-bag-line mr-2"></i>
-Add to Cart
-</button>
-</div>
+<div class="product-card bg-white rounded overflow-hidden shadow-sm"
+    data-product-id="womens-suit-1"
+    data-description="Tailleur femme en tissu premium, coupe ajustée et élégante."
+    data-stock="10"
+    data-colors="Beige,Black,Navy">
+    <div class="relative">
+        <img src="https://readdy.ai/api/search-image?query=elegant%2520beige%2520womens%2520suit%2520on%2520female%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520clothing%2520catalog%2520style&width=400&height=500&seq=104&orientation=portrait" 
+            alt="Tailleur Femme" 
+            class="w-full h-80 object-cover object-top"
+            data-product-image>
+        <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+            <i class="ri-heart-line text-gray-500"></i>
+        </div>
+        <div class="absolute top-4 left-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full">-20%</div>
+    </div>
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-2">
+            <h3 class="font-medium text-primary" data-product-name>Tailleur Femme Premium</h3>
+            <span class="text-secondary font-semibold" data-product-price>299</span>
+        </div>
+        <div class="flex text-yellow-400 mb-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <span class="text-gray-500 text-sm ml-1">(32)</span>
+        </div>
+        <div class="flex space-x-2 mb-4">
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XS</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">S</button>
+            <button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">M</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">L</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">XL</button>
+        </div>
+        <button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center add-to-cart">
+            <i class="ri-shopping-bag-line mr-2"></i>
+            Add to Cart
+        </button>
+    </div>
 </div>
 <!-- Product 4 -->
 <div class="product-card bg-white rounded overflow-hidden shadow-sm">
@@ -981,6 +999,5 @@ I accept to receive promotional emails and latest news
 </div>
 </div>
 </div>
-<script src="assets/js/main.js"></script>
 </body>
 </html>

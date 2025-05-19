@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="stylesheet" href="src/css/tailwind.css">
+    <script type="module" src="src/js/main.js"></script>
     <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
@@ -193,7 +194,7 @@
     <!-- Header -->
     <header class="bg-white shadow-sm fixed w-full z-50">
         <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="https://readdy.ai/home/53bed6ad-338e-456f-89b0-1a536587ea02/c3bb5dc5-36d0-4b3e-816a-d97e75a82ba6" data-readdy="true" class="text-3xl font-['Pacifico'] text-secondary">Moses</a>
+            <a href="index.html" data-readdy="true" class="text-3xl font-['Pacifico'] text-secondary">Moses</a>
             
             <nav class="hidden md:flex space-x-8">
                 <a href="men.html" class="text-secondary hover:text-secondary transition-colors font-medium border-b-2 border-secondary">Men</a>
@@ -442,7 +443,7 @@
                     </button>
                 </div>
                 <div class="flex items-center bg-gray-100 rounded-full px-3 py-1 text-sm">
-                    Price: < €500
+                    Price: &lt; €500
                     <button class="ml-2 text-gray-500 hover:text-gray-700">
                         <i class="ri-close-line"></i>
                     </button>
@@ -455,24 +456,33 @@
                 <h2 class="text-2xl font-bold mb-6">New Arrivals</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Product 1 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md"
+                        data-product-id="mens-suit-1"
+                        data-description="Elegant dark blue suit crafted from premium wool blend. Perfect for formal occasions."
+                        data-stock="15"
+                        data-colors="#1a237e,#000000">
                         <div class="relative h-80 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=elegant%20mens%20suit%20in%20dark%20blue%2C%20professional%20studio%20lighting%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20detailed%20fabric%20texture%2C%20luxury%20clothing%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=17&orientation=portrait" alt="Elegant Suit" class="w-full h-full object-cover object-top">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%20mens%20suit%20in%20dark%20blue%2C%20professional%20studio%20lighting%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20detailed%20fabric%20texture%2C%20luxury%20clothing%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=17&orientation=portrait" 
+                                alt="Elegant Suit" 
+                                class="w-full h-full object-cover object-top"
+                                data-product-image>
                             <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">New</div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Navy Blue Elegant Suit</h3>
+                            <h3 class="text-xl font-semibold mb-2" data-product-name>Elegant Dark Blue Suit</h3>
                             <div class="flex justify-between items-center mb-4">
-                                <span class="text-xl font-bold">€349.00</span>
+                                <div>
+                                    <span class="text-xl font-bold" data-product-price>€599.00</span>
+                                </div>
                                 <div class="flex">
                                     <i class="ri-star-fill text-yellow-400"></i>
                                     <i class="ri-star-fill text-yellow-400"></i>
                                     <i class="ri-star-fill text-yellow-400"></i>
                                     <i class="ri-star-fill text-yellow-400"></i>
-                                    <i class="ri-star-half-fill text-yellow-400"></i>
+                                    <i class="ri-star-fill text-yellow-400"></i>
                                 </div>
                             </div>
-                            <button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                            <button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                     <!-- Product 2 -->
@@ -581,7 +591,7 @@
                     <!-- Product 2 -->
                     <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
                         <div class="relative h-80 overflow-hidden">
-                            <img src="https://readdy.ai/api/search-image?query=elegant%2520light%2520blue%2520mens%2520dress%2520shirt%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=206&orientation=portrait" alt="Chemise Bleu Ciel" class="w-full h-full object-cover object-top">
+                            <img src="https://readdy.ai/api/search-image?query=elegant%2520light%2520blue%2520mens%2520dress%252C%2520professional%2520studio%2520lighting%252C%2520neutral%2520background%252C%2520high-end%2520fashion%2520photography%252C%2520detailed%2520fabric%2520texture%252C%2520luxury%2520menswear%2520display&width=600&height=800&seq=206&orientation=portrait" alt="Chemise Bleu Ciel" class="w-full h-full object-cover object-top">
                             <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">Populaire</div>
                         </div>
                         <div class="p-4">

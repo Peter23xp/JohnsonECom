@@ -151,7 +151,7 @@ function debounce(func, wait) {
     };
 }
 
-// Gestion du panier
+// Cart Management
 class Cart {
     constructor() {
         this.items = JSON.parse(localStorage.getItem('cart')) || [];
@@ -161,13 +161,13 @@ class Cart {
     addItem(product) {
         const existingItem = this.items.find(item => item.id === product.id);
         if (existingItem) {
-            existingItem.quantity += 1;
+            existingItem.quantity += product.quantity || 1;
         } else {
-            this.items.push({ ...product, quantity: 1 });
+            this.items.push({ ...product, quantity: product.quantity || 1 });
         }
         this.saveCart();
         this.updateCartCount();
-        this.showNotification('Produit ajouté au panier');
+        this.showNotification('Product added to cart');
     }
 
     removeItem(productId) {
@@ -201,6 +201,51 @@ class Cart {
     }
 }
 
+// Product Management
+class ProductManager {
+    constructor() {
+        this.modal = new ProductModal();
+        this.cart = new Cart();
+        this.setupEventListeners();
+    }
+
+    setupEventListeners() {
+        // Add click handlers for product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            const addToCartBtn = card.querySelector('.add-to-cart');
+            
+            // Product card click (excluding add to cart button)
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('.add-to-cart')) {
+                    const product = this.getProductFromCard(card);
+                    this.modal.show(product);
+                }
+            });
+
+            // Add to cart button click
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const product = this.getProductFromCard(card);
+                    this.cart.addItem(product);
+                });
+            }
+        });
+    }
+
+    getProductFromCard(card) {
+        return {
+            id: card.dataset.productId,
+            name: card.querySelector('h3').textContent,
+            price: parseFloat(card.querySelector('.text-xl.font-bold').textContent.replace('€', '').trim()),
+            image: card.querySelector('img').src,
+            description: card.dataset.description || 'Premium quality product from Moses collection.',
+            stock: parseInt(card.dataset.stock || '20'),
+            colors: (card.dataset.colors || '').split(',').filter(Boolean)
+        };
+    }
+}
+
 // Initialisation du panier
 const cart = new Cart();
 
@@ -231,4 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.addItem(product);
         });
     });
+});
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const productManager = new ProductManager();
 }); 

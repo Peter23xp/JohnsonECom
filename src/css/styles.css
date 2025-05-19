@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-sans text-gray-800 bg-gray-50;
+    }
+
+    h1, h2, h3, h4, h5 {
+        @apply font-display;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply px-6 py-2 rounded-button transition-colors;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-white hover:bg-opacity-90;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary text-white hover:bg-opacity-90;
+    }
+
+    .product-card {
+        @apply bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300;
+    }
+
+    .product-card:hover {
+        @apply shadow-lg -translate-y-1;
+    }
+
+    .cart-count {
+        @apply absolute -top-1 -right-1 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full;
+    }
+
+    .cart-dropdown {
+        @apply hidden absolute right-0 top-full mt-2 w-80 bg-white rounded-lg shadow-xl z-50 transform opacity-0 transition-all duration-300;
+    }
+
+    .cart-dropdown.active {
+        @apply block opacity-100 translate-y-0;
+    }
+
+    .notification {
+        @apply fixed top-4 right-4 bg-secondary text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-toast-in;
+    }
+
+    .color-swatch {
+        @apply w-8 h-8 rounded-full border-2 transition-transform hover:scale-110 cursor-pointer;
+    }
+
+    .color-swatch.selected {
+        @apply border-secondary;
+    }
+}
+
+@layer utilities {
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-shadow-lg {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+} 

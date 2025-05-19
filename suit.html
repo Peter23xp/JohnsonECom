@@ -10,8 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
 <link href="assets/css/animations.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="src/css/tailwind.css">
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<script type="module" src="src/js/main.js"></script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
@@ -568,39 +571,46 @@ Discover
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Product 1 -->
-<div class="product-card bg-white rounded overflow-hidden shadow-sm">
-<div class="relative">
-<img src="https://readdy.ai/api/search-image?query=elegant%2520navy%2520blue%2520suit%2520on%2520male%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=202&orientation=portrait" alt="Costume Bleu Marine" class="w-full h-80 object-cover object-top">
-<div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
-<i class="ri-heart-line text-gray-500"></i>
-</div>
-<div class="absolute top-4 left-4 bg-secondary text-white text-xs px-3 py-1 rounded-full">Nouveau</div>
-</div>
-<div class="p-6">
-<div class="flex justify-between items-center mb-2">
-<h3 class="font-medium text-primary">Costume Bleu Marine Prestige</h3>
-<span class="text-secondary font-semibold">349 €</span>
-</div>
-<div class="flex text-yellow-400 mb-3">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-half-fill"></i>
-<span class="text-gray-500 text-sm ml-1">(28)</span>
-</div>
-<div class="flex space-x-2 mb-4">
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
-<button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
-<button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
-</div>
-<button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center">
-<i class="ri-shopping-bag-line mr-2"></i>
-Ajouter au panier
-</button>
-</div>
+<div class="product-card bg-white rounded overflow-hidden shadow-sm"
+    data-product-id="suit-navy-1"
+    data-description="Costume bleu marine en laine premium, coupe ajustée et élégante."
+    data-stock="18"
+    data-colors="Navy Blue,Black,Charcoal">
+    <div class="relative">
+        <img src="https://readdy.ai/api/search-image?query=elegant%2520navy%2520blue%2520suit%2520on%2520male%2520model%252C%2520premium%2520tailored%2520fabric%252C%2520minimalist%2520background%252C%2520professional%2520fashion%2520photography%252C%2520high-end%2520menswear%2520catalog%2520style&width=400&height=500&seq=202&orientation=portrait" 
+            alt="Costume Bleu Marine" 
+            class="w-full h-80 object-cover object-top"
+            data-product-image>
+        <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md">
+            <i class="ri-heart-line text-gray-500"></i>
+        </div>
+        <div class="absolute top-4 left-4 bg-secondary text-white text-xs px-3 py-1 rounded-full">Nouveau</div>
+    </div>
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-2">
+            <h3 class="font-medium text-primary" data-product-name>Costume Bleu Marine Prestige</h3>
+            <span class="text-secondary font-semibold" data-product-price>349</span>
+        </div>
+        <div class="flex text-yellow-400 mb-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-half-fill"></i>
+            <span class="text-gray-500 text-sm ml-1">(28)</span>
+        </div>
+        <div class="flex space-x-2 mb-4">
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">46</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">48</button>
+            <button class="border border-secondary bg-secondary bg-opacity-10 text-secondary text-xs px-2 py-1 rounded">50</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">52</button>
+            <button class="border border-gray-300 hover:border-secondary text-xs px-2 py-1 rounded">54</button>
+        </div>
+        <button class="w-full bg-primary text-white py-2 font-medium !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap flex items-center justify-center add-to-cart">
+            <i class="ri-shopping-bag-line mr-2"></i>
+            Add to Cart
+        </button>
+    </div>
 </div>
 
 <!-- Product 2 -->
@@ -1013,6 +1023,5 @@ J'accepte de recevoir des emails promotionnels et les dernières nouvelles
 </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
 </body>
 </html>

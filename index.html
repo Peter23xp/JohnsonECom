@@ -22,6 +22,8 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
 <link href="assets/css/animations.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script src="assets/js/productModal.js" type="module"></script>
+<script src="src/js/main.js" type="module"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
@@ -251,7 +253,11 @@ Discover <i class="ri-arrow-right-line ml-2"></i>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 <!-- Product 1 -->
-<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-product-id="suit-1">
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" 
+    data-product-id="suit-1"
+    data-description="Elegant navy blue suit crafted from premium Italian wool. Perfect for formal occasions and business meetings."
+    data-stock="15"
+    data-colors="#1a237e,#000000,#34495e">
 <div class="relative h-80 overflow-hidden">
 <img src="https://readdy.ai/api/search-image?query=elegant%20mens%20suit%20in%20dark%20blue%2C%20professional%20studio%20lighting%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20detailed%20fabric%20texture%2C%20luxury%20clothing%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=6&orientation=portrait" alt="Elegant Suit" class="w-full h-full object-cover object-top">
 <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">New</div>
@@ -273,7 +279,11 @@ Discover <i class="ri-arrow-right-line ml-2"></i>
 </div>
 </div>
 <!-- Product 2 -->
-<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-product-id="dress-1">
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" 
+    data-product-id="dress-1"
+    data-description="Beautiful sage green evening dress made from sustainable materials. Features elegant draping and a flattering silhouette."
+    data-stock="8"
+    data-colors="#8A9A5B,#2E8B57,#000000">
 <div class="relative h-80 overflow-hidden">
 <img src="assets/images/fa8fbcb730b0d99dcb099e85a60bc317.jpg" alt="Elegant Dress" class="w-full h-full object-cover object-top">
 <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">-15%</div>
@@ -297,7 +307,11 @@ Discover <i class="ri-arrow-right-line ml-2"></i>
 </div>
 </div>
 <!-- Product 3 -->
-<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-product-id="shoes-1">
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" 
+    data-product-id="shoes-1"
+    data-description="Classic Oxford leather shoes handcrafted by skilled artisans. Made from premium Italian leather."
+    data-stock="20"
+    data-colors="#5D4037,#000000">
 <div class="relative h-80 overflow-hidden">
 <img src="assets/images/1.jpg" alt="Leather Shoes" class="w-full h-full object-cover object-top">
 </div>
@@ -317,7 +331,11 @@ Discover <i class="ri-arrow-right-line ml-2"></i>
 </div>
 </div>
 <!-- Product 4 -->
-<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-product-id="heels-1">
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" 
+    data-product-id="heels-1"
+    data-description="Elegant beige heels designed for both style and comfort. Features cushioned insoles and stable heel design."
+    data-stock="12"
+    data-colors="#D7CCC8,#000000,#F5F5DC">
 <div class="relative h-80 overflow-hidden">
 <img src="assets/images/Elegant Heels.jpg" alt="Elegant Heels" class="w-full h-full object-cover object-top">
 <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">Popular</div>
@@ -673,6 +691,5 @@ I agree to receive marketing communications from Moses.
 </div>
 </div>
 </footer>
-<script src="assets/js/main.js"></script>
 </body>
 </html>
