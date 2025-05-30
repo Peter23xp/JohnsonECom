@@ -3,25 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create the footer HTML
     const footer = `
     <!-- Footer -->
-    <footer class="bg-primary text-white pt-16 pb-8">
+    <footer class="bg-primary text-neutral pt-16 pb-8">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <!-- Column 1 -->
                 <div>
-                    <a href="index.html" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Moses</a>
+                    <a href="index.html" class="text-3xl font-['Pacifico'] text-neutral mb-6 inline-block">Moses</a>
                     <p class="text-gray-300 mb-6">Timeless elegance and exceptional artisanal Liberian fashion since 2010. We create clothing and shoes that blend tradition and modernity.</p>
                     <div class="flex space-x-4">
                         <a href="https://www.facebook.com/moses.fashion" class="w-10 h-10 flex items-center justify-center rounded-full bg-dark bg-opacity-40 hover:bg-secondary transition-all">
-                            <i class="ri-facebook-fill text-white"></i>
+                            <i class="ri-facebook-fill text-neutral"></i>
                         </a>
                         <a href="https://www.instagram.com/moses.fashion" class="w-10 h-10 flex items-center justify-center rounded-full bg-dark bg-opacity-40 hover:bg-secondary transition-all">
-                            <i class="ri-instagram-fill text-white"></i>
+                            <i class="ri-instagram-fill text-neutral"></i>
                         </a>
                         <a href="https://www.twitter.com/moses_fashion" class="w-10 h-10 flex items-center justify-center rounded-full bg-dark bg-opacity-40 hover:bg-secondary transition-all">
-                            <i class="ri-twitter-x-fill text-white"></i>
+                            <i class="ri-twitter-x-fill text-neutral"></i>
                         </a>
                         <a href="https://www.pinterest.com/moses_fashion" class="w-10 h-10 flex items-center justify-center rounded-full bg-dark bg-opacity-40 hover:bg-secondary transition-all">
-                            <i class="ri-pinterest-fill text-white"></i>
+                            <i class="ri-pinterest-fill text-neutral"></i>
                         </a>
                     </div>
                 </div>
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li><a href="women.html" class="text-gray-300 hover:text-tertiary transition-colors">Women</a></li>
                         <li><a href="suits.html" class="text-gray-300 hover:text-tertiary transition-colors">Suits</a></li>
                         <li><a href="shop.html" class="text-gray-300 hover:text-tertiary transition-colors">Shop</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-tertiary transition-colors">Accessories</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-tertiary transition-colors">New Arrivals</a></li>
+                        <li><a href="accessories.html" class="text-gray-300 hover:text-tertiary transition-colors">Accessories</a></li>
+                        <li><a href="shop.html" class="text-gray-300 hover:text-tertiary transition-colors">New Arrivals</a></li>
                     </ul>
                 </div>
                 <!-- Column 3 -->
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li><a href="privacy.html" class="text-gray-300 hover:text-tertiary transition-colors">Privacy Policy</a></li>
                         <li><a href="terms.html" class="text-gray-300 hover:text-tertiary transition-colors">Terms of Service</a></li>
                         <li><a href="careers.html" class="text-gray-300 hover:text-tertiary transition-colors">Careers</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-tertiary transition-colors">FAQ</a></li>
+                        <li><a href="faq.html" class="text-gray-300 hover:text-tertiary transition-colors">FAQ</a></li>
                     </ul>
                 </div>
                 <!-- Column 4 -->

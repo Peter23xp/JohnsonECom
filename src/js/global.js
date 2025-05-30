@@ -35,22 +35,22 @@ function showToast(message, type = 'success') {
     
     // Set toast color based on type
     if (type === 'success') {
-        toast.style.backgroundColor = COLOR_PALETTE.sageGreen;
+        toast.Style.backgroundColor = COLOR_PALETTE.sageGreen;
     } else if (type === 'error') {
-        toast.style.backgroundColor = '#e74c3c';
+        toast.Style.backgroundColor = '#e74c3c';
     } else if (type === 'info') {
-        toast.style.backgroundColor = COLOR_PALETTE.darkGray;
+        toast.Style.backgroundColor = COLOR_PALETTE.darkGray;
     }
     
     // Set message
     toast.textContent = message;
     
     // Show toast
-    toast.style.opacity = '1';
+    toast.Style.opacity = '1';
     
     // Hide toast after 3 seconds
     setTimeout(() => {
-        toast.style.opacity = '0';
+        toast.Style.opacity = '0';
     }, 3000);
 }
 
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Animation fade-in au chargement de la page
+// Animation fade-in au Loading de la page
 window.addEventListener('DOMContentLoaded', () => {
     const main = document.querySelector('main') || document.body;
     main.classList.add('opacity-0', 'translate-y-4');
@@ -237,21 +237,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            const filter = btn.getAttribute('data-filter');
+            const filter = btn.getAttribute('data-filter') || btn.getAttribute('data-category') || btn.getAttribute('data-size') || '';
+            const filterType = btn.hasAttribute('data-category') ? 'category' : 
+                              btn.hasAttribute('data-size') ? 'size' : 
+                              btn.hasAttribute('data-filter') ? 'filter' : 'other';
 
             // Toggle active state
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            if (filterType === 'size') {
+                btn.classList.toggle('active');
+            } else {
+                // For category/filter, deactivate other buttons of same type
+                const similarButtons = document.querySelectorAll(`[data-${filterType}]`);
+                similarButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
 
-            // Filter products
-            productCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                if (filter === 'all' || cardCategory === filter) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
+            // Apply filter
+            applyFilters();
         });
     });
 
@@ -277,6 +279,27 @@ window.addEventListener('DOMContentLoaded', () => {
             once: true
         });
     }
+
+    // Initialize dropdown filters if they exist
+    if (document.querySelector('[id$="FilterBtn"]')) {
+        initializeDropdownFilters();
+    }
+    
+    // Initialize price range slider if it exists
+    const priceRange = document.getElementById('priceRange');
+    const priceValue = document.getElementById('priceValue');
+    
+    if (priceRange && priceValue) {
+        priceRange.addEventListener('input', () => {
+            const value = priceRange.value;
+            priceValue.textContent = '€' + value;
+        });
+    }
+    
+    // Apply initial filters
+    if (document.querySelectorAll('.filter-btn, .custom-checkbox, [data-color]').length > 0) {
+        applyFilters();
+    }
 });
 
 // Newsletter Signup
@@ -298,6 +321,211 @@ function handleNewsletterSignup(event) {
 function isValidEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
+}
+
+// Function to apply all active filters
+function applyFilters() {
+    const activeCategories = getActiveFilters('category');
+    const activeSizes = getActiveFilters('size');
+    const activeColors = Array.from(document.querySelectorAll('.color-button.border-secondary, [data-color].ring-2'))
+        .map(btn => btn.getAttribute('data-color'));
+    
+    const priceRange = document.getElementById('priceRange');
+    const maxPrice = priceRange ? parseFloat(priceRange.value) : 10000;
+
+    productCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category') || '';
+        const cardSize = card.getAttribute('data-size') || '';
+        const cardColor = card.getAttribute('data-color') || '';
+        const cardPrice = parseFloat(card.getAttribute('data-price') || '0');
+
+        const matchesCategory = activeCategories.length === 0 || 
+                               activeCategories.includes('all') || 
+                               activeCategories.includes(cardCategory);
+        
+        const matchesSize = activeSizes.length === 0 || 
+                           activeSizes.some(size => cardSize.includes(size));
+        
+        const matchesColor = activeColors.length === 0 || 
+                            activeColors.includes(cardColor);
+        
+        const matchesPrice = !maxPrice || cardPrice <= maxPrice;
+
+        if (matchesCategory && matchesSize && matchesColor && matchesPrice) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+
+    // Update count of visible products
+    updateProductCount();
+}
+
+// Helper function to get active filters of a specific type
+function getActiveFilters(type) {
+    return Array.from(document.querySelectorAll(`.filter-btn[data-${type}].active`))
+        .map(btn => btn.getAttribute(`data-${type}`));
+}
+
+// Update visible product count
+function updateProductCount() {
+    const visibleProducts = document.querySelectorAll('.product-card:not(.hidden)').length;
+    const countElement = document.getElementById('productCount');
+    if (countElement) {
+        countElement.textContent = visibleProducts;
+    }
+}
+
+// Initialize dropdown filters (for suits.html)
+function initializeDropdownFilters() {
+    const filterDropdownBtns = document.querySelectorAll('[id$="FilterBtn"]');
+    
+    filterDropdownBtns.forEach(btn => {
+        const dropdownId = btn.id.replace('Btn', 'Dropdown');
+        const dropdown = document.getElementById(dropdownId);
+        
+        if (dropdown) {
+            btn.addEventListener('click', () => {
+                // Close all other dropdowns
+                document.querySelectorAll('.filter-dropdown.active').forEach(el => {
+                    if (el.id !== dropdownId) {
+                        el.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+            });
+            
+            // Apply button inside dropdown
+            const applyBtn = dropdown.querySelector('button:last-child');
+            if (applyBtn) {
+                applyBtn.addEventListener('click', () => {
+                    dropdown.classList.remove('active');
+                    applyFilters();
+                    updateActiveFiltersDisplay();
+                });
+            }
+        }
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('[id$="FilterBtn"]') && !e.target.closest('.filter-dropdown')) {
+            document.querySelectorAll('.filter-dropdown.active').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+    
+    // Clear all filters button
+    const clearAllBtn = document.getElementById('clearAllFiltersBtn');
+    if (clearAllBtn) {
+        clearAllBtn.addEventListener('click', () => {
+            // Uncheck all checkboxes
+            document.querySelectorAll('.custom-checkbox input').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // Reset radio buttons to "All"
+            document.querySelectorAll('input[type="radio"][name="fit"]').forEach((radio, index) => {
+                radio.checked = index === 0;
+            });
+            
+            // Reset color buttons
+            document.querySelectorAll('[data-color]').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-secondary');
+            });
+            
+            // Reset price range
+            const priceRange = document.getElementById('priceRange');
+            const priceValue = document.getElementById('priceValue');
+            if (priceRange && priceValue) {
+                priceRange.value = priceRange.max;
+                priceValue.textContent = '€' + priceRange.max;
+            }
+            
+            // Clear active filters display
+            document.getElementById('activeFiltersContainer').querySelectorAll('.active-filter').forEach(el => {
+                el.remove();
+            });
+            
+            clearAllBtn.classList.add('hidden');
+            
+            // Apply cleared filters
+            applyFilters();
+        });
+    }
+}
+
+// Update active filters display (for suits.html)
+function updateActiveFiltersDisplay() {
+    const container = document.getElementById('activeFiltersContainer');
+    const clearAllBtn = document.getElementById('clearAllFiltersBtn');
+    
+    if (!container) return;
+    
+    // Remove existing filter tags
+    container.querySelectorAll('.active-filter').forEach(el => el.remove());
+    
+    // Get all active filters
+    const activeFilters = [];
+    
+    // Get checked checkboxes (except "All")
+    document.querySelectorAll('.custom-checkbox input:checked').forEach(checkbox => {
+        const label = checkbox.closest('label').textContent.trim();
+        if (label !== 'All styles') {
+            activeFilters.push({ type: 'Style', value: label });
+        }
+    });
+    
+    // Get selected fit
+    document.querySelectorAll('input[type="radio"][name="fit"]:checked').forEach(radio => {
+        const label = radio.closest('label').textContent.trim();
+        if (label !== 'All fits') {
+            activeFilters.push({ type: 'Fit', value: label });
+        }
+    });
+    
+    // Get selected colors
+    document.querySelectorAll('[data-color].ring-2').forEach(btn => {
+        activeFilters.push({ type: 'Color', value: btn.getAttribute('aria-label') });
+    });
+    
+    // Get price range
+    const priceRange = document.getElementById('priceRange');
+    if (priceRange && priceRange.value < priceRange.max) {
+        activeFilters.push({ type: 'Price', value: `Max €${priceRange.value}` });
+    }
+    
+    // Create and append filter tags
+    activeFilters.forEach(filter => {
+        const filterTag = document.createElement('div');
+        filterTag.className = 'active-filter flex items-center bg-tertiary px-3 py-1 rounded-full text-xs';
+        filterTag.innerHTML = `
+            <span class="font-medium mr-1">${filter.type}:</span>
+            <span>${filter.value}</span>
+            <button class="ml-2 text-secondary hover:text-primary">×</button>
+        `;
+        
+        filterTag.querySelector('button').addEventListener('click', () => {
+            // Remove this filter
+            // Implementation depends on filter type
+            filterTag.remove();
+            applyFilters();
+            updateActiveFiltersDisplay();
+        });
+        
+        container.insertBefore(filterTag, clearAllBtn);
+    });
+    
+    // Show/hide clear all button
+    if (activeFilters.length > 0) {
+        clearAllBtn.classList.remove('hidden');
+    } else {
+        clearAllBtn.classList.add('hidden');
+    }
 }
 
 // Export functions if needed for module-based imports

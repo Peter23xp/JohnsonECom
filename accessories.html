@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories - Moses Shoes & Clothing Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #3B3E3A;
+            background-color: #FAFAF0;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Filter Styles */
+        .filter-btn {
+            @apply px-4 py-2 rounded-button text-center transition-colors;
+        }
+        .filter-btn.active {
+            @apply bg-secondary text-white;
+        }
+    </style>
+    <!-- Include navbar component -->
+    <script src="components/navbar.js"></script>
+    <!-- Include footer component -->
+    <script src="components/footer.js"></script>
+    <!-- Include global CSS -->
+    <link rel="stylesheet" href="src/css/global.css">
+    <!-- Include filters script -->
+    <script src="src/js/filters.js"></script>
+</head>
+<body>
+    <!-- Header/navbar will be injected by navbar.js -->
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-12 bg-tertiary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Accessories Collection</h1>
+                <p class="text-lg mb-6">Discover our exquisite selection of handcrafted accessories to complement your style.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="py-16 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar Filters -->
+                <div class="lg:w-1/4 bg-tertiary p-6 rounded-lg">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-dark">Categories</h3>
+                        <div class="space-y-2">
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded active" data-category="all">All</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-category="bags">Bags</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-category="belts">Belts</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-category="wallets">Wallets</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-category="jewelry">Jewelry</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-dark">Materials</h3>
+                        <div class="space-y-2">
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-material="leather">Leather</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-material="fabric">Fabric</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-material="metal">Metal</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-dark">Price Range</h3>
+                        <div class="px-2">
+                            <input type="range" id="priceRange" min="0" max="500" value="500" class="w-full" 
+                                   title="Price Range Slider" 
+                                   aria-label="Select a price range between 0 and 500 euros">
+                            <div class="flex justify-between text-sm text-dark mt-2">
+                                <span>0 €</span>
+                                <span id="priceValue">500 €</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Grid -->
+                <div class="lg:w-3/4">
+                    <div class="flex justify-between items-center mb-8">
+                        <p class="text-dark"><span id="productCount">6</span> Products</p>
+                        <div class="flex items-center">
+                            <label for="sortSelect" class="mr-2 text-dark">Sort by:</label>
+                            <select id="sortSelect" class="bg-white border border-gray-200 rounded-button px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <option value="default">Default</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Grid -->
+                    <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Product 1 -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="bags" data-material="leather">
+                            <div class="relative">
+                                <img src="assets/images/accessories/leather-bag.jpg" alt="Leather Bag" class="w-full h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">New</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Handcrafted Leather Tote</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xl font-bold text-secondary">199 €</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 2 -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="belts" data-material="leather">
+                            <div class="relative">
+                                <img src="assets/images/accessories/leather-belt.jpg" alt="Leather Belt" class="w-full h-80 object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Premium Leather Belt</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xl font-bold text-secondary">89 €</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-half-fill"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 3 -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="wallets" data-material="leather">
+                            <div class="relative">
+                                <img src="assets/images/accessories/wallet.jpg" alt="Leather Wallet" class="w-full h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">-20%</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Bifold Leather Wallet</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <div>
+                                        <span class="text-xl font-bold text-secondary">79 €</span>
+                                        <span class="text-sm text-gray-500 line-through ml-2">99 €</span>
+                                    </div>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-line"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 4 -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="jewelry" data-material="metal">
+                            <div class="relative">
+                                <img src="assets/images/accessories/bracelet.jpg" alt="Silver Bracelet" class="w-full h-80 object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Silver Cuff Bracelet</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xl font-bold text-secondary">129 €</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-half-fill"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 5 -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="bags" data-material="fabric">
+                            <div class="relative">
+                                <img src="assets/images/accessories/tote-bag.jpg" alt="Canvas Tote" class="w-full h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">Popular</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Canvas Tote Bag</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xl font-bold text-secondary">69 €</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 6 -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="jewelry" data-material="metal">
+                            <div class="relative">
+                                <img src="assets/images/accessories/necklace.jpg" alt="Gold Necklace" class="w-full h-80 object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Gold Chain Necklace</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xl font-bold text-secondary">159 €</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-line"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Product Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div id="productModalContent" class="bg-white p-8 rounded-lg max-w-xl w-full relative">
+            <!-- Content will be dynamically injected -->
+        </div>
+    </div>
+
+    <!-- Footer will be injected by footer.js -->
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Price Range Slider
+            const priceRange = document.getElementById('priceRange');
+            const priceValue = document.getElementById('priceValue');
+            
+            priceRange.addEventListener('input', function() {
+                priceValue.textContent = this.value + ' €';
+            });
+
+            // Apply filters initially to ensure everything is properly set up
+            if (typeof applyFilters === 'function') {
+                applyFilters();
+            }
+        });
+    </script>
+</body>
+</html> 

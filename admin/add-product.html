@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product - Admin | Moses Shoes & Clothing Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',
+                        secondary: '#86997B',
+                        tertiary: '#E1E6C9',
+                        neutral: '#FAFAF0',
+                        dark: '#3B3E3A',
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #3B3E3A;
+            background-color: #FAFAF0;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        .input-field {
+            @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-secondary focus:outline-none;
+        }
+        .form-group {
+            @apply mb-6;
+        }
+        .form-label {
+            @apply block text-sm font-medium text-dark mb-2;
+        }
+        .checkbox-item {
+            @apply flex items-center mr-4 mb-2;
+        }
+        .checkbox-input {
+            @apply w-4 h-4 text-secondary accent-secondary focus:ring-secondary;
+        }
+        .checkbox-label {
+            @apply ml-2 text-sm text-dark;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-neutral py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-['Pacifico'] text-neutral">Moses Admin</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="dashboard.html" class="hover:text-tertiary transition-colors">Dashboard</a></li>
+                    <li><a href="add-product.html" class="text-secondary font-medium">Add Product</a></li>
+                    <li><a href="manage-products.html" class="hover:text-tertiary transition-colors">Manage Products</a></li>
+                    <li><a href="../index.html" class="hover:text-tertiary transition-colors">View Site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">Add New Product</h1>
+        
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+            <form id="addProductForm" class="space-y-6">
+                <!-- Product Name -->
+                <div class="form-group">
+                    <label for="name" class="form-label">Product Name *</label>
+                    <input type="text" id="name" name="name" class="input-field" required
+                           placeholder="Ex: Premium Linen Shirt">
+                </div>
+                
+                <!-- Price and Category -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-group">
+                        <label for="price" class="form-label">Price (€) *</label>
+                        <input type="number" id="price" name="price" min="0" step="0.01" class="input-field" required
+                               placeholder="99.99">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category" class="form-label">Category *</label>
+                        <select id="category" name="category" class="input-field" required>
+                            <option value="">Select a category</option>
+                            <option value="Men">Men</option>
+                            <option value="Women">Women</option>
+                            <option value="Suits">Suits</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Accessories">Accessories</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" name="description" rows="4" class="input-field"
+                              placeholder="Describe your product..."></textarea>
+                </div>
+                
+                <!-- Image URL -->
+                <div class="form-group">
+                    <label for="image" class="form-label">Image URL *</label>
+                    <input type="text" id="image" name="image" class="input-field" required
+                           placeholder="assets/images/products/image-name.jpg">
+                    <p class="text-xs text-gray-500 mt-1">Recommended format: 800x800 px, JPG or PNG</p>
+                </div>
+                
+                <!-- Sizes -->
+                <div class="form-group">
+                    <label class="form-label">Available Sizes</label>
+                    <div class="flex flex-wrap">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sizeXS" name="size" value="XS" class="checkbox-input">
+                            <label for="sizeXS" class="checkbox-label">XS</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sizeS" name="size" value="S" class="checkbox-input">
+                            <label for="sizeS" class="checkbox-label">S</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sizeM" name="size" value="M" class="checkbox-input" checked>
+                            <label for="sizeM" class="checkbox-label">M</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sizeL" name="size" value="L" class="checkbox-input">
+                            <label for="sizeL" class="checkbox-label">L</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sizeXL" name="size" value="XL" class="checkbox-input">
+                            <label for="sizeXL" class="checkbox-label">XL</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sizeXXL" name="size" value="XXL" class="checkbox-input">
+                            <label for="sizeXXL" class="checkbox-label">XXL</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Colors -->
+                <div class="form-group">
+                    <label class="form-label">Available Colors</label>
+                    <div class="flex flex-wrap">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="colorBlack" name="color" value="Black" class="checkbox-input">
+                            <label for="colorBlack" class="checkbox-label">Black</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="colorWhite" name="color" value="White" class="checkbox-input">
+                            <label for="colorWhite" class="checkbox-label">White</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="colorBlue" name="color" value="Blue" class="checkbox-input">
+                            <label for="colorBlue" class="checkbox-label">Blue</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="colorGreen" name="color" value="Green" class="checkbox-input">
+                            <label for="colorGreen" class="checkbox-label">Green</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="colorBeige" name="color" value="Beige" class="checkbox-input">
+                            <label for="colorBeige" class="checkbox-label">Beige</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="colorBrown" name="color" value="Brown" class="checkbox-input">
+                            <label for="colorBrown" class="checkbox-label">Brown</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stock -->
+                <div class="form-group">
+                    <label for="stock" class="form-label">Available Stock</label>
+                    <input type="number" id="stock" name="stock" min="0" class="input-field" value="10"
+                           placeholder="Ex: 100">
+                </div>
+                
+                <!-- Submit -->
+                <div class="flex justify-end gap-4">
+                    <button type="reset" class="px-6 py-3 bg-gray-200 text-dark rounded-button hover:bg-gray-300 transition-colors">
+                        Reset
+                    </button>
+                    <button type="submit" class="px-6 py-3 bg-secondary text-white rounded-button hover:bg-opacity-90 transition-colors">
+                        Add Product
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-neutral py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>© <span id="currentYear"></span> Moses Shoes & Clothing Line - Admin Panel</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="product-manager.js"></script>
+    <script>
+        // Client-side validation
+        document.getElementById('addProductForm').addEventListener('submit', function(e) {
+            const name = document.getElementById('name').value.trim();
+            const price = document.getElementById('price').value.trim();
+            const category = document.getElementById('category').value;
+            const image = document.getElementById('image').value.trim();
+            
+            let isValid = true;
+            let errorMessage = '';
+            
+            // Required fields validation
+            if (!name) {
+                isValid = false;
+                errorMessage += 'Product name is required.\n';
+            }
+            
+            if (!price || isNaN(parseFloat(price)) || parseFloat(price) < 0) {
+                isValid = false;
+                errorMessage += 'Please enter a valid price.\n';
+            }
+            
+            if (!category) {
+                isValid = false;
+                errorMessage += 'Please select a category.\n';
+            }
+            
+            if (!image) {
+                isValid = false;
+                errorMessage += 'Image URL is required.\n';
+            }
+            
+            // Check if at least one size is selected
+            const sizeChecked = document.querySelector('input[name="size"]:checked');
+            if (!sizeChecked) {
+                isValid = false;
+                errorMessage += 'Please select at least one size.\n';
+            }
+            
+            // Check if at least one color is selected
+            const colorChecked = document.querySelector('input[name="color"]:checked');
+            if (!colorChecked) {
+                isValid = false;
+                errorMessage += 'Please select at least one color.\n';
+            }
+            
+            if (!isValid) {
+                e.preventDefault();
+                alert('Please correct the following errors:\n\n' + errorMessage);
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -36,7 +36,7 @@ function updateCartItems() {
     if (cartItems.length === 0) {
         cartItemsContainer.innerHTML = `
             <div class="text-center py-12">
-                <p class="text-gray-600 mb-6">Votre panier est vide</p>
+                <p class="text-gray-600 mb-6">Votre Cart est vide</p>
                 <a href="index.html" class="inline-block bg-secondary text-white px-8 py-3 rounded-button hover:bg-opacity-90 transition-colors">
                     Continuer vos achats
                 </a>
@@ -50,7 +50,7 @@ function updateCartItems() {
         itemElement.className = 'cart-item bg-white rounded-lg overflow-hidden shadow-md flex items-center p-6';
         itemElement.innerHTML = `
             <div class="w-24 h-24 mr-6 overflow-hidden rounded-lg">
-                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                <img src="/assets/images/products/Moses Shoes.3.jpg" alt="${item.name}" class="w-full h-full object-cover">
             </div>
             <div class="flex-grow">
                 <h3 class="text-xl font-semibold mb-2">${item.name}</h3>
@@ -114,7 +114,7 @@ function addToCart(product) {
     }
 
     saveCartToLocalStorage();
-    showNotification('Produit ajouté au panier');
+    showNotification('Produit ajouté au Cart');
 }
 
 // Update quantity
@@ -216,25 +216,25 @@ function applyPromoCode(code) {
     }
 }
 
-// Gestion du panier avec localStorage
+// Gestion du Cart avec localStorage
 class CartManager {
     constructor() {
         this.cart = this.getCart();
     }
 
-    // Récupérer le panier depuis localStorage
+    // Récupérer le Cart depuis localStorage
     getCart() {
         const cart = localStorage.getItem('mosesCart');
         return cart ? JSON.parse(cart) : [];
     }
 
-    // Sauvegarder le panier dans localStorage
+    // Sauvegarder le Cart dans localStorage
     saveCart() {
         localStorage.setItem('mosesCart', JSON.stringify(this.cart));
         this.updateCartCount();
     }
 
-    // Ajouter un produit au panier
+    // Add Product au Cart
     addToCart(product) {
         const existingProduct = this.cart.find(item => 
             item.id === product.id && 
@@ -252,7 +252,7 @@ class CartManager {
         }
 
         this.saveCart();
-        this.showNotification('Produit ajouté au panier');
+        this.showNotification('Produit ajouté au Cart');
     }
 
     // Mettre à jour la quantité
@@ -302,7 +302,7 @@ class CartManager {
         };
     }
 
-    // Mettre à jour le compteur du panier
+    // Mettre à jour le compteur du Cart
     updateCartCount() {
         const count = this.cart.reduce((total, item) => total + item.quantity, 0);
         const countElements = document.querySelectorAll('.cart-count');
@@ -323,7 +323,7 @@ class CartManager {
         }, 3000);
     }
 
-    // Rendre le panier dans la page cart.html
+    // Rendre le Cart dans la page cart.html
     renderCart() {
         const cartContainer = document.getElementById('cartItems');
         if (!cartContainer) return;
@@ -331,7 +331,7 @@ class CartManager {
         if (this.cart.length === 0) {
             cartContainer.innerHTML = `
                 <div class="text-center py-12">
-                    <p class="text-gray-600 mb-6">Votre panier est vide</p>
+                    <p class="text-gray-600 mb-6">Votre Cart est vide</p>
                     <a href="index.html" class="inline-block bg-secondary text-white px-8 py-3 rounded-button hover:bg-opacity-90 transition-colors">
                         Continuer vos achats
                     </a>
@@ -343,7 +343,7 @@ class CartManager {
         cartContainer.innerHTML = this.cart.map(item => `
             <div class="cart-item bg-white rounded-lg overflow-hidden shadow-md flex items-center p-6" data-id="${item.id}" data-size="${item.size}" data-color="${item.color}">
                 <div class="w-24 h-24 mr-6 overflow-hidden rounded-lg">
-                    <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                    <img src="/assets/images/products/Moses Shoes.3.jpg" alt="${item.name}" class="w-full h-full object-cover">
                 </div>
                 <div class="flex-grow">
                     <h3 class="text-xl font-semibold mb-2">${item.name}</h3>
@@ -380,7 +380,7 @@ class CartManager {
         this.addCartEventListeners();
     }
 
-    // Ajouter les écouteurs d'événements pour le panier
+    // Ajouter les écouteurs d'événements pour le Cart
     addCartEventListeners() {
         const quantityBtns = document.querySelectorAll('.quantity-btn');
         const deleteButtons = document.querySelectorAll('.delete-item');
@@ -411,13 +411,13 @@ class CartManager {
     }
 }
 
-// Initialiser le gestionnaire de panier
+// Initialiser le gestionnaire de Cart
 const cartManager = new CartManager();
 
-// Si nous sommes sur la page du panier, afficher le contenu
+// Si nous sommes sur la page du Cart, afficher le contenu
 if (window.location.pathname.includes('cart.html')) {
     cartManager.renderCart();
 }
 
-// Exporter le gestionnaire de panier pour l'utiliser dans d'autres fichiers
+// Exporter le gestionnaire de Cart pour l'utiliser dans d'autres fichiers
 window.cartManager = cartManager; 

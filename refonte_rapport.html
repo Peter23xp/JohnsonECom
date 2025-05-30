@@ -1,0 +1,832 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moses Shoes & Clothing - Rapport de Refonte</title>
+  <Style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #86997B;
+    }
+    .header {
+      background-color: #1D1C1C;
+      color: #FAFAF0;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+    .header h1 {
+      color: #FAFAF0;
+      margin: 0;
+    }
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .summary-box {
+      background-color: #F5F5F5;
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1;
+      margin: 0 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .summary-box h3 {
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #E1E6C9;
+    }
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+    .valid {
+      color: #4CAF50;
+    }
+    .invalid {
+      color: #F44336;
+    }
+    .section {
+      margin-bottom: 40px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .progress-container {
+      width: 100%;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    .progress-bar {
+      height: 20px;
+      background-color: #86997B;
+      border-radius: 5px;
+      text-align: center;
+      color: white;
+      line-height: 20px;
+    }
+    .footnote {
+      font-Style: italic;
+      color: #666;
+      margin-top: 50px;
+      text-align: center;
+    }
+  </Style>
+</head>
+<body>
+  <div class="header">
+    <h1>Moses Shoes & Clothing Line</h1>
+    <p>Rapport de Refonte Multilingue et Visuelle</p>
+  </div>
+  
+  <div class="section">
+    <h2>Résumé du Projet</h2>
+    <div class="summary">
+      <div class="summary-box">
+        <h3>Fichiers Analysés</h3>
+        <p><strong>Total :</strong> 33 fichiers</p>
+        <p><strong>HTML :</strong> 16 fichiers</p>
+        <p><strong>JavaScript :</strong> 14 fichiers</p>
+        <p><strong>CSS :</strong> 3 fichiers</p>
+      </div>
+      <div class="summary-box">
+        <h3>Chemins d'Images</h3>
+        <p><strong>Total :</strong> 53 références d'images</p>
+        <p><strong>Valides :</strong> 53 (100%)</p>
+        <p><strong>À corriger :</strong> 0 (0%)</p>
+        <div class="progress-container">
+          <div class="progress-bar" Style="width: 100%">
+            100%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Pages HTML (16)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Chemin</th>
+          <th>Taille</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>404.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/404.html</td>
+            <td>3.12 KB</td>
+          </tr>
+        
+          <tr>
+            <td>about.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/about.html</td>
+            <td>8.92 KB</td>
+          </tr>
+        
+          <tr>
+            <td>accessories.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/accessories.html</td>
+            <td>17.15 KB</td>
+          </tr>
+        
+          <tr>
+            <td>add-product.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/admin/add-product.html</td>
+            <td>12.99 KB</td>
+          </tr>
+        
+          <tr>
+            <td>careers.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/careers.html</td>
+            <td>16.83 KB</td>
+          </tr>
+        
+          <tr>
+            <td>cart.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/cart.html</td>
+            <td>18.55 KB</td>
+          </tr>
+        
+          <tr>
+            <td>contact.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/contact.html</td>
+            <td>18.77 KB</td>
+          </tr>
+        
+          <tr>
+            <td>faq.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/faq.html</td>
+            <td>19.47 KB</td>
+          </tr>
+        
+          <tr>
+            <td>index.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/index.html</td>
+            <td>33.19 KB</td>
+          </tr>
+        
+          <tr>
+            <td>men.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/men.html</td>
+            <td>26.33 KB</td>
+          </tr>
+        
+          <tr>
+            <td>privacy.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/privacy.html</td>
+            <td>7.13 KB</td>
+          </tr>
+        
+          <tr>
+            <td>products.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/products.html</td>
+            <td>11.01 KB</td>
+          </tr>
+        
+          <tr>
+            <td>shop.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/shop.html</td>
+            <td>17.19 KB</td>
+          </tr>
+        
+          <tr>
+            <td>suits.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/suits.html</td>
+            <td>75.13 KB</td>
+          </tr>
+        
+          <tr>
+            <td>terms.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/terms.html</td>
+            <td>17.4 KB</td>
+          </tr>
+        
+          <tr>
+            <td>women.html</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/women.html</td>
+            <td>25.8 KB</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="section">
+    <h2>Composants (0)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Chemin</th>
+          <th>Taille</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="section">
+    <h2>Scripts (14)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Chemin</th>
+          <th>Taille</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>product-manager.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/admin/product-manager.js</td>
+            <td>8.04 KB</td>
+          </tr>
+        
+          <tr>
+            <td>footer.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/components/footer.js</td>
+            <td>7.24 KB</td>
+          </tr>
+        
+          <tr>
+            <td>navbar.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/components/navbar.js</td>
+            <td>8.8 KB</td>
+          </tr>
+        
+          <tr>
+            <td>generate_report.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/generate_report.js</td>
+            <td>12.46 KB</td>
+          </tr>
+        
+          <tr>
+            <td>postcss.config.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/postcss.config.js</td>
+            <td>0.08 KB</td>
+          </tr>
+        
+          <tr>
+            <td>scan_links.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/scan_links.js</td>
+            <td>6.53 KB</td>
+          </tr>
+        
+          <tr>
+            <td>cart.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/src/js/cart.js</td>
+            <td>15.51 KB</td>
+          </tr>
+        
+          <tr>
+            <td>filters.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/src/js/filters.js</td>
+            <td>10.76 KB</td>
+          </tr>
+        
+          <tr>
+            <td>global.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/src/js/global.js</td>
+            <td>17.83 KB</td>
+          </tr>
+        
+          <tr>
+            <td>men.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/src/js/men.js</td>
+            <td>8.63 KB</td>
+          </tr>
+        
+          <tr>
+            <td>product-display.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/src/js/product-display.js</td>
+            <td>32.16 KB</td>
+          </tr>
+        
+          <tr>
+            <td>products.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/src/js/products.js</td>
+            <td>3.49 KB</td>
+          </tr>
+        
+          <tr>
+            <td>tailwind.config.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/tailwind.config.js</td>
+            <td>0.53 KB</td>
+          </tr>
+        
+          <tr>
+            <td>translate_project.js</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/translate_project.js</td>
+            <td>9.71 KB</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="section">
+    <h2>Styles (3)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Chemin</th>
+          <th>Taille</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>custom.css</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/src/css/custom.css</td>
+            <td>2.86 KB</td>
+          </tr>
+        
+          <tr>
+            <td>global.css</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/src/css/global.css</td>
+            <td>2.73 KB</td>
+          </tr>
+        
+          <tr>
+            <td>input.css</td>
+            <td>D:/Nouveau dossier/Johnson e-commerce/JohnsonECom/src/css/input.css</td>
+            <td>0.58 KB</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="section">
+    <h2>Références d'Images</h2>
+    <h3>Chemins Non Valides à Corriger (0)</h3>
+    <p>Aucun chemin non valide trouvé.</p>
+    
+    <h3>Chemins Valides (53)</h3>
+    
+      <table>
+        <thead>
+          <tr>
+            <th>Fichier</th>
+            <th>Chemin de l'image</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+              <tr>
+                <td>about.html</td>
+                <td class="valid">assets/images/story.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>about.html</td>
+                <td class="valid">assets/images/products/oxford.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>about.html</td>
+                <td class="valid">assets/images/founder.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>accessories.html</td>
+                <td class="valid">assets/images/accessories/leather-bag.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>accessories.html</td>
+                <td class="valid">assets/images/accessories/leather-belt.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>accessories.html</td>
+                <td class="valid">assets/images/accessories/wallet.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>accessories.html</td>
+                <td class="valid">assets/images/accessories/bracelet.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>accessories.html</td>
+                <td class="valid">assets/images/accessories/tote-bag.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>accessories.html</td>
+                <td class="valid">assets/images/accessories/necklace.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>careers.html</td>
+                <td class="valid">assets/images/1.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>cart.html</td>
+                <td class="valid">/assets/images/products/Moses Shoes.3.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>contact.html</td>
+                <td class="valid">assets/images/Contact/Contact-hero.jpg</td>
+                <td>css background</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/men/men-category.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/women/women-category.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/products/oxford.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/accessories/accessories-category.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/products/suit-navy-wool.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/women/robe-elegante.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/products/oxford.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/women/escarpins.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/story.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/materials.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/products/oxford.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/products/suit-navy-wool.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/testimonials/client1.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/testimonials/client2.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/testimonials/client3.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/instagram/insta1.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/instagram/insta2.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/instagram/insta3.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/instagram/insta4.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/instagram/insta5.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>index.html</td>
+                <td class="valid">assets/images/instagram/insta6.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>men.html</td>
+                <td class="valid">assets/images/men/costume-elegant.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>men.html</td>
+                <td class="valid">assets/images/men/chemise-elegante.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>men.html</td>
+                <td class="valid">assets/images/men/Shoes-oxford.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>men.html</td>
+                <td class="valid">assets/images/men/pantalon-chino.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>men.html</td>
+                <td class="valid">assets/images/testimonials/client4.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>men.html</td>
+                <td class="valid">assets/images/testimonials/client5.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>men.html</td>
+                <td class="valid">assets/images/testimonials/client6.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>men.html</td>
+                <td class="valid">/assets/images/products/Moses Shoes.3.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>men.html</td>
+                <td class="valid">assets/images/men-hero.jpg</td>
+                <td>css background</td>
+              </tr>
+            
+              <tr>
+                <td>shop.html</td>
+                <td class="valid">/assets/images/products/Moses Shoes.3.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>shop.html</td>
+                <td class="valid">/assets/images/products/Moses Shoes.3.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-navy-wool.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-grey-check.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-tuxedo-black.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-charcoal-wool.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-Beige-linen.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-blue-birds-eye.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-black-slim.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-grey-wool-silk.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-brown-velvet.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-green-linen.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-burgundy-velvet.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-double-breasted-navy.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-grey-pinstripe.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-white-wedding.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">assets/images/products/suit-brown-tweed.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>suits.html</td>
+                <td class="valid">/assets/images/products/Moses Shoes.3.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>women.html</td>
+                <td class="valid">assets/images/women/robe-elegante.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>women.html</td>
+                <td class="valid">assets/images/women/tailleur-femme.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>women.html</td>
+                <td class="valid">assets/images/women/escarpins.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>women.html</td>
+                <td class="valid">assets/images/women/sac-main.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>women.html</td>
+                <td class="valid">assets/images/testimonials/client1.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>women.html</td>
+                <td class="valid">assets/images/testimonials/client2.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>women.html</td>
+                <td class="valid">assets/images/testimonials/client3.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>women.html</td>
+                <td class="valid">/assets/images/products/Moses Shoes.3.jpg</td>
+                <td>img tag</td>
+              </tr>
+            
+              <tr>
+                <td>women.html</td>
+                <td class="valid">assets/images/women-hero.jpg</td>
+                <td>css background</td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+  </div>
+  
+  <p class="footnote">Rapport généré le 30/05/2025 16:44:53 pour le projet Moses Shoes & Clothing Line</p>
+</body>
+</html>
+  

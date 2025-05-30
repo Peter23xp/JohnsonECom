@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Moses Shoes & Clothing Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #3B3E3A;
+            background-color: #FAFAF0;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #E1E6C9;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            color: #86997B;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+    <!-- Include navbar component -->
+    <script src="components/navbar.js"></script>
+    <!-- Include footer component -->
+    <script src="components/footer.js"></script>
+    <!-- Include global CSS -->
+    <link rel="stylesheet" href="src/css/global.css">
+</head>
+<body>
+    <!-- Header/navbar will be injected by navbar.js -->
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-12 bg-tertiary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+                <p class="text-lg mb-6">Find answers to the most common questions about our products, services, and policies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- FAQ Categories -->
+                <div class="flex flex-wrap gap-4 mb-12 justify-center">
+                    <button class="faq-filter-btn bg-secondary text-white px-6 py-2 rounded-full text-sm font-medium" data-category="all">All Questions</button>
+                    <button class="faq-filter-btn bg-white text-dark px-6 py-2 rounded-full text-sm font-medium" data-category="products">Products</button>
+                    <button class="faq-filter-btn bg-white text-dark px-6 py-2 rounded-full text-sm font-medium" data-category="shipping">Shipping</button>
+                    <button class="faq-filter-btn bg-white text-dark px-6 py-2 rounded-full text-sm font-medium" data-category="returns">Returns & Refunds</button>
+                    <button class="faq-filter-btn bg-white text-dark px-6 py-2 rounded-full text-sm font-medium" data-category="care">Care Instructions</button>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="relative mb-12">
+                    <input type="text" id="faqSearch" placeholder="Search for questions..." class="w-full py-4 px-6 pr-12 rounded-lg border-2 border-tertiary focus:border-secondary focus:outline-none">
+                    <div class="absolute right-4 top-4 text-gray-400">
+                        <i class="ri-search-line text-2xl"></i>
+                    </div>
+                </div>
+                
+                <!-- FAQ Items -->
+                <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                    <!-- Item 1 -->
+                    <div class="faq-item py-4 md:py-6" data-category="products">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">How do I find my perfect fit?</h3>
+                            <span class="faq-icon text-secondary">
+                                <i class="ri-arrow-down-s-line text-2xl"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer pt-4">
+                            <p class="text-gray-600">
+                                We provide detailed size guides for each product category. To find your perfect fit, measure yourself according to our size guide instructions and compare your measurements with our size charts. For suits and formal wear, we recommend sizing up if you're between sizes. If you need additional assistance, our customer service team is happy to help you determine the best size for your body type.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="faq-item py-4 md:py-6" data-category="products">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">What materials do you use in your products?</h3>
+                            <span class="faq-icon text-secondary">
+                                <i class="ri-arrow-down-s-line text-2xl"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer pt-4">
+                            <p class="text-gray-600">
+                                We source only the highest quality materials, including premium leather from sustainable tanneries, organic cotton, fine wool blends, and other natural fibers. Each material is carefully selected for durability, comfort, and environmental impact. For detailed information on the materials used in a specific product, please check the product description or contact our customer service team.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="faq-item py-4 md:py-6" data-category="care">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">How do I care for my garments?</h3>
+                            <span class="faq-icon text-secondary">
+                                <i class="ri-arrow-down-s-line text-2xl"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer pt-4">
+                            <p class="text-gray-600">
+                                Each item comes with specific care instructions on the label. Generally, we recommend dry cleaning for suits, formal wear, and leather items. For cotton garments, machine wash in cold water on a gentle cycle and hang to dry or tumble dry on low heat. Wool items should be dry cleaned or hand washed with special wool detergent. Always check the care label for the best results and to maintain the quality and longevity of your Moses pieces.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="faq-item py-4 md:py-6" data-category="shipping">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">What are your shipping times and costs?</h3>
+                            <span class="faq-icon text-secondary">
+                                <i class="ri-arrow-down-s-line text-2xl"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer pt-4">
+                            <p class="text-gray-600">
+                                We offer several shipping options depending on your location:
+                            </p>
+                            <ul class="list-disc pl-6 mt-2 mb-2 text-gray-600">
+                                <li>Standard Shipping (3-5 business days): €10 or free for orders over €150</li>
+                                <li>Express Shipping (1-2 business days): €20</li>
+                                <li>International Shipping (7-14 business days): €30 or free for orders over €300</li>
+                            </ul>
+                            <p class="text-gray-600">
+                                Delivery times may vary depending on your location and customs processing for international orders. You will receive a tracking number once your order has been shipped.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="faq-item py-4 md:py-6" data-category="returns">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">What is your return policy?</h3>
+                            <span class="faq-icon text-secondary">
+                                <i class="ri-arrow-down-s-line text-2xl"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer pt-4">
+                            <p class="text-gray-600">
+                                We offer a 30-day return policy for unworn items in original condition with tags attached. For suits and tailored items, we provide one free alteration. To initiate a return, please contact our customer service team or use the return form included with your order. Return shipping is free for exchanges, but standard return shipping costs are the responsibility of the customer unless the item is defective or was shipped incorrectly.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 6 -->
+                    <div class="faq-item py-4 md:py-6" data-category="products">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">Do you offer customization or made-to-measure services?</h3>
+                            <span class="faq-icon text-secondary">
+                                <i class="ri-arrow-down-s-line text-2xl"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer pt-4">
+                            <p class="text-gray-600">
+                                Yes, we offer customization and made-to-measure services for select items, particularly suits and formal wear. Our made-to-measure service includes a consultation with our expert tailors, who will take your measurements and discuss fabric and style options. Customization options include monogramming, special linings, and button selections. Please contact us to schedule an appointment or inquire about available customization options for specific products.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 7 -->
+                    <div class="faq-item py-4 md:py-6" data-category="shipping">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">Do you ship internationally?</h3>
+                            <span class="faq-icon text-secondary">
+                                <i class="ri-arrow-down-s-line text-2xl"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer pt-4">
+                            <p class="text-gray-600">
+                                Yes, we ship to most countries worldwide. International shipping typically takes 7-14 business days, depending on the destination and customs processing. Please note that any import duties, taxes, or customs fees are the responsibility of the customer and are not included in our shipping costs. For specific information about shipping to your country, please contact our customer service team.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 8 -->
+                    <div class="faq-item py-4 md:py-6" data-category="returns">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">How do I exchange an item for a different size?</h3>
+                            <span class="faq-icon text-secondary">
+                                <i class="ri-arrow-down-s-line text-2xl"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer pt-4">
+                            <p class="text-gray-600">
+                                To exchange an item for a different size, please contact our customer service team within 30 days of receiving your order. For size exchanges, we offer free return shipping. Once we receive your returned item, we will ship the new size to you as soon as possible. If the new size is not available, we will issue a full refund or store credit, according to your preference.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 9 -->
+                    <div class="faq-item py-4 md:py-6" data-category="care">
+                        <div class="faq-question flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">How do I care for leather shoes and accessories?</h3>
+                            <span class="faq-icon text-secondary">
+                                <i class="ri-arrow-down-s-line text-2xl"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer pt-4">
+                            <p class="text-gray-600">
+                                To maintain the quality and extend the life of your leather items:
+                            </p>
+                            <ul class="list-disc pl-6 mt-2 mb-2 text-gray-600">
+                                <li>Clean with a soft, damp cloth and mild soap, then air dry away from direct heat</li>
+                                <li>Apply leather conditioner every 3-6 months to prevent drying and cracking</li>
+                                <li>Use shoe trees for footwear to maintain shape</li>
+                                <li>Protect from water and extreme temperatures</li>
+                                <li>For suede, use a specialized suede brush and protectant spray</li>
+                            </ul>
+                            <p class="text-gray-600">
+                                We also offer a leather care kit that includes all the essentials for maintaining your leather products.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Box -->
+                <div class="mt-12 bg-tertiary rounded-lg p-8 text-center">
+                    <h3 class="text-2xl font-semibold mb-4">Didn't find your answer?</h3>
+                    <p class="text-gray-600 mb-6">Our customer service team is here to help with any questions you may have.</p>
+                    <a href="contact.html" class="inline-block bg-secondary hover:bg-opacity-90 text-white px-8 py-3 rounded-button font-medium transition-colors">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be injected by footer.js -->
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion Functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Toggle active class
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // FAQ Filter Functionality
+            const filterButtons = document.querySelectorAll('.faq-filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-secondary', 'text-white');
+                        btn.classList.add('bg-white', 'text-dark');
+                    });
+                    
+                    // Add active class to clicked button
+                    button.classList.remove('bg-white', 'text-dark');
+                    button.classList.add('bg-secondary', 'text-white');
+                    
+                    // Get selected category
+                    const category = button.getAttribute('data-category');
+                    
+                    // Filter FAQ items
+                    faqItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // FAQ Search Functionality
+            const searchInput = document.getElementById('faqSearch');
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                // Filter FAQ items based on search term
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

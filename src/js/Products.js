@@ -41,7 +41,7 @@ const testimonials = [
     {
         name: "Michael Chen",
         role: "Business Executive",
-        text: "Their suits are the perfect blend of comfort and style. The attention to detail is remarkable.",
+        text: "Their suits are the perfect blend of comfort and Style. The attention to detail is remarkable.",
         rating: 5
     },
     {
@@ -61,7 +61,7 @@ function populateFeaturedProducts() {
         slide.className = 'swiper-slide';
         slide.innerHTML = `
             <div class="bg-darker rounded-lg overflow-hidden">
-                <img src="${product.image}" alt="${product.name}" class="w-full h-80 object-cover">
+                <img src="/assets/images/products/Moses Shoes.3.jpg" alt="${product.name}" class="w-full h-80 object-cover">
                 <div class="p-6">
                     <p class="text-accent text-sm mb-2">${product.category}</p>
                     <h3 class="font-display text-xl mb-2">${product.name}</h3>

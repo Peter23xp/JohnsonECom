@@ -45,7 +45,7 @@
             }
             .filter-btn.active {
             background-color: #86997B;
-            color: white;
+            color: #FAFAF0;
             }
         .hero-overlay {
             background-image: linear-gradient(to right, rgba(29, 28, 28, 0.7) 30%, rgba(29, 28, 28, 0.3));
@@ -57,17 +57,19 @@
     <script src="components/footer.js"></script>
     <!-- Include global CSS -->
     <link rel="stylesheet" href="src/css/global.css">
+    <!-- Include filters script -->
+    <script src="src/js/filters.js"></script>
 </head>
 <body class="bg-neutral">
     <!-- Header/navbar will be injected by navbar.js -->
 
     <!-- Hero Section -->
-    <section class="relative h-[70vh] flex items-center justify-center text-white">
+    <section class="relative h-[70vh] flex items-center justify-center text-neutral">
         <div class="absolute inset-0 bg-cover bg-center hero-overlay" style="background-image: url('assets/images/women-hero.jpg')"></div>
         <div class="container mx-auto px-4 relative z-10 text-center">
             <h1 class="text-5xl md:text-6xl font-bold mb-6">Feminine Elegance</h1>
             <p class="text-xl max-w-2xl mx-auto mb-8">Discover our exclusive collection of clothing and accessories that celebrate the grace and confidence of the modern woman.</p>
-            <a href="#collection" class="inline-block bg-secondary hover:bg-opacity-90 text-white px-10 py-4 rounded-button font-medium transition-all">
+            <a href="#collection" class="inline-block bg-secondary hover:bg-opacity-90 text-neutral px-10 py-4 rounded-button font-medium transition-all">
                 Discover the Collection
             </a>
         </div>
@@ -134,7 +136,7 @@
                         <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
                             <div class="relative">
                                 <img src="assets/images/women/robe-elegante.jpg" alt="Elegant Dress" class="w-full h-80 object-cover">
-                                <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">New</div>
+                                <div class="absolute top-4 right-4 bg-secondary text-neutral text-xs px-2 py-1 rounded">New</div>
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-semibold mb-2 text-dark">Black Cocktail Dress</h3>
@@ -166,7 +168,7 @@
                         <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
                             <div class="relative">
                                 <img src="assets/images/women/tailleur-femme.jpg" alt="Women's Suit" class="w-full h-80 object-cover">
-                                <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">-20%</div>
+                                <div class="absolute top-4 right-4 bg-red-500 text-neutral text-xs px-2 py-1 rounded">-20%</div>
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-semibold mb-2 text-dark">Elegant Beige Suit</h3>
@@ -224,7 +226,7 @@
                         <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
                             <div class="relative">
                                 <img src="assets/images/women/sac-main.jpg" alt="Camel Leather Handbag" class="w-full h-80 object-cover">
-                                <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">Trend</div>
+                                <div class="absolute top-4 right-4 bg-secondary text-neutral text-xs px-2 py-1 rounded">Trend</div>
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-semibold mb-2 text-dark">Camel Leather Handbag</h3>
@@ -251,7 +253,7 @@
                             <button aria-label="Previous Page" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">
                                 <i class="ri-arrow-left-s-line"></i>
                             </button>
-                            <button aria-label="Page 1" class="w-10 h-10 flex items-center justify-center border border-secondary bg-secondary text-white rounded">1</button>
+                            <button aria-label="Page 1" class="w-10 h-10 flex items-center justify-center border border-secondary bg-secondary text-neutral rounded">1</button>
                             <button aria-label="Page 2" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">2</button>
                             <button aria-label="Page 3" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">3</button>
                             <span class="w-10 h-10 flex items-center justify-center">...</span>
@@ -354,7 +356,7 @@
     </section>
 
     <!-- Toast Notification -->
-    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-white px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-neutral px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
 
     <!-- Product Modal -->
     <div id="productModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">

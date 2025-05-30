@@ -30,5 +30,9 @@
   "bugs": {
     "url": "https://github.com/Peter23xp/JohnsonECom/issues"
   },
-  "homepage": "https://github.com/Peter23xp/JohnsonECom#readme"
+  "homepage": "https://github.com/Peter23xp/JohnsonECom#readme",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "cheerio": "^1.0.0"
+  }
 }

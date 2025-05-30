@@ -41,7 +41,7 @@ html {
 /* Product Card Animations */
 .product-card {
     perspective: 1000px;
-    transform-style: preserve-3d;
+    transform-Style: preserve-3d;
     transition: transform 0.5s;
 }
 
@@ -149,16 +149,16 @@ html {
     animation: slideUp 0.6s ease-out;
 }
 
-/* Dark Mode Specific Styles */
-.dark-mode {
+/* Dark Fashion Specific Styles */
+.dark-Fashion {
     background-color: #0f0f0f;
     color: #f5f5f5;
 }
 
-.dark-mode a {
+.dark-Fashion a {
     color: #c6b29f;
 }
 
-.dark-mode a:hover {
+.dark-Fashion a:hover {
     color: #bfae9f;
 } 

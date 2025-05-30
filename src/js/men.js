@@ -6,7 +6,7 @@ const menProducts = [
         price: 129.99,
         image: "assets/images/products/oxford-shirt.jpg",
         category: "Shirts",
-        description: "Timeless oxford shirt crafted from premium cotton.",
+        Description: "Timeless oxford shirt crafted from Premium cotton.",
         isFavorite: true,
         colors: ["white", "blue", "black"],
         sizes: ["S", "M", "L", "XL"]
@@ -17,7 +17,7 @@ const menProducts = [
         price: 89.99,
         image: "assets/images/products/chinos.jpg",
         category: "Pants",
-        description: "Modern slim-fit chinos with stretch comfort.",
+        Description: "Modern slim-fit chinos with stretch comfort.",
         isFavorite: false,
         colors: ["khaki", "navy", "olive"],
         sizes: ["30", "32", "34", "36"]
@@ -28,7 +28,7 @@ const menProducts = [
         price: 249.99,
         image: "assets/images/products/derby.jpg",
         category: "Shoes",
-        description: "Hand-crafted derby shoes in premium leather.",
+        Description: "Hand-crafted derby shoes in Premium leather.",
         isFavorite: true,
         colors: ["brown", "black"],
         sizes: ["40", "41", "42", "43", "44"]
@@ -43,7 +43,7 @@ const faqData = [
     },
     {
         question: "What materials do you use?",
-        answer: "We source only the highest quality materials, including premium leather from sustainable tanneries, organic cotton, and fine wool blends. Each material is carefully selected for durability and comfort."
+        answer: "We source only the highest quality materials, including Premium leather from sustainable tanneries, organic cotton, and fine wool blends. Each material is carefully selected for durability and comfort."
     },
     {
         question: "How do I care for my garments?",
@@ -64,16 +64,16 @@ function populateProductGrid() {
         productCard.className = 'product-card cursor-pointer';
         productCard.innerHTML = `
             <div class="relative overflow-hidden">
-                <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+                <img src="/assets/images/products/Moses Shoes.3.jpg" alt="${product.name}" class="w-full h-64 object-cover">
                 ${product.isFavorite ? '<span class="absolute top-4 right-4 text-accent"><i data-feather="heart" fill="currentColor"></i></span>' : ''}
             </div>
             <div class="p-6">
                 <p class="text-accent text-sm mb-2">${product.category}</p>
                 <h3 class="font-display text-xl mb-2">${product.name}</h3>
-                <p class="text-light/60 text-sm mb-4">${product.description}</p>
+                <p class="text-light/60 text-sm mb-4">${product.Description}</p>
                 <div class="flex justify-between items-center">
                     <span class="text-xl font-display text-accent">${product.price} €</span>
-                    <button class="btn-primary text-sm px-6">Ajouter au Panier</button>
+                    <button class="btn-primary text-sm px-6">Ajouter au Cart</button>
                 </div>
             </div>
         `;
@@ -83,7 +83,7 @@ function populateProductGrid() {
                 openProductModal(product);
             }
         });
-        // Ajout au panier direct
+        // Ajout au Cart direct
         productCard.querySelector('.btn-primary').addEventListener('click', (e) => {
             e.stopPropagation();
             if (typeof cartManager !== 'undefined') {
@@ -101,29 +101,29 @@ function populateProductGrid() {
 function populateFAQ() {
     const faqAccordion = document.getElementById('faqAccordion');
     
-    faqData.forEach((faq, index) => {
+    faqData.forEach((FAQ, index) => {
         const faqItem = document.createElement('div');
         faqItem.className = 'bg-dark rounded-lg overflow-hidden';
         faqItem.innerHTML = `
-            <button class="w-full px-6 py-4 flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-${index}">
-                <span class="font-display text-lg">${faq.question}</span>
+            <button class="w-full px-6 py-4 flex justify-between items-center text-left" aria-expanded="false" aria-controls="FAQ-${index}">
+                <span class="font-display text-lg">${FAQ.question}</span>
                 <i data-feather="chevron-down" class="transform transition-transform"></i>
             </button>
-            <div id="faq-${index}" class="px-6 pb-4 hidden">
-                <p class="text-light/60">${faq.answer}</p>
+            <div id="FAQ-${index}" class="px-6 pb-4 hidden">
+                <p class="text-light/60">${FAQ.answer}</p>
             </div>
         `;
         faqAccordion.appendChild(faqItem);
 
         const button = faqItem.querySelector('button');
-        const content = faqItem.querySelector(`#faq-${index}`);
+        const content = faqItem.querySelector(`#FAQ-${index}`);
         const icon = button.querySelector('i');
 
         button.addEventListener('click', () => {
             const isExpanded = button.getAttribute('aria-expanded') === 'true';
             button.setAttribute('aria-expanded', !isExpanded);
             content.classList.toggle('hidden');
-            icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+            icon.Style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
         });
     });
 
@@ -173,22 +173,22 @@ function openProductModal(product) {
     modalContent.innerHTML = `
         <button id="closeProductModal" class="absolute top-4 right-4 text-gray-500 hover:text-secondary text-2xl">&times;</button>
         <div class="flex flex-col md:flex-row gap-6">
-            <img src="${product.image}" alt="${product.name}" class="w-40 h-40 object-cover rounded-lg mx-auto md:mx-0">
+            <img src="/assets/images/products/Moses Shoes.3.jpg" alt="${product.name}" class="w-40 h-40 object-cover rounded-lg mx-auto md:mx-0">
             <div class="flex-1">
                 <h2 class="text-2xl font-bold mb-2">${product.name}</h2>
                 <p class="text-secondary font-semibold mb-2">${product.category}</p>
-                <p class="mb-4 text-gray-700">${product.description || ''}</p>
+                <p class="mb-4 text-gray-700">${product.Description || ''}</p>
                 <div class="mb-4">
                     <span class="text-xl font-bold text-secondary">${product.price} €</span>
                 </div>
-                <button class="w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors add-to-cart-modal mt-2">Ajouter au Panier</button>
+                <button class="w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors add-to-cart-modal mt-2">Ajouter au Cart</button>
             </div>
         </div>
     `;
     modal.classList.remove('hidden');
     // Fermer la modale
     document.getElementById('closeProductModal').onclick = () => modal.classList.add('hidden');
-    // Ajouter au panier depuis la modale
+    // Ajouter au Cart depuis la modale
     modalContent.querySelector('.add-to-cart-modal').onclick = () => {
         if (typeof cartManager !== 'undefined') {
             cartManager.addToCart(product);

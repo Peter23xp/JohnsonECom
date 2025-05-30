@@ -10,10 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
+    <Style>
         body {
             font-family: 'Poppins', sans-serif;
             color: #232323;
@@ -28,17 +45,19 @@
         .bg-neutral .text-gray-600, .bg-neutral p, .bg-neutral h2, .bg-neutral h3, .bg-neutral h4, .bg-neutral h5 {
             color: #232323 !important;
         }
-        .bg-primary .text-white, .bg-primary h1, .bg-primary h2, .bg-primary h3, .bg-primary h4, .bg-primary h5 {
-            color: #fff !important;
+        .bg-primary .text-neutral, .bg-primary h1, .bg-primary h2, .bg-primary h3, .bg-primary h4, .bg-primary h5 {
+            color: #FAFAF0;
         }
         .text-gray-600 { color: #232323 !important; }
         .text-gray-100 { color: #f5f5f5 !important; }
         .text-xl, .text-4xl, .text-5xl, .text-7xl { text-shadow: 0 1px 2px rgba(0,0,0,0.08); }
-    </style>
+    </Style>
     <!-- Include navbar component -->
     <script src="components/navbar.js"></script>
     <!-- Include footer component -->
     <script src="components/footer.js"></script>
+    <!-- Include global CSS -->
+    <link rel="stylesheet" href="src/css/global.css">
 </head>
 <body class="bg-white">
     <!-- Header/navbar will be injected by navbar.js -->
@@ -46,12 +65,12 @@
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center bg-primary pt-16">
         <div class="absolute inset-0 bg-[url('assets/images/story.jpg')] bg-cover bg-center opacity-50"></div>
-        <div class="relative text-center text-white z-10">
+        <div class="relative text-center text-neutral z-10">
             <h1 class="text-5xl md:text-7xl font-bold mb-4" data-aos="fade-up">
                 Crafted in Liberia,<br>Worn Worldwide
             </h1>
             <p class="text-xl opacity-90" data-aos="fade-up" data-aos-delay="200">
-                A legacy of quality, heritage, and style
+                A legacy of quality, heritage, and Style
             </p>
         </div>
     </section>
@@ -62,7 +81,7 @@
             <div class="relative" data-aos="fade-right">
                 <img src="assets/images/story.jpg" alt="Craftsmanship" class="rounded-lg shadow-xl">
                 <div class="absolute -bottom-6 -right-6 bg-secondary h-24 w-24 rounded-full flex items-center justify-center">
-                    <span class="text-white font-serif">Est. 2015</span>
+                    <span class="text-neutral font-serif">Est. 2015</span>
                 </div>
             </div>
             <div data-aos="fade-left">
@@ -91,23 +110,23 @@
                 <div class="bg-white rounded-lg shadow-xl max-w-sm w-full p-6 border border-secondary">
                     <img src="assets/images/products/oxford.jpg" alt="Produit exemple" class="w-40 h-40 object-cover rounded-lg mx-auto mb-4">
                     <h3 class="text-2xl font-bold mb-2 text-center">Classic Leather Oxford</h3>
-                    <p class="text-secondary font-semibold mb-2 text-center">Catégorie : Hommes</p>
-                    <p class="mb-4 text-gray-700 text-center">Chaussures en cuir véritable, élégantes et confortables pour toutes les occasions.</p>
+                    <p class="text-secondary font-semibold mb-2 text-center">Category : Men</p>
+                    <p class="mb-4 text-gray-700 text-center">Shoes en cuir véritable, élégantes et confortables pour toutes les occasions.</p>
                     <div class="mb-4 text-center">
                         <span class="text-xl font-bold text-secondary">299,99 €</span>
                 </div>
-                    <button class="w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors">Ajouter au Panier</button>
+                    <button class="w-full bg-primary text-neutral py-3 rounded-button hover:bg-secondary transition-colors">Ajouter au Cart</button>
                 </div>
             </div>
             <div class="flex-1">
                 <h3 class="text-2xl font-semibold mb-4">Une expérience d'achat moderne</h3>
                 <ul class="list-disc pl-6 mb-4 text-lg text-gray-700">
                     <li>Affichage instantané des détails du produit en un clic</li>
-                    <li>Ajout rapide au panier depuis la fiche</li>
+                    <li>Ajout rapide au Cart depuis la fiche</li>
                     <li>Navigation fluide et sans rechargement de page</li>
                     <li>Design responsive et accessible sur tous supports</li>
                 </ul>
-                <p class="text-gray-600">Essayez cette fonctionnalité sur toutes nos pages collections : Hommes, Femmes, Costumes, Shop…<br>Un simple clic sur un produit ouvre sa fiche détaillée !</p>
+                <p class="text-gray-600">Essayez cette fonctionnalité sur toutes nos pages collections : Men, Women, Suits, Shop…<br>Un simple clic sur un produit ouvre sa fiche détaillée !</p>
             </div>
         </div>
     </section>
@@ -132,20 +151,20 @@
     <!-- SUPPRIMÉ car vide -->
 
     <!-- Call-to-Action Strip -->
-    <section class="bg-primary text-white py-16">
+    <section class="bg-primary text-neutral py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl mb-6" data-aos="fade-up">Join Our Journey</h2>
             <p class="mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
                 Be part of our story as we continue to craft excellence and preserve heritage
             </p>
-            <a href="contact.html" class="inline-block bg-secondary text-white px-8 py-3 rounded-button hover:bg-opacity-90 transition-colors duration-300" data-aos="fade-up" data-aos-delay="400">
+            <a href="Contact.html" class="inline-block bg-secondary text-neutral px-8 py-3 rounded-button hover:bg-opacity-90 transition-colors duration-300" data-aos="fade-up" data-aos-delay="400">
                 Contact Us
             </a>
         </div>
     </section>
 
     <!-- Toast Notification -->
-    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-white px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-neutral px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
 
     <script src="src/js/cart.js"></script>
     <script src="src/js/global.js"></script>

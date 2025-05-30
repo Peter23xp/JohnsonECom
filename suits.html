@@ -10,25 +10,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
         body {
             font-family: 'Poppins', sans-serif;
-            color: #333;
-            background-color: #FCFCFC;
+            color: #3B3E3A;
+            background-color: #FAFAF0;
         }
         h1, h2, h3, h4, h5 {
             font-family: 'Playfair Display', serif;
         }
         .hero-section {
-            background-image: linear-gradient(to right, rgba(12, 12, 12, 0.7) 0%, rgba(12, 12, 12, 0.4) 100%), url('assets/images/suits-hero-banner.jpg'); /* MODIFIED */
+            background-image: linear-gradient(to right, rgba(29, 28, 28, 0.7) 0%, rgba(29, 28, 28, 0.4) 100%), url('assets/images/suits-hero-banner.jpg');
             background-size: cover;
             background-position: center;
         }
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px -5px rgba(134, 153, 123, 0.2);
         }
         .product-card {
             transition: all 0.3s ease;
@@ -52,11 +78,11 @@
             height: 20px;
             width: 20px;
             background-color: transparent;
-            border: 2px solid #8A9A5B;
+            border: 2px solid #86997B;
             border-radius: 4px;
         }
         .custom-checkbox input:checked ~ .checkmark {
-            background-color: #8A9A5B;
+            background-color: #86997B;
         }
         .custom-checkbox input:checked ~ .checkmark:after {
             content: "";
@@ -66,7 +92,7 @@
             top: 2px;
             width: 5px;
             height: 10px;
-            border: solid white;
+            border: solid #FAFAF0;
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
         }
@@ -86,7 +112,7 @@
             height: 20px;
             width: 20px;
             background-color: transparent;
-            border: 2px solid #8A9A5B;
+            border: 2px solid #86997B;
             border-radius: 50%;
         }
         .custom-radio input:checked ~ .radiomark {
@@ -101,11 +127,11 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: #8A9A5B;
+            background: #86997B;
         }
         .custom-select {
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%238A9A5B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2386997B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 0.5rem center;
             background-size: 1.5em;
@@ -124,21 +150,21 @@
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background: #8A9A5B;
+            background: #86997B;
             cursor: pointer;
         }
         .price-slider::-moz-range-thumb {
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background: #8A9A5B;
+            background: #86997B;
             cursor: pointer;
             border: none;
         }
         .pagination-btn.active {
-            background-color: #8A9A5B;
-            color: white;
-            border-color: #8A9A5B;
+            background-color: #86997B;
+            color: #FAFAF0;
+            border-color: #86997B;
         }
         .filter-dropdown {
             display: none;
@@ -187,7 +213,7 @@
             border-radius: 50%;
         }
         input:checked + .switch-slider {
-            background-color: #8A9A5B;
+            background-color: #86997B;
         }
         input:checked + .switch-slider:before {
             transform: translateX(20px);
@@ -197,6 +223,12 @@
     <script src="components/navbar.js"></script>
     <!-- Include footer component -->
     <script src="components/footer.js"></script>
+    <!-- Include global CSS -->
+    <link rel="stylesheet" href="src/css/global.css">
+    <script src="src/js/cart.js"></script>
+    <script src="src/js/global.js"></script>
+    <!-- Include filters script -->
+    <script src="src/js/filters.js"></script>
 </head>
 <body>
     <!-- Header/navbar will be injected by navbar.js -->
@@ -429,7 +461,7 @@
                 <h2 class="text-2xl font-bold mb-6">New Arrivals</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Product 1 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="new-arrivals" data-price="799" data-color="Blue">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-navy-wool.jpg" alt="Wool Marine Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                             <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">New</div>
@@ -462,7 +494,7 @@
                     </div>
 
                     <!-- Product 2 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="new-arrivals" data-price="849" data-color="Grey">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-grey-check.jpg" alt="Grey Check Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                             <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">New</div>
@@ -495,7 +527,7 @@
                 </div>
 
                     <!-- Product 3 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="new-arrivals" data-price="999" data-color="Black">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-tuxedo-black.jpg" alt="Classic Black Smoking" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                         </div>
@@ -533,7 +565,7 @@
                 <h2 class="text-2xl font-bold mb-6">Popular Costumes</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Product 1 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="popular" data-price="749" data-color="Anthracite">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-charcoal-wool.jpg" alt="Anthracite Wool Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                             <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">Popular</div>
@@ -569,7 +601,7 @@
                 </div>
 
                     <!-- Product 2 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="popular" data-price="699" data-color="Beige">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-beige-linen.jpg" alt="Beige Linen Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                             <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">Popular</div>
@@ -605,7 +637,7 @@
                 </div>
 
                     <!-- Product 3 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="popular" data-price="899" data-color="Blue">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-blue-birds-eye.jpg" alt="Blue Birds Eye Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                             <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">Popular</div>
@@ -647,7 +679,7 @@
                 <h2 class="text-2xl font-bold mb-6">Costume Promotions</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Product 1 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="promotions" data-price="559" data-color="Black">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-black-slim.jpg" alt="Black Slim Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                             <div class="absolute top-4 right-4 bg-red-600 text-white text-xs px-2 py-1 rounded">-20%</div>
@@ -689,7 +721,7 @@
                 </div>
 
                     <!-- Product 2 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="promotions" data-price="720" data-color="Grey">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-grey-wool-silk.jpg" alt="Grey Wool & Silk Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                             <div class="absolute top-4 right-4 bg-red-600 text-white text-xs px-2 py-1 rounded">-15%</div>
@@ -731,7 +763,7 @@
         </div>
                     
                     <!-- Product 3 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="promotions" data-price="375" data-color="Brown">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-brown-velvet.jpg" alt="Brown Velvet Blazer" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                             <div class="absolute top-4 right-4 bg-red-600 text-white text-xs px-2 py-1 rounded">-25%</div>
@@ -779,7 +811,7 @@
                 <h2 class="text-2xl font-bold mb-6">All Costumes</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="allProductsGrid">
                     <!-- Product 1 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="all-products" data-price="729" data-color="Green">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-green-linen.jpg" alt="Green Linen Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                         </div>
@@ -810,7 +842,7 @@
             </div>
         </div>
                      <!-- Product 2 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="all-products" data-price="1199" data-color="Burgundy">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-burgundy-velvet.jpg" alt="Burgundy Velvet Smoking" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
             </div>
@@ -842,7 +874,7 @@
                     </div>
                     
                     <!-- Product 3 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="all-products" data-price="949" data-color="Navy">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-double-breasted-navy.jpg" alt="Double Breasted Navy Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                     </div>
@@ -874,7 +906,7 @@
                     </div>
                     
                     <!-- Product 4 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="all-products" data-price="879" data-color="Grey">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-grey-pinstripe.jpg" alt="Grey Pinstripe Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                         </div>
@@ -906,7 +938,7 @@
                     </div>
                     
                     <!-- Product 5 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="all-products" data-price="1099" data-color="Ivory">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-white-wedding.jpg" alt="White Wedding Suit" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                         </div>
@@ -938,7 +970,7 @@
                     </div>
                     
                     <!-- Product 6 -->
-                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md" data-category="all-products" data-price="459" data-color="Brown">
                         <div class="relative h-96 overflow-hidden">
                             <img src="assets/images/products/suit-brown-tweed.jpg" alt="Brown Tweed Blazer" class="w-full h-full object-cover object-top"> <!-- MODIFIED -->
                         </div>
@@ -976,7 +1008,7 @@
                 <button aria-label="Previous Page" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-secondary hover:text-secondary mr-2">
                     <i class="ri-arrow-left-s-line"></i>
                 </button>
-                <button class="w-10 h-10 flex items-center justify-center rounded-full border border-secondary bg-secondary text-white mx-1 pagination-btn active">1</button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full border border-secondary bg-secondary text-neutral mx-1 pagination-btn active">1</button>
                 <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-secondary hover:text-secondary mx-1 pagination-btn">2</button>
                 <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-secondary hover:text-secondary mx-1 pagination-btn">3</button>
                 <button aria-label="Next Page" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:border-secondary hover:text-secondary ml-2">
@@ -985,13 +1017,13 @@
             </div>
             
             <div class="flex justify-between items-center mt-6">
-                <div class="text-sm text-gray-500">Affichage de 1-12 sur 30 costumes</div>
+                <div class="text-sm text-gray-500">Showing 1-12 of 30 suits</div>
                 <div class="flex items-center">
-                    <span class="text-sm text-gray-600 mr-2">Afficher:</span>
-                    <select title="Nombre de produits par page" class="custom-select pl-3 pr-8 py-1 border border-gray-300 rounded-button bg-white text-sm appearance-none">
+                    <span class="text-sm text-gray-600 mr-2">Show:</span>
+                    <select title="Number of products per page" class="custom-select pl-3 pr-8 py-1 border border-gray-300 rounded-button bg-white text-sm appearance-none">
                         <option>12</option>
                         <option>24</option>
-                        <option>Tous</option>
+                        <option>All</option>
                     </select>
                 </div>
             </div>
@@ -1007,7 +1039,7 @@
                 
                 <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto" id="newsletterFormSuits">
                     <input type="email" id="newsletterEmailSuits" placeholder="Your email address" class="flex-grow px-6 py-3 rounded-button border-none focus:ring-2 focus:ring-secondary" required>
-                    <button type="submit" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-button font-medium transition-colors whitespace-nowrap">Subscribe</button>
+                    <button type="submit" class="bg-primary hover:bg-secondary text-neutral px-8 py-3 rounded-button font-medium transition-colors whitespace-nowrap">Subscribe</button>
                 </form>
                 <p id="newsletterMessageSuits" class="mt-4 text-sm"></p>
                 <div class="mt-6 flex items-center justify-center">
@@ -1022,25 +1054,23 @@
     </section>
 
     <!-- Toast Notification -->
-    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-white px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-neutral px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
 
     <!-- Product Modal -->
     <div id="productModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
         <div class="bg-white rounded-lg shadow-xl max-w-lg w-full relative p-8" id="productModalContent">
-            <!-- Le contenu du produit sera injecté ici par JS -->
+            <!-- Product content will be injected here by JS -->
             <button id="closeProductModal" class="absolute top-4 right-4 text-gray-500 hover:text-secondary text-2xl">&times;</button>
         </div>
     </div>
 
-    <script src="src/js/cart.js"></script>
-    <script src="src/js/global.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Rendre chaque carte produit cliquable pour ouvrir la modale
+        // Make each product card clickable to open the modal
         document.querySelectorAll('.product-card').forEach(function(card) {
             card.style.cursor = 'pointer';
             card.addEventListener('click', function(e) {
-                // Empêche le clic sur le bouton d'ajout au panier d'ouvrir la modale
+                // Prevent clicks on the add to cart button from opening the modal
                 if (e.target.closest('button')) return;
                 const img = card.querySelector('img');
                 const name = card.querySelector('h3').textContent;
@@ -1056,7 +1086,266 @@
             });
         });
         });
-        // Fermer la modale si on clique en dehors du contenu
+        
+        // Initialize filter dropdowns
+        const styleFilterBtn = document.getElementById('styleFilterBtn');
+        const styleDropdown = document.getElementById('styleDropdown');
+        const fitFilterBtn = document.getElementById('fitFilterBtn');
+        const fitDropdown = document.getElementById('fitDropdown');
+        const colorFilterBtn = document.getElementById('colorFilterBtn');
+        const colorDropdown = document.getElementById('colorDropdown');
+        const priceFilterBtn = document.getElementById('priceFilterBtn');
+        const priceDropdown = document.getElementById('priceDropdown');
+        const moreFilterBtn = document.getElementById('moreFilterBtn');
+        const moreDropdown = document.getElementById('moreDropdown');
+        
+        // Toggle dropdowns when clicking the respective buttons
+        [
+            { btn: styleFilterBtn, dropdown: styleDropdown },
+            { btn: fitFilterBtn, dropdown: fitDropdown },
+            { btn: colorFilterBtn, dropdown: colorDropdown },
+            { btn: priceFilterBtn, dropdown: priceDropdown },
+            { btn: moreFilterBtn, dropdown: moreDropdown }
+        ].forEach(item => {
+            if (item.btn && item.dropdown) {
+                item.btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    // Close all other dropdowns
+                    document.querySelectorAll('.filter-dropdown').forEach(dropdown => {
+                        if (dropdown !== item.dropdown) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                    // Toggle current dropdown
+                    item.dropdown.classList.toggle('active');
+                });
+            }
+        });
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('[id$="FilterBtn"]') && !e.target.closest('.filter-dropdown')) {
+                document.querySelectorAll('.filter-dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+        
+        // Price range slider functionality
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        if (priceRange && priceValue) {
+            priceRange.addEventListener('input', function() {
+                priceValue.textContent = '€' + this.value;
+            });
+        }
+        
+        // Color button selection
+        document.querySelectorAll('[aria-label]').forEach(btn => {
+            if (btn.hasAttribute('aria-label') && !btn.hasAttribute('id')) {
+                btn.addEventListener('click', function() {
+                    this.classList.toggle('ring-2');
+                    this.classList.toggle('ring-secondary');
+                });
+            }
+        });
+        
+        // Apply filters button click handler
+        document.querySelectorAll('.filter-dropdown button:last-child').forEach(applyBtn => {
+            applyBtn.addEventListener('click', function() {
+                // Hide the dropdown
+                this.closest('.filter-dropdown').classList.remove('active');
+                
+                // Update active filters display
+                updateActiveFilters();
+                
+                // Apply filters to products
+                applyFilters();
+            });
+        });
+        
+        // Function to update active filters display
+        function updateActiveFilters() {
+            const container = document.getElementById('activeFiltersContainer');
+            const clearAllBtn = document.getElementById('clearAllFiltersBtn');
+            
+            if (!container || !clearAllBtn) return;
+            
+            // Remove existing filter tags
+            container.querySelectorAll('.active-filter').forEach(el => el.remove());
+            
+            // Get all active filters
+            const activeFilters = [];
+            
+            // Style filter
+            document.querySelectorAll('#styleDropdown input:checked').forEach(checkbox => {
+                const label = checkbox.closest('label').textContent.trim();
+                if (label !== 'All styles') {
+                    activeFilters.push({ type: 'Style', value: label });
+                }
+            });
+            
+            // Fit filter
+            document.querySelectorAll('#fitDropdown input:checked').forEach(radio => {
+                const label = radio.closest('label').textContent.trim();
+                if (label !== 'All fits') {
+                    activeFilters.push({ type: 'Fit', value: label });
+                }
+            });
+            
+            // Color filter
+            document.querySelectorAll('#colorDropdown [aria-label].ring-2').forEach(btn => {
+                activeFilters.push({ type: 'Color', value: btn.getAttribute('aria-label') });
+            });
+            
+            // Price filter
+            if (priceRange && priceRange.value < priceRange.max) {
+                activeFilters.push({ type: 'Price', value: `Max €${priceRange.value}` });
+            }
+            
+            // Material filter (from More Filters)
+            document.querySelectorAll('#moreDropdown input:checked').forEach(checkbox => {
+                const label = checkbox.closest('label').textContent.trim();
+                activeFilters.push({ type: 'Material', value: label });
+            });
+            
+            // Create and append filter tags
+            activeFilters.forEach(filter => {
+                const filterTag = document.createElement('div');
+                filterTag.className = 'active-filter flex items-center bg-tertiary text-dark px-3 py-1 rounded-full text-xs';
+                filterTag.innerHTML = `
+                    <span class="font-medium mr-1">${filter.type}:</span>
+                    <span>${filter.value}</span>
+                    <button class="ml-2 text-secondary hover:text-primary">×</button>
+                `;
+                
+                // Add filter tag to container before the clear all button
+                container.insertBefore(filterTag, clearAllBtn);
+                
+                // Add click handler for the remove button
+                filterTag.querySelector('button').addEventListener('click', function() {
+                    filterTag.remove();
+                    
+                    // If this was the last filter, hide the clear all button
+                    const remainingFilters = container.querySelectorAll('.active-filter');
+                    if (remainingFilters.length === 0) {
+                        clearAllBtn.classList.add('hidden');
+                    }
+                    
+                    // TODO: Reset the corresponding filter in the UI
+                    
+                    // Apply filters again
+                    applyFilters();
+                });
+            });
+            
+            // Show/hide clear all button
+            if (activeFilters.length > 0) {
+                clearAllBtn.classList.remove('hidden');
+            } else {
+                clearAllBtn.classList.add('hidden');
+            }
+        }
+        
+        // Clear all filters button click handler
+        const clearAllBtn = document.getElementById('clearAllFiltersBtn');
+        if (clearAllBtn) {
+            clearAllBtn.addEventListener('click', function() {
+                // Reset all checkboxes
+                document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    if (checkbox.id && checkbox.id.includes('all')) {
+                        checkbox.checked = true;
+                    } else {
+                        checkbox.checked = false;
+                    }
+                });
+                
+                // Reset all radio buttons
+                document.querySelectorAll('input[type="radio"]').forEach((radio, index) => {
+                    radio.checked = index === 0; // Check only the first one
+                });
+                
+                // Reset all color buttons
+                document.querySelectorAll('[aria-label].ring-2').forEach(btn => {
+                    btn.classList.remove('ring-2', 'ring-secondary');
+                });
+                
+                // Reset price range
+                if (priceRange && priceValue) {
+                    priceRange.value = priceRange.max;
+                    priceValue.textContent = '€' + priceRange.max;
+                }
+                
+                // Clear active filters display
+                document.querySelectorAll('.active-filter').forEach(el => el.remove());
+                clearAllBtn.classList.add('hidden');
+                
+                // Show all products
+                document.querySelectorAll('.product-card').forEach(card => {
+                    card.classList.remove('hidden');
+                });
+            });
+        }
+        
+        // Apply filters to products
+        function applyFilters() {
+            const products = document.querySelectorAll('.product-card');
+            
+            // Collect all active filters
+            const selectedStyles = Array.from(document.querySelectorAll('#styleDropdown input:checked:not([id*="all"])')).map(checkbox => 
+                checkbox.closest('label').textContent.trim().toLowerCase()
+            );
+            
+            const selectedFit = document.querySelector('#fitDropdown input:checked:not([id*="all"])')?.closest('label')?.textContent.trim().toLowerCase();
+            
+            const selectedColors = Array.from(document.querySelectorAll('#colorDropdown [aria-label].ring-2')).map(btn => 
+                btn.getAttribute('aria-label').toLowerCase()
+            );
+            
+            const selectedMaterials = Array.from(document.querySelectorAll('#moreDropdown input:checked')).map(checkbox => 
+                checkbox.closest('label').textContent.trim().toLowerCase()
+            );
+            
+            const maxPrice = parseFloat(priceRange?.value || 2000);
+            
+            // Filter products
+            products.forEach(product => {
+                const productName = product.querySelector('h3').textContent.toLowerCase();
+                const productPrice = parseFloat(product.getAttribute('data-price') || 0);
+                const productColor = product.getAttribute('data-color')?.toLowerCase() || '';
+                
+                // Check if product matches all selected filters
+                const styleMatch = selectedStyles.length === 0 || 
+                                  selectedStyles.some(style => productName.includes(style));
+                
+                const fitMatch = !selectedFit || 
+                               productName.includes(selectedFit);
+                
+                const colorMatch = selectedColors.length === 0 || 
+                                 selectedColors.includes(productColor);
+                
+                const materialMatch = selectedMaterials.length === 0 || 
+                                    selectedMaterials.some(material => productName.includes(material));
+                
+                const priceMatch = productPrice <= maxPrice;
+                
+                // Show/hide product based on filter matches
+                if (styleMatch && fitMatch && colorMatch && materialMatch && priceMatch) {
+                    product.classList.remove('hidden');
+                } else {
+                    product.classList.add('hidden');
+                }
+            });
+            
+            // Update product count
+            const visibleCount = document.querySelectorAll('.product-card:not(.hidden)').length;
+            const countElement = document.querySelector('.text-sm.text-gray-500');
+            if (countElement) {
+                countElement.textContent = `Showing 1-${visibleCount} of ${products.length} suits`;
+            }
+        }
+        
+        // Close the modal when clicking outside the content
         const modal = document.getElementById('productModal');
         if (modal) {
             modal.addEventListener('click', function(e) {
@@ -1079,7 +1368,7 @@
                     <div class='mb-4'>
                         <span class='text-xl font-bold text-secondary'>${product.price}</span>
                     </div>
-                    <button class='w-full bg-primary text-white py-3 rounded-button hover:bg-secondary transition-colors add-to-cart-modal mt-2'>Add to Cart</button>
+                    <button class='w-full bg-primary text-neutral py-3 rounded-button hover:bg-secondary transition-colors add-to-cart-modal mt-2'>Add to Cart</button>
                 </div>
             </div>
         `;

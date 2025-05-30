@@ -10,8 +10,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC',dark:'#0f0f0f',darker:'#1a1a1a',light:'#f5f5f5',accent:'#c6b29f','accent-dark':'#bfae9f'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-    <style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <Style>
         body {
             font-family: 'Poppins', sans-serif;
             color: #333;
@@ -55,13 +81,15 @@
         .text-light {
             color: #f5f5f5;
         }
-    </style>
+    </Style>
     <!-- Include navbar component -->
     <script src="components/navbar.js"></script>
     <!-- Include feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Include footer component -->
     <script src="components/footer.js"></script>
+    <!-- Include global CSS -->
+    <link rel="stylesheet" href="src/css/global.css">
 </head>
 <body class="bg-dark text-light">
     <!-- Header/navbar will be injected by navbar.js -->
@@ -136,7 +164,7 @@
                                 <li>Return shipping costs are the responsibility of the customer unless the item was defective</li>
                             </ul>
                             <p>
-                                To initiate a return, please contact our customer service team at returns@mosesclothing.com with your order number and reason for return.
+                                To initiate a return, please Contact our customer service team at returns@mosesclothing.com with your order number and reason for return.
                             </p>
                         </div>
                     </div>
@@ -232,14 +260,14 @@
             <!-- Contact Section -->
             <div class="bg-darker/50 border border-light/10 rounded-lg p-6 text-center mb-8">
                 <h2 class="font-display text-2xl mb-4">Questions About Our Terms?</h2>
-                <p class="text-light/80 mb-6">If you have any questions or concerns about our Terms & Conditions, please contact our customer service team.</p>
-                <a href="contact.html" class="btn-primary inline-block">Contact Us</a>
+                <p class="text-light/80 mb-6">If you have any questions or concerns about our Terms & Conditions, please Contact our customer service team.</p>
+                <a href="Contact.html" class="btn-primary inline-block">Contact Us</a>
             </div>
         </div>
     </section>
 
     <!-- Toast Notification -->
-    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-white px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-neutral px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
 
     <script src="src/js/cart.js"></script>
     <script src="src/js/global.js"></script>

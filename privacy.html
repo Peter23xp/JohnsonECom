@@ -10,20 +10,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC',dark:'#0f0f0f',darker:'#1a1a1a',light:'#f5f5f5',accent:'#c6b29f','accent-dark':'#bfae9f'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'},fontFamily:{'display':['Playfair Display','serif'],'body':['Poppins','sans-serif']}}}}</script>
-    <style type="text/tailwindcss">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <Style type="text/tailwindcss">
         @layer components {
             .nav-link { @apply text-light/80 hover:text-accent transition-colors; }
             .btn-primary { @apply bg-accent text-dark px-8 py-3 rounded-full hover:bg-accent-dark transition-all transform hover:scale-105; }
             .section-title { @apply font-display text-3xl md:text-4xl text-light mb-6; }
             .section-text { @apply text-light/80 leading-relaxed mb-6; }
         }
-    </style>
+    </Style>
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Include navbar component -->
     <script src="components/navbar.js"></script>
     <!-- Include footer component -->
     <script src="components/footer.js"></script>
+    <!-- Include global CSS -->
+    <link rel="stylesheet" href="src/css/global.css">
 </head>
 <body class="bg-dark text-light">
     <!-- Header/navbar will be injected by navbar.js -->
@@ -112,7 +131,7 @@
                 <div>
                     <h2 class="section-title">7. Contact</h2>
                     <p class="section-text">
-                        For any question or request regarding your privacy, please contact us at:
+                        For any question or request regarding your privacy, please Contact us at:
                     </p>
                     <p class="text-light/80">
                         Email: privacy@mosesclothing.com<br>
