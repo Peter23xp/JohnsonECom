@@ -1,0 +1,138 @@
+/* Global Styles for Moses Shoes & Clothing Line
+   Using the vintage and nature-inspired color palette */
+
+:root {
+    --soft-white: #FAFAF0;
+    --light-green: #E1E6C9;
+    --sage-green: #86997B;
+    --dark-gray: #3B3E3A;
+    --deep-black: #1D1C1C;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-gray);
+    background-color: var(--soft-white);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    color: var(--deep-black);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--deep-black);
+    color: var(--soft-white);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-gray);
+}
+
+.btn-secondary {
+    background-color: var(--sage-green);
+    color: var(--soft-white);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--dark-gray);
+}
+
+.btn-outline {
+    border: 2px solid var(--sage-green);
+    color: var(--sage-green);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--sage-green);
+    color: var(--soft-white);
+}
+
+/* Cards & Containers */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(134, 153, 123, 0.2);
+}
+
+/* Sections */
+.section-light {
+    background-color: var(--soft-white);
+}
+
+.section-accent {
+    background-color: var(--light-green);
+}
+
+.section-dark {
+    background-color: var(--deep-black);
+    color: var(--soft-white);
+}
+
+/* Forms */
+input:focus, 
+textarea:focus, 
+select:focus {
+    border-color: var(--sage-green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(134, 153, 123, 0.3);
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th {
+    background-color: var(--light-green);
+    color: var(--dark-gray);
+    font-weight: 600;
+}
+
+table td, table th {
+    border: 1px solid var(--light-green);
+    padding: 8px 12px;
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(225, 230, 201, 0.3);
+}
+
+/* Custom Checkboxes */
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: var(--sage-green);
+}
+
+/* Custom Radio Buttons */
+.custom-radio input:checked ~ .radiomark:after {
+    background: var(--sage-green);
+}
+
+/* Progress Bars */
+progress {
+    background-color: var(--light-green);
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--light-green);
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--sage-green);
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--sage-green);
+} 

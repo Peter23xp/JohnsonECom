@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Moses Shoes & Clothing Line</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0C0C0C',
+                        secondary: '#8A9A5B',
+                        tertiary: '#BEBD7F',
+                        neutral: '#F5F5DC'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif']
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Tailwind CSS custom components */
+        .job-card {
+            background-color: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-width: 1px;
+            border-color: rgba(245, 245, 245, 0.1);
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+        .job-card:hover {
+            border-color: rgba(138, 154, 91, 0.4);
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(138, 154, 91, 0.05), 0 4px 6px -2px rgba(138, 154, 91, 0.025);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Include navbar component -->
+    <script src="components/navbar.js"></script>
+    <!-- Include footer component -->
+    <script src="components/footer.js"></script>
+</head>
+<body class="bg-primary text-white">
+    <!-- Header/navbar will be injected by navbar.js -->
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <h1 class="font-display text-4xl md:text-6xl mb-4 text-center" data-aos="fade-up">Join Our Team</h1>
+            <p class="text-xl text-gray-300 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Be part of a movement that celebrates Liberian craftsmanship and global style</p>
+        </div>
+    </section>
+
+    <!-- Our Culture -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="font-display text-3xl mb-6">Our Culture</h2>
+                    <p class="text-gray-300 mb-4">At Moses Shoes & Clothing Line, we believe in celebrating diversity, creativity, and excellence in everything we do. Our team members are passionate about craftsmanship and committed to bringing Liberian elegance to the global stage.</p>
+                    <p class="text-gray-300 mb-4">We foster an environment where innovation thrives, cultural heritage is honored, and every team member has the opportunity to grow professionally and personally.</p>
+                    <ul class="space-y-2 mt-6">
+                        <li class="flex items-center gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary"></i>
+                            <span>Collaborative work environment</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary"></i>
+                            <span>Opportunity for skill development</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary"></i>
+                            <span>Commitment to diversity and inclusion</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary"></i>
+                            <span>Global exposure and networking</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="assets/images/1.jpg" alt="Team at Moses Shoes & Clothing" class="rounded-lg shadow-xl w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-secondary text-white p-6 rounded-lg hidden md:block">
+                        <p class="font-display text-xl">Join our growing team of 50+ artisans and professionals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="font-display text-3xl text-center mb-12" data-aos="fade-up">Why Work With Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-secondary/10 flex items-center justify-center">
+                        <i class="ri-heart-line text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-xl mb-3">Health & Wellness</h3>
+                    <p class="text-gray-300">Comprehensive health insurance, wellness programs, and work-life balance initiatives.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-secondary/10 flex items-center justify-center">
+                        <i class="ri-award-line text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-xl mb-3">Professional Growth</h3>
+                    <p class="text-gray-300">Continuous learning opportunities, mentorship programs, and career advancement pathways.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-secondary/10 flex items-center justify-center">
+                        <i class="ri-global-line text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-xl mb-3">Global Impact</h3>
+                    <p class="text-gray-300">Be part of a mission to showcase Liberian craftsmanship on the global stage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="font-display text-3xl text-center mb-6" data-aos="fade-up">Open Positions</h2>
+            <p class="text-gray-300 text-center max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Join our team and help shape the future of Liberian-inspired fashion</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Job Card 1 -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-display text-xl mb-1">Senior Fashion Designer</h3>
+                            <p class="text-secondary">Creative Department</p>
+                        </div>
+                        <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Full-time</span>
+                    </div>
+                    <p class="text-gray-300 mb-6">Lead the design process for our flagship collections, blending traditional Liberian aesthetics with contemporary fashion trends.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">5+ Years Experience</span>
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">Fashion Design</span>
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">Leadership</span>
+                    </div>
+                    <a href="#" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-button inline-block">Apply Now</a>
+                </div>
+                
+                <!-- Job Card 2 -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-display text-xl mb-1">Master Tailor</h3>
+                            <p class="text-secondary">Production Department</p>
+                        </div>
+                        <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Full-time</span>
+                    </div>
+                    <p class="text-gray-300 mb-6">Create impeccable garments with attention to detail and craftsmanship, specializing in suits and formal wear.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">7+ Years Experience</span>
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">Tailoring</span>
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">Precision</span>
+                    </div>
+                    <a href="#" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-button inline-block">Apply Now</a>
+                </div>
+                
+                <!-- Job Card 3 -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-display text-xl mb-1">Digital Marketing Specialist</h3>
+                            <p class="text-secondary">Marketing Department</p>
+                        </div>
+                        <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Full-time</span>
+                    </div>
+                    <p class="text-gray-300 mb-6">Develop and implement digital marketing strategies to enhance brand visibility and drive engagement across all platforms.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">3+ Years Experience</span>
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">Social Media</span>
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">Analytics</span>
+                    </div>
+                    <a href="#" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-button inline-block">Apply Now</a>
+                </div>
+                
+                <!-- Job Card 4 -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="font-display text-xl mb-1">Retail Store Manager</h3>
+                            <p class="text-secondary">Sales Department</p>
+                        </div>
+                        <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm">Full-time</span>
+                    </div>
+                    <p class="text-gray-300 mb-6">Oversee daily operations of our flagship store, ensuring exceptional customer experience and meeting sales targets.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">5+ Years Experience</span>
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">Retail Management</span>
+                        <span class="text-xs bg-white/10 px-3 py-1 rounded-full">Team Leadership</span>
+                    </div>
+                    <a href="#" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-button inline-block">Apply Now</a>
+                </div>
+            </div>
+            
+            <!-- More Jobs -->
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-button font-medium text-lg hover:bg-white hover:bg-opacity-10 transition-all whitespace-nowrap">
+                    See All Positions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="font-display text-3xl text-center mb-12" data-aos="fade-up">Our Application Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center text-white font-bold text-xl">1</div>
+                    <h3 class="font-display text-xl mb-3">Application</h3>
+                    <p class="text-gray-300">Submit your application with your resume and cover letter through our careers portal.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center text-white font-bold text-xl">2</div>
+                    <h3 class="font-display text-xl mb-3">Initial Review</h3>
+                    <p class="text-gray-300">Our HR team will review your application and reach out to qualified candidates.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center text-white font-bold text-xl">3</div>
+                    <h3 class="font-display text-xl mb-3">Interviews</h3>
+                    <p class="text-gray-300">Participate in interviews with our team to assess skills and cultural fit.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center text-white font-bold text-xl">4</div>
+                    <h3 class="font-display text-xl mb-3">Onboarding</h3>
+                    <p class="text-gray-300">Successful candidates will receive an offer and begin their journey with Moses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-display text-3xl mb-6" data-aos="fade-up">Don't See the Right Position?</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">We're always looking for talented individuals who are passionate about fashion and craftsmanship. Send us your resume and let us know how you can contribute to Moses.</p>
+            <a href="contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-8 py-3 rounded-button font-medium text-lg transition-all whitespace-nowrap" data-aos="fade-up" data-aos-delay="200">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-white px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
+
+    <script src="src/js/cart.js"></script>
+    <script src="src/js/global.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+    </script>
+</body>
+</html>

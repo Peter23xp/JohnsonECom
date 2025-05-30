@@ -1,695 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moses Shoes & Clothing Line</title>
-<meta name="description" content="Moses Shoes & Clothing Line - Timeless elegance and exceptional Liberian craftsmanship since 2010. Luxury shoes and clothing boutique in Paris.">
-
-<!-- Keywords for SEO -->
-<meta name="keywords" content="Moses, clothing, shoes, suits, Liberian fashion, luxury, Paris, craftsmanship">
-
-<!-- Open Graph / Social Media Metadata -->
-<meta property="og:title" content="Moses Shoes & Clothing Line">
-<meta property="og:description" content="Luxury shoes and clothing boutique combining Liberian tradition and modernity.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://moses-fashion.com">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
-<link href="assets/css/animations.css" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script src="assets/js/productModal.js" type="module"></script>
-<script src="src/js/main.js" type="module"></script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-<style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'Poppins', sans-serif;
-color: #333;
-background-color: #FCFCFC;
-}
-h1, h2, h3, h4, h5 {
-font-family: 'Playfair Display', serif;
-}
-.hero-section {
-background-image: linear-gradient(to right, rgba(12, 12, 12, 0.8) 30%, rgba(12, 12, 12, 0.3)), url('https://readdy.ai/api/search-image?query=elegant%20fashion%20photoshoot%20with%20models%20wearing%20premium%20clothing%20and%20shoes%2C%20natural%20sage%20green%20background%2C%20professional%20studio%20lighting%2C%20high-end%20fashion%20photography%20style%2C%20minimalist%20aesthetic%2C%20soft%20shadows%2C%20neutral%20tones%2C%20luxury%20fashion%20brand%20photoshoot&width=1920&height=1080&seq=1&orientation=landscape');
-background-size: cover;
-background-position: center right;
-}
-.category-card:hover img {
-transform: scale(1.05);
-transition: transform 0.5s ease;
-}
-.category-card img {
-transition: transform 0.5s ease;
-}
-input:focus {
-outline: none;
-}
-.product-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-}
-.product-card {
-transition: all 0.3s ease;
-}
-.instagram-item:hover img {
-filter: brightness(0.8);
-}
-.instagram-item img {
-transition: filter 0.3s ease;
-}
-.custom-checkbox {
-position: relative;
-cursor: pointer;
-}
-.custom-checkbox input {
-position: absolute;
-opacity: 0;
-cursor: pointer;
-}
-.checkmark {
-position: absolute;
-top: 0;
-left: 0;
-height: 20px;
-width: 20px;
-background-color: transparent;
-border: 2px solid #8A9A5B;
-border-radius: 4px;
-}
-.custom-checkbox input:checked ~ .checkmark:after {
-content: "";
-position: absolute;
-display: block;
-left: 6px;
-top: 2px;
-width: 5px;
-height: 10px;
-border: solid #8A9A5B;
-border-width: 0 2px 2px 0;
-transform: rotate(45deg);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moses Shoes & Clothing Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #3B3E3A;
+            background-color: #FAFAF0;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(to right, rgba(29, 28, 28, 0.8) 30%, rgba(29, 28, 28, 0.3)), url('assets/images/hero.jpg');
+            background-size: cover;
+            background-position: center right;
+        }
+        .category-card:hover img {
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+        }
+        .category-card img {
+            transition: transform 0.5s ease;
+        }
+        input:focus {
+            outline: none;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(134, 153, 123, 0.2);
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .instagram-item:hover img {
+            filter: brightness(0.8);
+        }
+        .instagram-item img {
+            transition: filter 0.3s ease;
+        }
+        .custom-checkbox {
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: transparent;
+            border: 2px solid #86997B;
+            border-radius: 4px;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #86997B;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid #FAFAF0;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+    <!-- Include navbar component -->
+    <script src="components/navbar.js"></script>
+    <!-- Include footer component -->
+    <script src="components/footer.js"></script>
+    <!-- Include global CSS -->
+    <link rel="stylesheet" href="src/css/global.css">
 </head>
 <body>
-<!-- Header -->
-<header class="bg-white shadow-sm fixed w-full z-50">
-<div class="container mx-auto px-4 py-4 flex items-center justify-between">
-<a href="index.html" class="text-3xl font-['Pacifico'] text-secondary">Moses</a>
-<nav class="hidden md:flex space-x-8">
-<a href="men.html" class="text-primary hover:text-secondary transition-colors font-medium">Men</a>
-<a href="woman.html" class="text-primary hover:text-secondary transition-colors font-medium">Women</a>
-<a href="suit.html" class="text-primary hover:text-secondary transition-colors font-medium">Suits</a>
-<a href="#" class="text-primary hover:text-secondary transition-colors font-medium">Shoes</a>
-<a href="#" class="text-primary hover:text-secondary transition-colors font-medium">Accessories</a>
-</nav>
-<div class="flex items-center space-x-6">
-<div class="relative hidden md:block">
-<input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-200 bg-gray-50 text-sm focus:border-secondary">
-<div class="absolute left-3 top-2.5 w-5 h-5 flex items-center justify-center text-gray-400">
-<i class="ri-search-line"></i>
-</div>
-</div>
-<div class="w-10 h-10 flex items-center justify-center text-primary hover:text-secondary cursor-pointer relative">
-<a href="cart.html" class="flex items-center justify-center w-full h-full">
-<i class="ri-shopping-bag-line ri-lg"></i>
-<span class="cart-count absolute -top-1 -right-1 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
-</a>
-</div>
-<div class="w-10 h-10 flex items-center justify-center text-primary hover:text-secondary cursor-pointer md:hidden">
-<i class="ri-menu-line ri-lg"></i>
-</div>
-</div>
-</div>
-</header>
-<!-- Mobile Menu -->
-<div class="mobile-menu fixed inset-0 bg-primary bg-opacity-95 z-50 hidden">
-<div class="container mx-auto px-4 py-8">
-<div class="flex justify-end mb-8">
-<button class="text-white text-2xl" id="closeMenu">
-<i class="ri-close-line"></i>
-</button>
-</div>
-<nav class="flex flex-col space-y-6">
-<a href="index.html" class="text-white text-2xl hover:text-secondary transition-colors">Home</a>
-<a href="men.html" class="text-white text-2xl hover:text-secondary transition-colors">Men</a>
-<a href="woman.html" class="text-white text-2xl hover:text-secondary transition-colors">Women</a>
-<a href="suit.html" class="text-white text-2xl hover:text-secondary transition-colors">Suits</a>
-<a href="#" class="text-white text-2xl hover:text-secondary transition-colors">Shoes</a>
-<a href="#" class="text-white text-2xl hover:text-secondary transition-colors">Accessories</a>
-</nav>
-<div class="mt-12">
-<div class="flex space-x-4 justify-center">
-<a href="https://facebook.com/mosesshoesandclothingline" class="text-white hover:text-secondary transition-colors">
-<i class="ri-facebook-fill text-2xl"></i>
-</a>
-<a href="https://instagram.com/MosesFashion" class="text-white hover:text-secondary transition-colors">
-<i class="ri-instagram-fill text-2xl"></i>
-</a>
-<a href="https://wa.me/231770680204" class="text-white hover:text-secondary transition-colors">
-<i class="ri-whatsapp-fill text-2xl"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Hero Section -->
-<section class="hero-section min-h-screen flex items-center pt-16">
-<div class="container mx-auto px-4 py-20 w-full">
-<div class="max-w-2xl">
-<h1 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">Timeless Elegance, Liberian Style</h1>
-<p class="text-xl text-gray-100 mb-8 max-w-xl">Discover our exclusive collection of premium clothing and shoes, where traditional craftsmanship meets contemporary design.</p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-secondary hover:bg-opacity-90 text-white px-8 py-3 rounded-button font-medium text-lg transition-all whitespace-nowrap">Discover Collection</button>
-<button class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-button font-medium text-lg hover:bg-white hover:bg-opacity-10 transition-all whitespace-nowrap">Learn More</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Categories Section -->
-<section class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4">Our Categories</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Explore our carefully curated selection for all styles and occasions.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Category 1 -->
-<div class="category-card rounded-lg overflow-hidden shadow-md relative group">
-<div class="h-96 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=elegant%20mens%20fashion%20with%20suits%20and%20formal%20wear%2C%20professional%20male%20model%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20soft%20lighting%2C%20luxury%20clothing%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=2&orientation=portrait" alt="Men's Fashion" class="w-full h-full object-cover object-top">
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-70"></div>
-<div class="absolute bottom-0 left-0 p-6 w-full">
-<h3 class="text-2xl font-bold text-white mb-2">Men</h3>
-<a href="#" class="text-white flex items-center group-hover:underline">
-Discover <i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-</div>
-<!-- Category 2 -->
-<div class="category-card rounded-lg overflow-hidden shadow-md relative group">
-<div class="h-96 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=elegant%20womens%20fashion%20with%20dresses%20and%20formal%20wear%2C%20professional%20female%20model%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20soft%20lighting%2C%20luxury%20clothing%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=3&orientation=portrait" alt="Women's Fashion" class="w-full h-full object-cover object-top">
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-70"></div>
-<div class="absolute bottom-0 left-0 p-6 w-full">
-<h3 class="text-2xl font-bold text-white mb-2">Women</h3>
-<a href="#" class="text-white flex items-center group-hover:underline">
-Discover <i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-</div>
-<!-- Category 3 -->
-<div class="category-card rounded-lg overflow-hidden shadow-md relative group">
-<div class="h-96 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=elegant%20luxury%20shoes%2C%20premium%20footwear%20display%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20soft%20lighting%2C%20detailed%20craftsmanship%2C%20sage%20green%20color%20accents%2C%20luxury%20shoe%20display&width=600&height=800&seq=4&orientation=portrait" alt="Shoes" class="w-full h-full object-cover object-top">
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-70"></div>
-<div class="absolute bottom-0 left-0 p-6 w-full">
-<h3 class="text-2xl font-bold text-white mb-2">Shoes</h3>
-<a href="#" class="text-white flex items-center group-hover:underline">
-Discover <i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-</div>
-<!-- Category 4 -->
-<div class="category-card rounded-lg overflow-hidden shadow-md relative group">
-<div class="h-96 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=elegant%20fashion%20accessories%2C%20luxury%20watches%2C%20belts%2C%20ties%2C%20and%20jewelry%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20soft%20lighting%2C%20detailed%20craftsmanship%2C%20sage%20green%20color%20accents&width=600&height=800&seq=5&orientation=portrait" alt="Accessories" class="w-full h-full object-cover object-top">
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-70"></div>
-<div class="absolute bottom-0 left-0 p-6 w-full">
-<h3 class="text-2xl font-bold text-white mb-2">Accessories</h3>
-<a href="#" class="text-white flex items-center group-hover:underline">
-Discover <i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Featured Products -->
-<section class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="flex justify-between items-end mb-12">
-<div>
-<h2 class="text-4xl font-bold mb-4">Featured Products</h2>
-<p class="text-gray-600 max-w-2xl">Our selection of the most exclusive and refined pieces.</p>
-</div>
-<div class="hidden md:flex space-x-4">
-<button class="w-12 h-12 flex items-center justify-center rounded-full border border-gray-300 text-primary hover:bg-secondary hover:text-white hover:border-secondary transition-all">
-<i class="ri-arrow-left-s-line ri-lg"></i>
-</button>
-<button class="w-12 h-12 flex items-center justify-center rounded-full border border-gray-300 text-primary hover:bg-secondary hover:text-white hover:border-secondary transition-all">
-<i class="ri-arrow-right-s-line ri-lg"></i>
-</button>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Product 1 -->
-<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" 
-    data-product-id="suit-1"
-    data-description="Elegant navy blue suit crafted from premium Italian wool. Perfect for formal occasions and business meetings."
-    data-stock="15"
-    data-colors="#1a237e,#000000,#34495e">
-<div class="relative h-80 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=elegant%20mens%20suit%20in%20dark%20blue%2C%20professional%20studio%20lighting%2C%20neutral%20background%2C%20high-end%20fashion%20photography%2C%20detailed%20fabric%20texture%2C%20luxury%20clothing%20display%2C%20sage%20green%20color%20accents&width=600&height=800&seq=6&orientation=portrait" alt="Elegant Suit" class="w-full h-full object-cover object-top">
-<div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">New</div>
-</div>
-<div class="p-6">
-<h3 class="text-xl font-semibold mb-2">Navy Blue Elegant Suit</h3>
-<div class="flex justify-between items-center mb-4">
-<span class="text-xl font-bold">€189.99</span>
-<span class="text-sm text-gray-500 line-through ml-2">€349.00</span>
-<div class="flex">
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-half-fill text-yellow-400"></i>
-</div>
-</div>
-<button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap add-to-cart">Add to Cart</button>
-</div>
-</div>
-<!-- Product 2 -->
-<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" 
-    data-product-id="dress-1"
-    data-description="Beautiful sage green evening dress made from sustainable materials. Features elegant draping and a flattering silhouette."
-    data-stock="8"
-    data-colors="#8A9A5B,#2E8B57,#000000">
-<div class="relative h-80 overflow-hidden">
-<img src="assets/images/fa8fbcb730b0d99dcb099e85a60bc317.jpg" alt="Elegant Dress" class="w-full h-full object-cover object-top">
-<div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">-15%</div>
-</div>
-<div class="p-6">
-<h3 class="text-xl font-semibold mb-2">Sage Green Evening Dress</h3>
-<div class="flex justify-between items-center mb-4">
-<div>
-<span class="text-xl font-bold">€279.00</span>
-<span class="text-sm text-gray-500 line-through ml-2">€329.00</span>
-</div>
-<div class="flex">
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-</div>
-</div>
-<button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap add-to-cart">Add to Cart</button>
-</div>
-</div>
-<!-- Product 3 -->
-<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" 
-    data-product-id="shoes-1"
-    data-description="Classic Oxford leather shoes handcrafted by skilled artisans. Made from premium Italian leather."
-    data-stock="20"
-    data-colors="#5D4037,#000000">
-<div class="relative h-80 overflow-hidden">
-<img src="assets/images/1.jpg" alt="Leather Shoes" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6">
-<h3 class="text-xl font-semibold mb-2">Oxford Leather Shoes</h3>
-<div class="flex justify-between items-center mb-4">
-<span class="text-xl font-bold">€189.00</span>
-<div class="flex">
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-line text-yellow-400"></i>
-</div>
-</div>
-<button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap add-to-cart">Add to Cart</button>
-</div>
-</div>
-<!-- Product 4 -->
-<div class="product-card bg-white rounded-lg overflow-hidden shadow-md" 
-    data-product-id="heels-1"
-    data-description="Elegant beige heels designed for both style and comfort. Features cushioned insoles and stable heel design."
-    data-stock="12"
-    data-colors="#D7CCC8,#000000,#F5F5DC">
-<div class="relative h-80 overflow-hidden">
-<img src="assets/images/Elegant Heels.jpg" alt="Elegant Heels" class="w-full h-full object-cover object-top">
-<div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">Popular</div>
-</div>
-<div class="p-6">
-<h3 class="text-xl font-semibold mb-2">Classic Beige Heels</h3>
-<div class="flex justify-between items-center mb-4">
-<span class="text-xl font-bold">€159.00</span>
-<div class="flex">
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-fill text-yellow-400"></i>
-<i class="ri-star-half-fill text-yellow-400"></i>
-</div>
-</div>
-<button class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-button transition-colors whitespace-nowrap add-to-cart">Add to Cart</button>
-</div>
-</div>
-</div>
-<div class="text-center mt-12">
-<button class="inline-flex items-center px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-button font-medium transition-all whitespace-nowrap">
-View All Products <i class="ri-arrow-right-line ml-2"></i>
-</button>
-</div>
-</div>
-</section>
-<!-- Liberian Fashion Section -->
-<section class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div>
-<h2 class="text-4xl font-bold mb-6">The Art of Liberian Fashion</h2>
-<p class="text-gray-600 mb-6 leading-relaxed">At Moses, we celebrate the rich heritage of Liberian fashion by fusing traditional craftsmanship with contemporary designs. Each piece tells a story of excellence and craftsmanship passed down through generations.</p>
-<p class="text-gray-600 mb-8 leading-relaxed">Our skilled artisans meticulously select the finest materials and work with precision to create clothing and shoes that embody timeless elegance and accessible luxury.</p>
-<div class="grid grid-cols-2 gap-6 mb-8">
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full text-secondary mr-4">
-<i class="ri-hand-heart-line ri-lg"></i>
-</div>
-<div>
-<h3 class="font-semibold mb-2">Authentic Craftsmanship</h3>
-<p class="text-sm text-gray-600">Traditional techniques carefully preserved</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full text-secondary mr-4">
-<i class="ri-recycle-line ri-lg"></i>
-</div>
-<div>
-<h3 class="font-semibold mb-2">Sustainable Materials</h3>
-<p class="text-sm text-gray-600">Ethical and responsible selection</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full text-secondary mr-4">
-<i class="ri-scissors-line ri-lg"></i>
-</div>
-<div>
-<h3 class="font-semibold mb-2">Made to Measure</h3>
-<p class="text-sm text-gray-600">Custom adjustments for perfect fit</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full text-secondary mr-4">
-<i class="ri-award-line ri-lg"></i>
-</div>
-<div>
-<h3 class="font-semibold mb-2">Quality Guaranteed</h3>
-<p class="text-sm text-gray-600">Rigorous control at every step</p>
-</div>
-</div>
-</div>
-<button class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-button font-medium transition-colors whitespace-nowrap">Our Story</button>
-</div>
-<div class="grid grid-cols-2 gap-6">
-<div class="rounded-lg overflow-hidden shadow-lg h-80">
-<img src="https://readdy.ai/api/search-image?query=close-up%20of%20hands%20sewing%20fabric%2C%20detailed%20craftsmanship%2C%20artisan%20working%20on%20premium%20clothing%2C%20soft%20natural%20lighting%2C%20sage%20green%20thread%2C%20focus%20on%20the%20needle%20and%20fabric%20texture&width=600&height=800&seq=10&orientation=portrait" alt="Quality Craftsmanship" class="w-full h-full object-cover">
-</div>
-<div class="rounded-lg overflow-hidden shadow-lg h-64 mt-16">
-<img src="https://readdy.ai/api/search-image?query=premium%20fabric%20materials%2C%20luxury%20textiles%20close-up%2C%20sage%20green%20and%20beige%20color%20palette%2C%20soft%20natural%20lighting%2C%20detailed%20texture%2C%20high-end%20fashion%20materials&width=600&height=600&seq=11&orientation=squarish" alt="Premium Materials" class="w-full h-full object-cover">
-</div>
-<div class="rounded-lg overflow-hidden shadow-lg h-64">
-<img src="https://readdy.ai/api/search-image?query=elegant%20shoe%20making%20process%2C%20craftsman%20working%20on%20luxury%20leather%20shoes%2C%20detailed%20craftsmanship%2C%20soft%20natural%20lighting%2C%20focus%20on%20hands%20and%20tools&width=600&height=600&seq=12&orientation=squarish" alt="Shoe Making" class="w-full h-full object-cover">
-</div>
-<div class="rounded-lg overflow-hidden shadow-lg h-80 -mt-16">
-<img src="https://readdy.ai/api/search-image?query=tailor%20measuring%20fabric%20for%20custom%20suit%2C%20professional%20studio%20with%20sage%20green%20accents%2C%20soft%20natural%20lighting%2C%20focus%20on%20precision%20and%20craftsmanship&width=600&height=800&seq=13&orientation=portrait" alt="Made to Measure" class="w-full h-full object-cover">
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Testimonials Section -->
-<section class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4">What Our Clients Say</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Discover the experiences of our satisfied customers with Moses Shoes & Clothing Line.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Testimonial 1 -->
-<div class="bg-white p-8 rounded-lg shadow-md">
-<div class="flex text-yellow-400 mb-4">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-</div>
-<p class="text-gray-600 mb-6 italic">"The quality of Moses suits is unmatched. The made-to-measure service perfectly fitted my silhouette and the finishes are impeccable. An investment I absolutely don't regret."</p>
-<div class="flex items-center">
-<div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20middle-aged%20African%20man%20in%20a%20suit%2C%20neutral%20background%2C%20professional%20lighting%2C%20business%20portrait&width=100&height=100&seq=14&orientation=squarish" alt="Thomas Dubois" class="w-full h-full object-cover">
-</div>
-<div>
-<h4 class="font-semibold">Thomas Dubois</h4>
-<p class="text-sm text-gray-500">Entrepreneur, Paris</p>
-</div>
-</div>
-</div>
-<!-- Testimonial 2 -->
-<div class="bg-white p-8 rounded-lg shadow-md">
-<div class="flex text-yellow-400 mb-4">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-</div>
-<p class="text-gray-600 mb-6 italic">"My Moses heels have become my favorite shoes. Elegant and incredibly comfortable, even after a full day. The customer service is also exceptional, very attentive to my needs."</p>
-<div class="flex items-center">
-<div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20young%20African%20woman%20with%20natural%20hair%2C%20neutral%20background%2C%20professional%20lighting%2C%20business%20portrait&width=100&height=100&seq=15&orientation=squarish" alt="Sophie Moreau" class="w-full h-full object-cover">
-</div>
-<div>
-<h4 class="font-semibold">Sophie Moreau</h4>
-<p class="text-sm text-gray-500">Lawyer, Lyon</p>
-</div>
-</div>
-</div>
-<!-- Testimonial 3 -->
-<div class="bg-white p-8 rounded-lg shadow-md">
-<div class="flex text-yellow-400 mb-4">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-half-fill"></i>
-</div>
-<p class="text-gray-600 mb-6 italic">"I ordered several accessories from Moses and I'm impressed by the attention to detail. The materials are top quality and the style is both classic and contemporary. Fast delivery and careful packaging."</p>
-<div class="flex items-center">
-<div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20middle-aged%20European%20man%20with%20glasses%2C%20neutral%20background%2C%20professional%20lighting%2C%20business%20portrait&width=100&height=100&seq=16&orientation=squarish" alt="Jean-Pierre Lambert" class="w-full h-full object-cover">
-</div>
-<div>
-<h4 class="font-semibold">Jean-Pierre Lambert</h4>
-<p class="text-sm text-gray-500">Marketing Director, Bordeaux</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Instagram Gallery -->
-<section class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4">Follow Our Style</h2>
-<p class="text-gray-600 max-w-2xl mx-auto">Join our community on Instagram and discover the latest trends and inspirations.</p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-<!-- Instagram Item 1 -->
-<div class="instagram-item relative rounded-lg overflow-hidden group">
-<img src="https://readdy.ai/api/search-image?query=elegant%20fashion%20outfit%20flat%20lay%20with%20sage%20green%20clothing%20items%2C%20neutral%20background%2C%20professional%20styling%2C%20luxury%20fashion%20photography&width=400&height=400&seq=17&orientation=squarish" alt="Instagram Post" class="w-full h-64 object-cover">
-<div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
-<div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
-<i class="ri-instagram-line ri-2x"></i>
-</div>
-</div>
-</div>
-<!-- Instagram Item 2 -->
-<div class="instagram-item relative rounded-lg overflow-hidden group">
-<img src="https://readdy.ai/api/search-image?query=elegant%20man%20wearing%20premium%20suit%20walking%20in%20urban%20setting%2C%20professional%20fashion%20photography%2C%20luxury%20lifestyle%2C%20sage%20green%20color%20accent&width=400&height=400&seq=18&orientation=squarish" alt="Instagram Post" class="w-full h-64 object-cover">
-<div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
-<div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
-<i class="ri-instagram-line ri-2x"></i>
-</div>
-</div>
-</div>
-<!-- Instagram Item 3 -->
-<div class="instagram-item relative rounded-lg overflow-hidden group">
-<img src="https://readdy.ai/api/search-image?query=elegant%20woman%20wearing%20premium%20dress%20in%20urban%20setting%2C%20professional%20fashion%20photography%2C%20luxury%20lifestyle%2C%20sage%20green%20color%20accent&width=400&height=400&seq=19&orientation=squarish" alt="Instagram Post" class="w-full h-64 object-cover">
-<div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
-<div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
-<i class="ri-instagram-line ri-2x"></i>
-</div>
-</div>
-</div>
-<!-- Instagram Item 4 -->
-<div class="instagram-item relative rounded-lg overflow-hidden group">
-<img src="https://readdy.ai/api/search-image?query=close-up%20of%20luxury%20leather%20shoes%20detail%C2%A0professional%20product%20photography%2C%20premium%20footwear%20craftsmanship%2C%20neutral%20background&width=400&height=400&seq=20&orientation=squarish" alt="Instagram Post" class="w-full h-64 object-cover">
-<div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
-<div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
-<i class="ri-instagram-line ri-2x"></i>
-</div>
-</div>
-</div>
-<!-- Instagram Item 5 -->
-<div class="instagram-item relative rounded-lg overflow-hidden group">
-<img src="https://readdy.ai/api/search-image?query=elegant%20fashion%20accessories%20arrangement%2C%20luxury%20watches%2C%20ties%2C%20and%20cufflinks%2C%20professional%20product%20photography%2C%20sage%20green%20color%20accent&width=400&height=400&seq=21&orientation=squarish" alt="Instagram Post" class="w-full h-64 object-cover">
-<div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
-<div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
-<i class="ri-instagram-line ri-2x"></i>
-</div>
-</div>
-</div>
-<!-- Instagram Item 6 -->
-<div class="instagram-item relative rounded-lg overflow-hidden group">
-<img src="https://readdy.ai/api/search-image?query=behind%20the%20scenes%20of%20fashion%20photoshoot%2C%20professional%20studio%20setting%2C%20models%20getting%20ready%2C%20sage%20green%20color%20elements%20in%20decor&width=400&height=400&seq=22&orientation=squarish" alt="Instagram Post" class="w-full h-64 object-cover">
-<div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
-<div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
-<i class="ri-instagram-line ri-2x"></i>
-</div>
-</div>
-</div>
-</div>
-<div class="text-center mt-12">
-<a href="#" class="inline-flex items-center text-primary hover:text-secondary font-medium">
-@MosesFashion <i class="ri-external-link-line ml-2"></i>
-</a>
-</div>
-</div>
-</section>
-<!-- Newsletter Section -->
-<section class="py-20 bg-secondary bg-opacity-10">
-<div class="container mx-auto px-4">
-<div class="max-w-3xl mx-auto text-center">
-<h2 class="text-4xl font-bold mb-4">Stay Informed</h2>
-<p class="text-gray-600 mb-8">Subscribe to our newsletter to receive exclusive offers and updates about our new collections.</p>
-<form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
-<input type="email" placeholder="Your email address" class="flex-grow px-6 py-4 rounded-button border-none focus:ring-2 focus:ring-secondary">
-<button type="submit" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-button font-medium transition-colors whitespace-nowrap">Subscribe</button>
-</form>
-<div class="mt-6 flex items-center justify-center">
-<label class="custom-checkbox flex items-center text-sm text-gray-600">
-<input type="checkbox" class="hidden">
-<span class="checkmark mr-3"></span>
-I agree to receive marketing communications from Moses.
-</label>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-primary text-white pt-16 pb-8">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-<!-- Column 1 -->
-<div>
-<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Moses</a>
-<p class="text-gray-300 mb-6">Élégance intemporelle et artisanat libérien d'exception depuis 2010. Nous créons des vêtements et chaussures qui allient tradition et modernité.</p>
-<div class="flex space-x-4">
-<a href="https://facebook.com/mosesshoesandclothingline" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 transition-all">
-<i class="ri-facebook-fill text-white"></i>
-</a>
-<a href="https://instagram.com/MosesFashion" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 transition-all">
-<i class="ri-instagram-fill text-white"></i>
-</a>
-<a href="https://wa.me/231770680204" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 transition-all">
-<i class="ri-whatsapp-fill text-white"></i>
-</a>
-</div>
-</div>
-<!-- Column 2 -->
-<div>
-<h3 class="text-xl font-bold mb-6">Catégories</h3>
-<ul class="space-y-3">
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Hommes</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Femmes</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Suits</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Shoes</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Accessories</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Nouveautés</a></li>
-</ul>
-</div>
-<!-- Column 3 -->
-<div>
-<h3 class="text-xl font-bold mb-6">Informations</h3>
-<ul class="space-y-3">
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">À Propos de Nous</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Notre Histoire</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Politique de Confidentialité</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Conditions Générales</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Livraison & Retours</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
-</ul>
-</div>
-<!-- Column 4 -->
-<div>
-<h3 class="text-xl font-bold mb-6">Contact</h3>
-<ul class="space-y-4">
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-secondary mr-3 mt-1">
-<i class="ri-map-pin-line"></i>
-</div>
-<span class="text-gray-300">15 Rue de la Mode, 75008 Paris, France</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-secondary mr-3 mt-1">
-<i class="ri-phone-line"></i>
-                        </div>
-<span class="text-gray-300">+33 1 23 45 67 89</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-secondary mr-3 mt-1">
-<i class="ri-whatsapp-line"></i>
-                        </div>
-<span class="text-gray-300">WhatsApp: +231770680204</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-secondary mr-3 mt-1">
-<i class="ri-mail-line"></i>
-                        </div>
-<span class="text-gray-300">contact@moses-fashion.com</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-secondary mr-3 mt-1">
-<i class="ri-time-line"></i>
+    <!-- Header/navbar will be injected by navbar.js -->
+
+    <!-- Hero Section -->
+    <section class="hero-section min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 py-20 w-full">
+            <div class="max-w-2xl">
+                <h1 class="text-5xl md:text-6xl font-bold text-neutral leading-tight mb-6">Timeless Elegance, Liberian Style</h1>
+                <p class="text-xl text-gray-100 mb-8 max-w-xl">Discover our exclusive collection of premium clothing and shoes, where traditional craftsmanship meets contemporary design.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-secondary hover:bg-opacity-90 text-neutral px-8 py-3 rounded-button font-medium text-lg transition-all whitespace-nowrap">Discover the Collection</button>
+                    <button class="bg-transparent border-2 border-neutral text-neutral px-8 py-3 rounded-button font-medium text-lg hover:bg-white hover:bg-opacity-10 transition-all whitespace-nowrap">Learn More</button>
+                </div>
+        </div>
+        </div>
+    </section>
+    <!-- Categories Section -->
+    <section class="py-20 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-dark">Our Categories</h2>
+                <p class="text-dark max-w-2xl mx-auto">Explore our carefully curated selection for all styles and occasions.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Category 1 -->
+                <div class="category-card rounded-lg overflow-hidden shadow-md relative group">
+                    <div class="h-96 overflow-hidden">
+                        <img src="assets/images/men/men-category.jpg" alt="Men's Fashion" class="w-full h-full object-cover object-top">
                     </div>
-<span class="text-gray-300">Lun - Sam: 10h00 - 19h00<br>Dim: Fermé</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="border-t border-gray-700 pt-8">
-<div class="flex flex-col md:flex-row justify-between items-center">
-<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Moses Shoes & Clothing Line. Tous droits réservés.</p>
-<div class="flex items-center space-x-4">
-<div class="w-10 h-6 flex items-center justify-center">
-<i class="ri-visa-fill ri-lg text-gray-300"></i>
-</div>
-<div class="w-10 h-6 flex items-center justify-center">
-<i class="ri-mastercard-fill ri-lg text-gray-300"></i>
-</div>
-<div class="w-10 h-6 flex items-center justify-center">
-<i class="ri-paypal-fill ri-lg text-gray-300"></i>
-</div>
-<div class="w-10 h-6 flex items-center justify-center">
-<i class="ri-apple-fill ri-lg text-gray-300"></i>
-</div>
-</div>
-</div>
-</div>
-</div>
-</footer>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h3 class="text-2xl font-bold text-neutral mb-2">Men</h3>
+                        <a href="#" class="text-neutral flex items-center group-hover:underline">
+                            Discover <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Category 2 -->
+                <div class="category-card rounded-lg overflow-hidden shadow-md relative group">
+                    <div class="h-96 overflow-hidden">
+                        <img src="assets/images/women/women-category.jpg" alt="Women's Fashion" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h3 class="text-2xl font-bold text-neutral mb-2">Women</h3>
+                        <a href="#" class="text-neutral flex items-center group-hover:underline">
+                            Discover <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Category 3 -->
+                <div class="category-card rounded-lg overflow-hidden shadow-md relative group">
+                    <div class="h-96 overflow-hidden">
+                        <img src="assets/images/products/oxford.jpg" alt="Shoes" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h3 class="text-2xl font-bold text-neutral mb-2">Shoes</h3>
+                        <a href="#" class="text-neutral flex items-center group-hover:underline">
+                            Discover <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Category 4 -->
+                <div class="category-card rounded-lg overflow-hidden shadow-md relative group">
+                    <div class="h-96 overflow-hidden">
+                        <img src="assets/images/accessories/accessories-category.jpg" alt="Accessories" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-70"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h3 class="text-2xl font-bold text-neutral mb-2">Accessories</h3>
+                        <a href="#" class="text-neutral flex items-center group-hover:underline">
+                            Discover <i class="ri-arrow-right-line ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Products -->
+    <section class="py-20 bg-tertiary">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4 text-dark">Featured Products</h2>
+                    <p class="text-dark max-w-2xl">Our selection of the most exclusive and refined pieces.</p>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <button aria-label="Previous Product" class="w-12 h-12 flex items-center justify-center rounded-full border border-secondary text-dark hover:bg-secondary hover:text-neutral hover:border-secondary transition-all">
+                        <i class="ri-arrow-left-s-line ri-lg"></i>
+                    </button>
+                    <button aria-label="Next Product" class="w-12 h-12 flex items-center justify-center rounded-full border border-secondary text-dark hover:bg-secondary hover:text-neutral hover:border-secondary transition-all">
+                        <i class="ri-arrow-right-s-line ri-lg"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-neutral rounded-lg overflow-hidden shadow-md">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="assets/images/products/suit-navy-wool.jpg" alt="Elegant Suit" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4 bg-secondary text-neutral text-xs px-2 py-1 rounded">New</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-dark">Dark Blue Elegant Suit</h3>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xl font-bold text-secondary">€349,00</span>
+                            <div class="flex">
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-half-fill text-secondary"></i>
+                            </div>
+                        </div>
+                        <button class="w-full bg-dark hover:bg-primary text-neutral py-3 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card bg-neutral rounded-lg overflow-hidden shadow-md">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="assets/images/women/robe-elegante.jpg" alt="Elegant Dress" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">-15%</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-dark">Evening Dress in Sage Green</h3>
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <span class="text-xl font-bold text-secondary">€279,00</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">€329,00</span>
+                            </div>
+                            <div class="flex">
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                            </div>
+                        </div>
+                        <button class="w-full bg-dark hover:bg-primary text-neutral py-3 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card bg-neutral rounded-lg overflow-hidden shadow-md">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="assets/images/products/oxford.jpg" alt="Leather Shoes" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-dark">Brown Leather Oxford Shoes</h3>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xl font-bold text-secondary">€189,00</span>
+                            <div class="flex">
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-line text-secondary"></i>
+                            </div>
+                        </div>
+                        <button class="w-full bg-dark hover:bg-primary text-neutral py-3 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card bg-neutral rounded-lg overflow-hidden shadow-md">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="assets/images/women/escarpins.jpg" alt="Elegant High Heels" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4 bg-secondary text-neutral text-xs px-2 py-1 rounded">Popular</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-dark">Beige Elegant High Heels</h3>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xl font-bold text-secondary">€159,00</span>
+                            <div class="flex">
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-fill text-secondary"></i>
+                                <i class="ri-star-half-fill text-secondary"></i>
+                            </div>
+                        </div>
+                        <button class="w-full bg-dark hover:bg-primary text-neutral py-3 rounded-button transition-colors whitespace-nowrap">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="inline-flex items-center px-8 py-3 border-2 border-dark text-dark hover:bg-secondary hover:text-neutral hover:border-secondary rounded-button font-medium transition-all whitespace-nowrap">
+                    View All Products <i class="ri-arrow-right-line ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Liberian Fashion Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Liberian Fashion Artistry</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">At Moses, we celebrate the rich heritage of Liberian fashion by blending traditional artisanal techniques with contemporary designs. Each piece tells a story of excellence and craftsmanship passed down through generations.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Our skilled artisans carefully select the finest materials and work with precision to create clothing and shoes that embody timeless elegance and accessible luxury.</p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full text-secondary mr-4">
+                                <i class="ri-hand-heart-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Authentic Craftsmanship</h3>
+                                <p class="text-sm text-gray-600">Traditionally preserved techniques with care</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full text-secondary mr-4">
+                                <i class="ri-recycle-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Durable Materials</h3>
+                                <p class="text-sm text-gray-600">Ethical and responsible selection</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full text-secondary mr-4">
+                                <i class="ri-scissors-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Customized</h3>
+                                <p class="text-sm text-gray-600">Perfectly adjusted for perfect comfort</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center bg-secondary bg-opacity-10 rounded-full text-secondary mr-4">
+                                <i class="ri-award-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Guaranteed Quality</h3>
+                                <p class="text-sm text-gray-600">Rigorous control at every step</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-button font-medium transition-colors whitespace-nowrap">Our Story</button>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="rounded-lg overflow-hidden shadow-lg h-80">
+                        <img src="assets/images/story.jpg" alt="High Quality Craftsmanship" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg h-64 mt-16">
+                        <img src="assets/images/materials.jpg" alt="Premium Materials" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg h-64">
+                        <img src="assets/images/products/oxford.jpg" alt="Shoe Making Process" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg h-80 -mt-16">
+                        <img src="assets/images/products/suit-navy-wool.jpg" alt="Customized" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover the experiences of our satisfied clients with Moses Shoes & Clothing Line.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The quality of Moses' suits is unmatched. The customization perfectly fit my silhouette and the finishes are impeccable. An investment I don't regret at all."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
+                            <img src="assets/images/testimonials/client1.jpg" alt="Thomas Dubois" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Thomas Dubois</h4>
+                            <p class="text-sm text-gray-500">Entrepreneur, Paris</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"My Moses heels have become my favorite shoes. Elegant and incredibly comfortable, even after a full day. The customer service is also exceptional, very attentive to my needs."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
+                            <img src="assets/images/testimonials/client2.jpg" alt="Sophie Moreau" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sophie Moreau</h4>
+                            <p class="text-sm text-gray-500">Lawyer, Lyon</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"I've ordered several accessories from Moses and I'm impressed by the attention to detail. The materials are of high quality and the style is both classic and contemporary. Fast delivery and well-packaged."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
+                            <img src="assets/images/testimonials/client3.jpg" alt="Jean-Pierre Lambert" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Jean-Pierre Lambert</h4>
+                            <p class="text-sm text-gray-500">Marketing Director, Bordeaux</p>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Instagram Gallery -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Follow Our Style</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Join our community on Instagram and discover the latest trends and inspirations.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Instagram Item 1 -->
+                <div class="instagram-item relative rounded-lg overflow-hidden group">
+                    <img src="assets/images/instagram/insta1.jpg" alt="Instagram Post" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
+                        <div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
+                            <i class="ri-instagram-line ri-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Instagram Item 2 -->
+                <div class="instagram-item relative rounded-lg overflow-hidden group">
+                    <img src="assets/images/instagram/insta2.jpg" alt="Instagram Post" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
+                        <div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
+                            <i class="ri-instagram-line ri-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Instagram Item 3 -->
+                <div class="instagram-item relative rounded-lg overflow-hidden group">
+                    <img src="assets/images/instagram/insta3.jpg" alt="Instagram Post" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
+                        <div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
+                            <i class="ri-instagram-line ri-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Instagram Item 4 -->
+                <div class="instagram-item relative rounded-lg overflow-hidden group">
+                    <img src="assets/images/instagram/insta4.jpg" alt="Instagram Post" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
+                        <div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
+                            <i class="ri-instagram-line ri-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Instagram Item 5 -->
+                <div class="instagram-item relative rounded-lg overflow-hidden group">
+                    <img src="assets/images/instagram/insta5.jpg" alt="Instagram Post" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
+                        <div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
+                            <i class="ri-instagram-line ri-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Instagram Item 6 -->
+                <div class="instagram-item relative rounded-lg overflow-hidden group">
+                    <img src="assets/images/instagram/insta6.jpg" alt="Instagram Post" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center transition-all duration-300">
+                        <div class="opacity-0 group-hover:opacity-100 text-white transition-opacity duration-300">
+                            <i class="ri-instagram-line ri-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/moses.fashion" class="inline-flex items-center text-primary hover:text-secondary font-medium">
+                    @MosesFashion <i class="ri-external-link-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-tertiary bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-4 text-dark">Stay Informed</h2>
+                <p class="text-dark mb-8">Subscribe to our newsletter to receive early access to our new collections and exclusive offers.</p>
+                <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-6 py-4 rounded-button border-none bg-neutral focus:ring-2 focus:ring-secondary">
+                    <button type="submit" class="bg-dark hover:bg-primary text-neutral px-8 py-4 rounded-button font-medium transition-colors whitespace-nowrap">Subscribe</button>
+            </form>
+                <div class="mt-6 flex items-center justify-center">
+                    <label class="custom-checkbox flex items-center text-sm text-dark">
+                        <input type="checkbox" class="hidden">
+                        <span class="checkmark mr-3"></span>
+                        I accept to receive marketing communications from Moses.
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-neutral px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">
+        Item added to cart!
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Custom checkbox functionality
+        const checkboxes = document.querySelectorAll('.custom-checkbox input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkmark = this.nextElementSibling;
+                if (this.checked) {
+                    checkmark.style.backgroundColor = '#86997B';
+                    checkmark.style.borderColor = '#86997B';
+                } else {
+                    checkmark.style.backgroundColor = 'transparent';
+                    checkmark.style.borderColor = '#86997B';
+                }
+            });
+        });
+
+        // Sticky header
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.add('bg-neutral');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        });
+    </script>
 </body>
-</html>
+</html> 

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Moses Shoes & Clothing Line</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #3B3E3A;
+            background-color: #FAFAF0;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        .filter-btn {
+            @apply px-4 py-2 rounded-lg text-sm border border-gray-300 hover:border-secondary hover:text-secondary transition-colors;
+        }
+        .filter-btn.active {
+            @apply border-secondary text-neutral bg-secondary;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(134, 153, 123, 0.2);
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card img {
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+    <!-- Include navbar component -->
+    <script src="components/navbar.js"></script>
+    <!-- Include footer component -->
+    <script src="components/footer.js"></script>
+</head>
+<body class="bg-neutral">
+    <!-- Header/navbar will be injected by navbar.js -->
+
+    <!-- Shop Hero -->
+    <section class="pt-32 pb-12 px-4 bg-tertiary">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark">Shop All Collections</h1>
+            <p class="text-dark text-lg mb-8 max-w-2xl mx-auto">Explore our full range of premium menswear, womenswear, suits, and accessories. Crafted in Liberia, worn worldwide.</p>
+        </div>
+    </section>
+
+    <!-- Filters + Product Grid -->
+    <main class="container mx-auto px-4 py-12 flex flex-col lg:flex-row gap-8">
+        <!-- Filters Sidebar -->
+        <aside class="w-full lg:w-64 bg-white p-6 rounded-lg border border-tertiary mb-8 lg:mb-0">
+            <h2 class="text-2xl font-bold mb-6 text-dark">Filters</h2>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-dark">Category</h3>
+                <div class="space-y-2">
+                    <button class="filter-btn active w-full text-left" data-category="all">All</button>
+                    <button class="filter-btn w-full text-left" data-category="Men">Men</button>
+                    <button class="filter-btn w-full text-left" data-category="Women">Women</button>
+                    <button class="filter-btn w-full text-left" data-category="Suits">Suits</button>
+                    <button class="filter-btn w-full text-left" data-category="Accessories">Accessories</button>
+                </div>
+            </div>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-dark">Price</h3>
+                <input type="range" min="0" max="1000" value="1000" class="w-full accent-secondary" id="priceRange" title="Price Range" placeholder="Price Range">
+                <div class="flex justify-between mt-2">
+                    <span class="text-dark">€0</span>
+                    <span class="text-dark" id="priceValue">€1000</span>
+                </div>
+            </div>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-dark">Color</h3>
+                <div class="flex flex-wrap gap-2">
+                    <button class="w-8 h-8 rounded-full bg-black border-2 border-transparent hover:border-secondary transition-all" data-color="Black" aria-label="Black"></button>
+                    <button class="w-8 h-8 rounded-full bg-white border-2 border-gray-300 hover:border-secondary transition-all" data-color="White" aria-label="White"></button>
+                    <button class="w-8 h-8 rounded-full bg-blue-600 border-2 border-transparent hover:border-secondary transition-all" data-color="Blue" aria-label="Blue"></button>
+                    <button class="w-8 h-8 rounded-full bg-yellow-500 border-2 border-transparent hover:border-secondary transition-all" data-color="Yellow" aria-label="Yellow"></button>
+                    <button class="w-8 h-8 rounded-full bg-red-700 border-2 border-transparent hover:border-secondary transition-all" data-color="Red" aria-label="Red"></button>
+                </div>
+            </div>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-dark">Size</h3>
+                <div class="grid grid-cols-4 gap-2">
+                    <button class="filter-btn" data-size="S">S</button>
+                    <button class="filter-btn" data-size="M">M</button>
+                    <button class="filter-btn" data-size="L">L</button>
+                    <button class="filter-btn" data-size="XL">XL</button>
+                </div>
+            </div>
+            <button class="w-full bg-dark hover:bg-primary text-neutral py-3 rounded-button font-medium transition-colors" id="applyFiltersBtn">Apply Filters</button>
+        </aside>
+
+        <!-- Product Grid -->
+        <section class="flex-1">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productGrid">
+                <!-- Products will be populated via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-white px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="fixed inset-0 bg-primary bg-opacity-60 flex items-center justify-center z-50 hidden">
+        <div class="bg-neutral rounded-lg shadow-xl max-w-lg w-full relative p-8" id="productModalContent">
+            <!-- Le contenu du produit sera injecté ici par JS -->
+            <button id="closeProductModal" class="absolute top-4 right-4 text-dark hover:text-secondary text-2xl">&times;</button>
+        </div>
+    </div>
+
+    <script src="src/js/cart.js"></script>
+    <script src="src/js/global.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+            
+            // Product data
+            const products = [
+                {id: 1, name: 'Classic Leather Oxford', price: 299.99, image: 'assets/images/products/Quality Men Sneakers.1.jpg', category: 'Men', color: 'Black', size: 'M'},
+                {id: 2, name: 'Handwoven Leather Bag', price: 399.99, image: 'assets/images/products/Quality Ladie Material.2.jpg', category: 'Accessories', color: 'Brown', size: 'M'},
+                {id: 3, name: 'Premium Wool Suit', price: 899.99, image: 'assets/images/products/Moses Coat.6.jpg', category: 'Suits', color: 'Blue', size: 'L'},
+                {id: 4, name: 'Designer Dress', price: 499.99, image: 'assets/images/products/Quality Ladie Material.7.jpg', category: 'Women', color: 'Red', size: 'S'},
+                {id: 5, name: 'Quality Men Sneakers', price: 199.99, image: 'assets/images/products/Quality Men Sneakers.2.jpg', category: 'Men', color: 'White', size: 'L'},
+                {id: 6, name: 'Elegant Heels', price: 249.99, image: 'assets/images/Elegant Heels.jpg', category: 'Women', color: 'Pink', size: 'M'},
+                {id: 7, name: 'Perfect Quality Coat', price: 349.99, image: 'assets/images/products/Perfect Quality.1.jpg', category: 'Suits', color: 'Black', size: 'XL'},
+                {id: 8, name: 'Brand T Shirt', price: 99.99, image: 'assets/images/products/Brand T Shirt.1.jpg', category: 'Men', color: 'White', size: 'M'},
+                {id: 9, name: 'Quality Ladies Material', price: 159.99, image: 'assets/images/products/Quality Ladie Material.10.jpg', category: 'Women', color: 'Yellow', size: 'S'},
+            ];
+
+            // Render products
+            function renderProducts(list) {
+                const grid = document.getElementById('productGrid');
+                grid.innerHTML = '';
+                if (list.length === 0) {
+                    grid.innerHTML = '<div class="col-span-3 text-center text-dark py-16">No products found.</div>';
+                    return;
+                }
+                list.forEach(product => {
+                    grid.innerHTML += `
+                    <div class="product-card flex flex-col bg-white rounded-lg overflow-hidden shadow-md" data-aos="fade-up">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-80 object-cover" loading="lazy">
+                        <div class="p-6 flex-1 flex flex-col">
+                            <p class="text-secondary text-sm mb-2">${product.category}</p>
+                            <h3 class="text-xl font-semibold mb-2 text-dark">${product.name}</h3>
+                            <p class="text-dark mb-4">€${product.price}</p>
+                            <button class="w-full bg-dark hover:bg-primary text-neutral py-3 rounded-button transition-colors mt-auto add-to-cart-btn" data-product='${JSON.stringify(product)}'>Add to Cart</button>
+                        </div>
+                    </div>
+                    `;
+                });
+                // Re-bind add to cart buttons
+                document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productData = JSON.parse(this.dataset.product || '{}');
+                        if (!productData.id || !productData.name || !productData.price) return;
+                        addToCart(productData);
+                    });
+                });
+            }
+
+            // Filtering logic
+            let selectedCategory = 'all';
+            let selectedPrice = 1000;
+            let selectedColor = null;
+            let selectedSize = null;
+
+            function applyFilters() {
+                let filtered = products.filter(p => {
+                    let match = true;
+                    if (selectedCategory !== 'all' && p.category !== selectedCategory) match = false;
+                    if (selectedPrice && p.price > selectedPrice) match = false;
+                    if (selectedColor && p.color !== selectedColor) match = false;
+                    if (selectedSize && p.size !== selectedSize) match = false;
+                    return match;
+                });
+                renderProducts(filtered);
+            }
+
+            // Category filter
+            document.querySelectorAll('[data-category]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('[data-category]').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedCategory = this.dataset.category;
+                    applyFilters();
+                });
+            });
+            // Price filter
+            document.getElementById('priceRange').addEventListener('input', function() {
+                selectedPrice = parseInt(this.value);
+                document.getElementById('priceValue').textContent = '€' + selectedPrice;
+            });
+            document.getElementById('priceRange').addEventListener('change', applyFilters);
+            // Color filter
+            document.querySelectorAll('[data-color]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (selectedColor === this.dataset.color) {
+                        selectedColor = null;
+                        this.classList.remove('ring-2', 'ring-secondary');
+                    } else {
+                        document.querySelectorAll('[data-color]').forEach(b => b.classList.remove('ring-2', 'ring-secondary'));
+                        selectedColor = this.dataset.color;
+                        this.classList.add('ring-2', 'ring-secondary');
+                    }
+                    applyFilters();
+                });
+            });
+            // Size filter
+            document.querySelectorAll('[data-size]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (selectedSize === this.dataset.size) {
+                        selectedSize = null;
+                        this.classList.remove('active');
+                    } else {
+                        document.querySelectorAll('[data-size]').forEach(b => b.classList.remove('active'));
+                        selectedSize = this.dataset.size;
+                        this.classList.add('active');
+                    }
+                    applyFilters();
+                });
+            });
+            // Apply filters button
+            document.getElementById('applyFiltersBtn').addEventListener('click', applyFilters);
+
+            // Initial render
+            renderProducts(products);
+
+            // Product modal functionality
+            document.addEventListener('click', function(e) {
+                const card = e.target.closest('.product-card');
+                if (card && !e.target.closest('button')) {
+                    const img = card.querySelector('img');
+                    const name = card.querySelector('h3').textContent;
+                    const price = card.querySelector('p:nth-of-type(2)').textContent;
+                    const category = card.querySelector('p:nth-of-type(1)').textContent;
+                    
+                    openProductModal({
+                        image: img ? img.src : '',
+                        name,
+                        price,
+                        category
+                    });
+                }
+            });
+            
+            // Modal close handler
+            const modal = document.getElementById('productModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) modal.classList.add('hidden');
+                });
+            }
+        });
+        
+        function openProductModal(product) {
+            const modal = document.getElementById('productModal');
+            const modalContent = document.getElementById('productModalContent');
+            if (!modal || !modalContent) return;
+            modalContent.innerHTML = `
+                <button id='closeProductModal' class='absolute top-4 right-4 text-dark hover:text-secondary text-2xl'>&times;</button>
+                <div class='flex flex-col md:flex-row gap-6'>
+                    <img src='${product.image}' alt='${product.name}' class='w-40 h-40 object-cover rounded-lg mx-auto md:mx-0'>
+                    <div class='flex-1'>
+                        <h2 class='text-2xl font-bold mb-2 text-dark'>${product.name}</h2>
+                        <p class='text-secondary font-semibold mb-2'>${product.category}</p>
+                        <p class='mb-4 text-dark'>${product.description || ''}</p>
+                        <div class='mb-4'>
+                            <span class='text-xl font-bold text-secondary'>${product.price}</span>
+                        </div>
+                        <button class='w-full bg-dark text-neutral py-3 rounded-button hover:bg-primary transition-colors add-to-cart-modal mt-2'>Add to Cart</button>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            document.getElementById('closeProductModal').onclick = () => modal.classList.add('hidden');
+            modalContent.querySelector('.add-to-cart-modal').onclick = () => {
+                if (typeof cartManager !== 'undefined') {
+                    cartManager.addToCart(product);
+                } else if (typeof addToCart === 'function') {
+                    addToCart(product);
+                }
+                modal.classList.add('hidden');
+            };
+        }
+    </script>
+</body>
+</html> 

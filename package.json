@@ -1,26 +1,31 @@
 {
-  "name": "johnson-ecommerce",
+  "name": "moses-clothing",
   "version": "1.0.0",
-  "description": "Johnson E-commerce Website",
+  "description": "Moses Shoes & Clothing Line E-commerce Website",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "npx --yes -- tailwindcss@3.4.1 -i ./src/css/input.css -o ./dist/css/style.css --watch",
+    "build": "npx --yes -- tailwindcss@3.4.1 -i ./src/css/input.css -o ./dist/css/style.css --minify",
+    "serve": "live-server --port=3000 --no-browser",
+    "start": "npm run serve"
   },
+  "keywords": [
+    "e-commerce",
+    "fashion",
+    "clothing"
+  ],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17",
-    "vite": "^5.4.19"
+    "autoprefixer": "^10.4.17",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
   },
-  "main": "postcss.config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Peter23xp/JohnsonECom.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Peter23xp/JohnsonECom/issues"

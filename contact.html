@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Moses Shoes & Clothing Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#0C0C0C',secondary:'#8A9A5B',tertiary:'#BEBD7F',neutral:'#F5F5DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #FCFCFC;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-primary {
+            color: #0C0C0C;
+        }
+        .text-secondary {
+            color: #8A9A5B;
+        }
+        .bg-primary {
+            background-color: #0C0C0C;
+        }
+        .bg-secondary {
+            background-color: #8A9A5B;
+        }
+        .border-secondary {
+            border-color: #8A9A5B;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #8A9A5B;
+            box-shadow: 0 0 0 2px rgba(138, 154, 91, 0.2);
+        }
+        .error-message {
+            display: none;
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: #8A9A5B;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+        }
+        .loading-spinner {
+            display: none;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <!-- Include navbar component -->
+    <script src="components/navbar.js"></script>
+    <!-- Include footer component -->
+    <script src="components/footer.js"></script>
+</head>
+<body class="bg-white">
+    <!-- Header/navbar will be injected by navbar.js -->
+
+    <!-- Page Title -->
+    <section class="pt-32 pb-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2 text-center">Contact Us</h1>
+            <p class="text-gray-600 text-center max-w-xl mx-auto">We're here to help. Reach out with any questions or feedback.</p>
+        </div>
+    </section>
+
+    <!-- Intro Block -->
+    <section class="py-20 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-5xl mb-6" data-aos="fade-up">Let's Talk</h1>
+                <p class="text-gray-600 text-lg mb-8" data-aos="fade-up" data-aos-delay="200">
+                    We'd love to hear from you. Whether you're curious about our collections, a store visit, or even a collaboration – we're ready to answer any and all questions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Phone -->
+                <div class="text-center p-6 bg-neutral rounded-lg" data-aos="fade-up">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-2">Call Us</h3>
+                    <p class="text-gray-600">+231 123 456 789</p>
+                    <p class="text-gray-600">Mon-Fri: 9am - 6pm</p>
+                </div>
+
+                <!-- Email -->
+                <div class="text-center p-6 bg-neutral rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-2">Email Us</h3>
+                    <p class="text-gray-600">info@mosesclothing.com</p>
+                    <p class="text-gray-600">support@mosesclothing.com</p>
+                </div>
+
+                <!-- Visit Us -->
+                <div class="text-center p-6 bg-neutral rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl mb-2">Visit Us</h3>
+                    <p class="text-gray-600">123 Fashion Street</p>
+                    <p class="text-gray-600">Monrovia, Liberia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-16 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <div id="successMessage" class="success-message">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Message sent successfully!</span>
+                    </div>
+                </div>
+                <form id="contactForm" class="space-y-6" data-aos="fade-up">
+                    <div>
+                        <label for="name" class="block text-gray-700 mb-2">Name</label>
+                        <input type="text" id="name" name="name" required
+                               class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-secondary transition-colors duration-300">
+                        <div class="error-message" id="nameError">Please enter your name</div>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                               class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-secondary transition-colors duration-300">
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" required
+                               class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-secondary transition-colors duration-300">
+                        <div class="error-message" id="subjectError">Please enter a subject</div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="6" required
+                                  class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-secondary transition-colors duration-300"></textarea>
+                        <div class="error-message" id="messageError">Please enter your message</div>
+                    </div>
+
+                    <div>
+                        <button type="submit" id="submitButton"
+                                class="w-full bg-secondary text-white py-3 px-6 rounded-button hover:bg-opacity-90 transition-colors duration-300 flex items-center justify-center">
+                            <span id="buttonText">Send Message</span>
+                            <div id="loadingSpinner" class="loading-spinner ml-2"></div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto h-96 rounded-lg overflow-hidden" data-aos="fade-up">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63123.26653288276!2d-10.815227!3d6.313181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf0a039f9ab2c6f%3A0x9e30d3838b9c83df!2sMonrovia%2C%20Liberia!5e0!3m2!1sen!2sus!4v1647882468950!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secondary CTA -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl mb-6" data-aos="fade-up">Book a Personal Styling Session</h2>
+                <p class="mb-8" data-aos="fade-up" data-aos-delay="200">
+                    Experience personalized fashion guidance with our expert stylists. Let us help you discover your perfect look.
+                </p>
+                <button class="bg-secondary text-white py-3 px-8 rounded-button hover:bg-opacity-90 transition-colors duration-300"
+                        data-aos="fade-up" data-aos-delay="400">
+                    Book Appointment
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Column 1 -->
+                <div>
+                    <a href="index.html" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Moses</a>
+                    <p class="text-gray-300 mb-6">Élégance intemporelle et artisanat libérien d'exception depuis 2010. Nous créons des vêtements et chaussures qui allient tradition et modernité.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/moses.fashion" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 transition-all">
+                            <i class="ri-facebook-fill text-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/moses.fashion" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 transition-all">
+                            <i class="ri-instagram-fill text-white"></i>
+                        </a>
+                        <a href="https://www.twitter.com/moses_fashion" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 transition-all">
+                            <i class="ri-twitter-x-fill text-white"></i>
+                        </a>
+                        <a href="https://www.pinterest.com/moses_fashion" class="w-10 h-10 flex items-center justify-center rounded-full bg-white bg-opacity-10 hover:bg-opacity-20 transition-all">
+                            <i class="ri-pinterest-fill text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Catégories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="men.html" class="text-gray-300 hover:text-white transition-colors">Hommes</a></li>
+                        <li><a href="women.html" class="text-gray-300 hover:text-white transition-colors">Femmes</a></li>
+                        <li><a href="suits.html" class="text-gray-300 hover:text-white transition-colors">Costumes</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">Chaussures</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Accessoires</a></li>
+                        <li><a href="shop.html" class="text-gray-300 hover:text-white transition-colors">Nouveautés</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Informations</h3>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">À Propos de Nous</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">Notre Histoire</a></li>
+                        <li><a href="privacy.html" class="text-gray-300 hover:text-white transition-colors">Politique de Confidentialité</a></li>
+                        <li><a href="terms.html" class="text-gray-300 hover:text-white transition-colors">Conditions Générales</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Livraison & Retours</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-secondary mr-3 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-300">15 Rue de la Mode, 75008 Paris, France</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-secondary mr-3 mt-1">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-300">+33 1 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-secondary mr-3 mt-1">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-300">contact@moses-fashion.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-secondary mr-3 mt-1">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <span class="text-gray-300">Lun - Sam: 10h00 - 19h00<br>Dim: Fermé</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© <span id="currentYear"></span> Moses Shoes & Clothing Line. Tous droits réservés.</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-visa-fill ri-lg text-gray-300"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-mastercard-fill ri-lg text-gray-300"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-paypal-fill ri-lg text-gray-300"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center">
+                            <i class="ri-apple-fill ri-lg text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-white px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">
+        Item added to cart!
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Custom checkbox functionality
+            const checkboxes = document.querySelectorAll('.custom-checkbox input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const checkmark = this.nextElementSibling;
+                    if (this.checked) {
+                        checkmark.style.backgroundColor = '#8A9A5B';
+                        checkmark.style.borderColor = '#8A9A5B';
+                    } else {
+                        checkmark.style.backgroundColor = 'transparent';
+                        checkmark.style.borderColor = '#8A9A5B';
+                    }
+                });
+            });
+
+            // Sticky header
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                    header.classList.add('bg-white');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            const form = document.getElementById('contactForm');
+            const fields = ['name', 'email', 'subject', 'message'];
+            const submitButton = document.getElementById('submitButton');
+            const buttonText = document.getElementById('buttonText');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const successMessage = document.getElementById('successMessage');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                let isValid = true;
+
+                // Reset error messages
+                fields.forEach(field => {
+                    const error = document.getElementById(`${field}Error`);
+                    error.style.display = 'none';
+                });
+
+                // Validate each field
+                fields.forEach(field => {
+                    const input = document.getElementById(field);
+                    const error = document.getElementById(`${field}Error`);
+
+                    if (!input.value.trim()) {
+                        error.style.display = 'block';
+                        isValid = false;
+                    } else if (field === 'email' && !isValidEmail(input.value)) {
+                        error.style.display = 'block';
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    // Show loading state
+                    submitButton.disabled = true;
+                    buttonText.textContent = 'Sending...';
+                    loadingSpinner.style.display = 'block';
+
+                    // Simulate form submission delay
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    setTimeout(() => {
+                        successMessage.style.opacity = '0';
+                        successMessage.style.transition = 'opacity 0.5s ease-out';
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                            successMessage.style.opacity = '1';
+                        }, 500);
+                    }, 3000);
+
+                    // Reset form and button state
+                    form.reset();
+                    submitButton.disabled = false;
+                    buttonText.textContent = 'Send Message';
+                    loadingSpinner.style.display = 'none';
+                }
+            });
+
+            // Email validation helper
+            function isValidEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            // Add focus effects with smooth transitions
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                input.addEventListener('focus', () => {
+                    input.classList.add('ring-2', 'ring-black', 'ring-opacity-20');
+                    input.style.transition = 'all 0.2s ease-in-out';
+                });
+                input.addEventListener('blur', () => {
+                    input.classList.remove('ring-2', 'ring-black', 'ring-opacity-20');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

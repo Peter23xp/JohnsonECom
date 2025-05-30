@@ -3,218 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - Moses Shoes & Clothing Line</title>
+    <title>Shopping Cart | Moses Shoes & Clothing Line</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0C0C0C',
-                        secondary: '#8A9A5B',
-                        tertiary: '#BEBD7F',
-                        neutral: '#F5F5DC'
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
                     }
                 }
             }
-        }
+        };
     </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #3B3E3A;
+            background-color: #FAFAF0;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+    <!-- Include navbar component -->
+    <script src="components/navbar.js"></script>
+    <!-- Include footer component -->
+    <script src="components/footer.js"></script>
+    <!-- Include global CSS -->
+    <link rel="stylesheet" href="src/css/global.css">
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-sm fixed w-full z-50">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-3xl font-['Pacifico'] text-secondary">Moses</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="men.html" class="text-primary hover:text-secondary transition-colors font-medium">Men</a>
-                <a href="woman.html" class="text-primary hover:text-secondary transition-colors font-medium">Women</a>
-                <a href="suit.html" class="text-primary hover:text-secondary transition-colors font-medium">Suits</a>
-                <a href="#" class="text-primary hover:text-secondary transition-colors font-medium">Shoes</a>
-                <a href="#" class="text-primary hover:text-secondary transition-colors font-medium">Accessories</a>
-            </nav>
-            <div class="flex items-center space-x-6">
-                <div class="relative hidden md:block">
-                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-200 bg-gray-50 text-sm focus:border-secondary">
-                    <div class="absolute left-3 top-2.5 w-5 h-5 flex items-center justify-center text-gray-400">
-                        <i class="ri-search-line"></i>
-                    </div>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-secondary cursor-pointer relative">
-                    <i class="ri-shopping-bag-line ri-lg"></i>
-                    <span class="cart-count absolute -top-1 -right-1 bg-secondary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
-                </div>
-            </div>
-        </div>
-    </header>
+<body class="bg-neutral">
+    <!-- Header/navbar will be injected by navbar.js -->
 
-    <!-- Cart Section -->
-    <section class="pt-24 pb-16">
+    <!-- Page Title -->
+    <section class="pt-32 pb-12 bg-tertiary">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold mb-8">Shopping Cart</h1>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <h1 class="text-4xl font-bold mb-2 text-center text-dark">Your Shopping Cart</h1>
+            <p class="text-dark text-center max-w-xl mx-auto">Review and manage the items in your cart before proceeding to checkout.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <!-- Cart Items -->
-                <div class="lg:col-span-2">
-                    <div class="bg-white rounded-lg shadow-sm p-6" id="cartItems">
-                        <!-- Cart items will be dynamically inserted here -->
-                        <div class="text-center text-gray-500 py-8" id="emptyCart">
-                            Your cart is empty
+                <div class="lg:col-span-8">
+                    <!-- Empty Cart Message -->
+                    <div id="emptyCart" class="bg-white rounded-lg shadow-md p-12 text-center">
+                        <div class="text-5xl text-secondary mb-6">
+                            <i class="ri-shopping-cart-line"></i>
                         </div>
+                        <h2 class="text-2xl font-semibold mb-4 text-dark">Your cart is empty</h2>
+                        <p class="text-gray-600 mb-8">Looks like you haven't added any items to your cart yet.</p>
+                        <a href="shop.html" class="bg-secondary text-neutral px-8 py-3 rounded-button hover:bg-primary transition-colors inline-block">
+                            Browse Products
+                        </a>
+                    </div>
+                    
+                    <!-- Cart Items List (Empty to start) -->
+                    <div id="cartItems" class="space-y-6">
+                        <!-- Items will be populated via JavaScript -->
                     </div>
                 </div>
 
                 <!-- Order Summary -->
-                <div class="lg:col-span-1">
-                    <div class="bg-white rounded-lg shadow-sm p-6">
-                        <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
-                        <div class="space-y-3 mb-6">
+                <div class="lg:col-span-4">
+                    <div class="bg-white rounded-lg shadow-md p-8 sticky top-24">
+                        <h2 class="text-2xl font-semibold mb-6 text-dark">Order Summary</h2>
+                        
+                        <!-- Pricing Details -->
+                        <div class="space-y-4 mb-6">
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Subtotal</span>
-                                <span class="font-medium" id="subtotal">€0.00</span>
+                                <span class="text-dark">Subtotal</span>
+                                <span class="font-bold text-dark" id="subtotal">€0.00</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Shipping</span>
-                                <span class="font-medium" id="shipping">€0.00</span>
+                                <span class="text-dark">Shipping</span>
+                                <span class="font-bold text-dark" id="shipping">€15.00</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Tax</span>
-                                <span class="font-medium" id="tax">€0.00</span>
+                                <span class="text-dark">Estimated Tax</span>
+                                <span class="font-bold text-dark" id="tax">€0.00</span>
                             </div>
-                            <div class="border-t pt-3">
-                                <div class="flex justify-between">
-                                    <span class="font-semibold">Total</span>
-                                    <span class="font-semibold" id="total">€0.00</span>
+                            <div class="border-t border-gray-200 pt-4">
+                                <div class="flex justify-between text-xl">
+                                    <span class="font-semibold text-dark">Total</span>
+                                    <span class="font-bold text-secondary" id="total">€15.00</span>
                                 </div>
                             </div>
                         </div>
-                        <button class="w-full bg-secondary text-white py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors" id="checkoutBtn">
-                            Proceed to Checkout
-                        </button>
+
+                        <!-- Promo Code -->
+                        <div class="mb-6">
+                            <form class="flex gap-4" onsubmit="event.preventDefault();" id="couponForm">
+                                <input type="text" id="couponCode" placeholder="Promo Code" class="flex-grow px-4 py-3 border border-gray-300 rounded-button focus:border-secondary focus:ring-1 focus:ring-secondary">
+                                <button type="submit" class="bg-primary text-neutral px-6 py-3 rounded-button hover:bg-secondary transition-colors">
+                                    Apply
+                                </button>
+                            </form>
+                            <p id="couponMessage" class="mt-2 text-sm"></p>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="space-y-4">
+                            <button class="w-full bg-secondary text-neutral py-4 rounded-button hover:bg-opacity-90 transition-colors text-lg font-medium" onclick="window.location.href='checkout.html'">
+                                Proceed to Checkout
+                            </button>
+                            <button class="w-full border-2 border-primary text-primary py-4 rounded-button hover:bg-primary hover:text-neutral transition-colors text-lg font-medium" onclick="window.location.href='index.html'">
+                                Continue Shopping
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="assets/js/main.js"></script>
+    <!-- Shipping & Returns Info -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-truck-line text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-dark">Free Shipping</h3>
+                    <p class="text-dark">Free shipping on orders over €200</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-refresh-line text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-dark">Easy Returns</h3>
+                    <p class="text-dark">30-day free returns</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-shield-check-line text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-dark">Secure Payment</h3>
+                    <p class="text-dark">All transactions are encrypted</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-customer-service-line text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-dark">Customer Support</h3>
+                    <p class="text-dark">Available 7 days a week</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-neutral px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item removed from cart!</div>
+
+    <script src="src/js/cart.js"></script>
+    <script src="src/js/global.js"></script>
     <script>
-        // Cart Page Specific JavaScript
-        document.addEventListener('DOMContentLoaded', () => {
-            const cart = new Cart();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Display cart items
+            displayCartItems();
+            
+            // Coupon code handling
+            const couponForm = document.getElementById('couponForm');
+            const couponMessage = document.getElementById('couponMessage');
+            
+            if (couponForm) {
+                couponForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const couponCode = document.getElementById('couponCode').value;
+                    
+                    // Simulate coupon validation
+                    if (couponCode === 'MOSES10') {
+                        couponMessage.textContent = 'Coupon applied! 10% discount';
+                        couponMessage.classList.remove('text-red-500');
+                        couponMessage.classList.add('text-green-500');
+                        
+                        // Apply discount
+                        const subtotal = parseFloat(document.getElementById('subtotal').textContent.replace('€', ''));
+                        const discount = subtotal * 0.1;
+                        
+                        // Create or update discount element
+                        let discountElement = document.getElementById('discount');
+                        if (!discountElement) {
+                            const taxElement = document.getElementById('tax').parentElement;
+                            const discountDiv = document.createElement('div');
+                            discountDiv.className = 'flex justify-between';
+                            discountDiv.innerHTML = `
+                                <span class="text-dark">Discount</span>
+                                <span class="font-bold text-green-500" id="discount">-€${discount.toFixed(2)}</span>
+                            `;
+                            taxElement.parentNode.insertBefore(discountDiv, taxElement.nextSibling);
+                        } else {
+                            discountElement.textContent = `-€${discount.toFixed(2)}`;
+                        }
+                        
+                        // Update total
+                        const shipping = 15;
+                        document.getElementById('total').textContent = `€${(subtotal - discount + shipping).toFixed(2)}`;
+                    } else {
+                        couponMessage.textContent = 'Invalid coupon code';
+                        couponMessage.classList.remove('text-green-500');
+                        couponMessage.classList.add('text-red-500');
+                    }
+                });
+            }
+        });
+        
+        // Display cart items function
+        function displayCartItems() {
             const cartItemsContainer = document.getElementById('cartItems');
             const emptyCartMessage = document.getElementById('emptyCart');
-            const subtotalElement = document.getElementById('subtotal');
-            const shippingElement = document.getElementById('shipping');
-            const taxElement = document.getElementById('tax');
-            const totalElement = document.getElementById('total');
-            const checkoutBtn = document.getElementById('checkoutBtn');
-
-            function updateCartDisplay() {
-                if (cart.items.length === 0) {
-                    emptyCartMessage.style.display = 'block';
-                    cartItemsContainer.innerHTML = '';
-                    updateOrderSummary(0);
-                    return;
-                }
-
-                emptyCartMessage.style.display = 'none';
-                let cartHTML = '';
-                let subtotal = 0;
-
-                cart.items.forEach(item => {
-                    const itemTotal = item.price * item.quantity;
-                    subtotal += itemTotal;
-
-                    cartHTML += `
-                        <div class="flex items-center justify-between border-b pb-4 mb-4" data-product-id="${item.id}">
-                            <div class="flex items-center space-x-4">
-                                <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded">
-                                <div>
-                                    <h3 class="font-medium">${item.name}</h3>
-                                    <p class="text-gray-500">€${item.price.toFixed(2)}</p>
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Update subtotal and total
+            const subtotal = cart.reduce((sum, item) => {
+                const price = typeof item.price === 'string' 
+                    ? parseFloat(item.price.replace('€', '').trim()) 
+                    : item.price;
+                return sum + price * (item.quantity || 1);
+            }, 0);
+            
+            const shipping = subtotal > 0 ? 15 : 0;
+            const tax = subtotal * 0.05; // Assuming 5% tax
+            
+            document.getElementById('subtotal').textContent = `€${subtotal.toFixed(2)}`;
+            document.getElementById('tax').textContent = `€${tax.toFixed(2)}`;
+            document.getElementById('total').textContent = `€${(subtotal + shipping + tax).toFixed(2)}`;
+            
+            // Show or hide empty cart message
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '';
+                emptyCartMessage.classList.remove('hidden');
+                return;
+            }
+            
+            emptyCartMessage.classList.add('hidden');
+            cartItemsContainer.innerHTML = '';
+            
+            // Add each item to the cart display
+            cart.forEach((item, index) => {
+                const cartItemHTML = `
+                    <div class="cart-item bg-white rounded-lg overflow-hidden shadow-md flex items-center p-6">
+                        <div class="w-24 h-24 mr-6 overflow-hidden rounded-lg">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-semibold mb-2 text-dark">${item.name}</h3>
+                            <p class="text-gray-600 mb-2">Size: ${item.size || 'Standard'} | Color: ${item.color || 'Standard'}</p>
+                            <div class="flex items-center">
+                                <span class="text-xl font-bold text-secondary mr-4">${typeof item.price === 'string' ? item.price : '€' + item.price.toFixed(2)}</span>
+                                <div class="flex items-center">
+                                    <button aria-label="Decrease quantity" title="Decrease quantity" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center decrease-quantity" data-index="${index}">
+                                        <span class="sr-only">Decrease quantity</span>
+                                        -
+                                    </button>
+                                    <span class="mx-4 item-quantity">${item.quantity || 1}</span>
+                                    <button aria-label="Increase quantity" title="Increase quantity" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center increase-quantity" data-index="${index}">
+                                        <span class="sr-only">Increase quantity</span>
+                                        +
+                                    </button>
                                 </div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <div class="flex items-center border rounded">
-                                    <button class="px-3 py-1 hover:bg-gray-100 decrease-quantity">-</button>
-                                    <span class="px-3 py-1 border-x">${item.quantity}</span>
-                                    <button class="px-3 py-1 hover:bg-gray-100 increase-quantity">+</button>
-                                </div>
-                                <button class="text-red-500 hover:text-red-700 remove-item">
-                                    <i class="ri-delete-bin-line"></i>
-                                </button>
                             </div>
                         </div>
-                    `;
-                });
-
-                cartItemsContainer.innerHTML = cartHTML;
-                updateOrderSummary(subtotal);
-
-                // Add event listeners for quantity buttons and remove buttons
-                document.querySelectorAll('.decrease-quantity').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        const productId = e.target.closest('[data-product-id]').dataset.productId;
-                        const item = cart.items.find(item => item.id === productId);
-                        if (item && item.quantity > 1) {
-                            item.quantity--;
-                            cart.saveCart();
-                            updateCartDisplay();
-                        }
-                    });
-                });
-
-                document.querySelectorAll('.increase-quantity').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        const productId = e.target.closest('[data-product-id]').dataset.productId;
-                        const item = cart.items.find(item => item.id === productId);
-                        if (item) {
-                            item.quantity++;
-                            cart.saveCart();
-                            updateCartDisplay();
-                        }
-                    });
-                });
-
-                document.querySelectorAll('.remove-item').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        const productId = e.target.closest('[data-product-id]').dataset.productId;
-                        cart.removeItem(productId);
-                        updateCartDisplay();
-                    });
-                });
-            }
-
-            function updateOrderSummary(subtotal) {
-                const shipping = subtotal > 0 ? 10 : 0;
-                const tax = subtotal * 0.2; // 20% tax
-                const total = subtotal + shipping + tax;
-
-                subtotalElement.textContent = `€${subtotal.toFixed(2)}`;
-                shippingElement.textContent = `€${shipping.toFixed(2)}`;
-                taxElement.textContent = `€${tax.toFixed(2)}`;
-                totalElement.textContent = `€${total.toFixed(2)}`;
-
-                checkoutBtn.disabled = subtotal === 0;
-                checkoutBtn.classList.toggle('opacity-50', subtotal === 0);
-            }
-
-            // Initialize cart display
-            updateCartDisplay();
-
-            // Checkout button click handler
-            checkoutBtn.addEventListener('click', () => {
-                if (cart.items.length > 0) {
-                    // Implement checkout logic here
-                    alert('Proceeding to checkout...');
-                }
+                        <button class="text-red-500 hover:text-red-700 delete-item" aria-label="Remove item" title="Remove item" data-index="${index}">
+                            <i class="ri-delete-bin-line ri-lg"></i>
+                        </button>
+                    </div>
+                `;
+                
+                cartItemsContainer.innerHTML += cartItemHTML;
             });
-        });
+            
+            // Add event listeners for quantity buttons and remove buttons
+            document.querySelectorAll('.decrease-quantity').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    if (cart[index]) {
+                        const quantity = (cart[index].quantity || 1) - 1;
+                        if (quantity <= 0) {
+                            cart.splice(index, 1);
+                        } else {
+                            cart[index].quantity = quantity;
+                        }
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        displayCartItems();
+                        updateCartBadge();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.increase-quantity').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    if (cart[index]) {
+                        cart[index].quantity = (cart[index].quantity || 1) + 1;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        displayCartItems();
+                        updateCartBadge();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.delete-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    if (cart[index]) {
+                        cart.splice(index, 1);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        
+                        // Show notification
+                        const toast = document.getElementById('toastNotification');
+                        if (toast) {
+                            toast.classList.remove('opacity-0');
+                            setTimeout(() => {
+                                toast.classList.add('opacity-0');
+                            }, 3000);
+                        }
+                        
+                        displayCartItems();
+                        updateCartBadge();
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html> 

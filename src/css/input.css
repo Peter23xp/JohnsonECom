@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .nav-link {
+        @apply text-text hover:text-accent transition-colors;
+    }
+
+    .cart-count {
+        @apply absolute -top-1 -right-1 bg-accent text-background text-xs w-5 h-5 rounded-full flex items-center justify-center;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-background px-6 py-2 rounded-full hover:bg-accent transition-colors;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary text-primary px-6 py-2 rounded-full hover:bg-hover transition-colors;
+    }
+} 

@@ -1,106 +1,104 @@
-import { ProductModal } from '../../assets/js/productModal.js';
-
-export class Products {
-    constructor() {
-        this.products = new Map();
-        this.initializeFromDOM();
-        this.setupEventListeners();
-        console.log('Products initialized:', this.products.size, 'products found');
+// Featured Products Data
+const featuredProducts = [
+    {
+        id: 1,
+        name: "Classic Leather Oxford",
+        price: 299.99,
+        image: "assets/images/products/oxford.jpg",
+        category: "Men"
+    },
+    {
+        id: 2,
+        name: "Handwoven Leather Bag",
+        price: 399.99,
+        image: "assets/images/products/bag.jpg",
+        category: "Accessories"
+    },
+    {
+        id: 3,
+        name: "Premium Wool Suit",
+        price: 899.99,
+        image: "assets/images/products/suit.jpg",
+        category: "Suits"
+    },
+    {
+        id: 4,
+        name: "Designer Dress",
+        price: 499.99,
+        image: "assets/images/products/dress.jpg",
+        category: "Women"
     }
+];
 
-    initializeFromDOM() {
-        // Find all product cards in the DOM
-        document.querySelectorAll('[data-product-id]').forEach(card => {
-            const id = card.dataset.productId;
-            const name = card.querySelector('[data-product-name]')?.textContent || card.querySelector('h3')?.textContent;
-            const priceElement = card.querySelector('[data-product-price]') || card.querySelector('.font-bold');
-            const price = parseFloat(priceElement?.textContent.replace('€', '').replace(',', '.') || '0');
-            const image = (card.querySelector('[data-product-image]') || card.querySelector('img'))?.src;
-            const description = card.dataset.description || 'No description available';
-            const stock = parseInt(card.dataset.stock || '10');
-            const colors = card.dataset.colors?.split(',').map(color => color.trim()) || [];
-
-            if (id && name && price && image) {
-                console.log('Initializing product:', { id, name, price });
-                
-                this.products.set(id, {
-                    id,
-                    name,
-                    price,
-                    image,
-                    description,
-                    stock,
-                    colors
-                });
-
-                // Add data attributes for quick view
-                card.setAttribute('data-quick-view', '');
-                
-                // Add hover effect classes
-                card.classList.add('transition-transform', 'hover:-translate-y-1', 'duration-300');
-            }
-        });
+// Testimonials Data
+const testimonials = [
+    {
+        name: "Sarah Johnson",
+        role: "Fashion Blogger",
+        text: "The quality and craftsmanship of Moses pieces are unmatched. Each item tells a story of heritage and modern luxury.",
+        rating: 5
+    },
+    {
+        name: "Michael Chen",
+        role: "Business Executive",
+        text: "Their suits are the perfect blend of comfort and style. The attention to detail is remarkable.",
+        rating: 5
+    },
+    {
+        name: "Amara Williams",
+        role: "Art Director",
+        text: "Moses brings African elegance to life in a way that's both authentic and contemporary. Simply stunning!",
+        rating: 5
     }
+];
 
-    setupEventListeners() {
-        // Quick view on product card click (excluding buttons)
-        document.querySelectorAll('[data-quick-view]').forEach(card => {
-            card.addEventListener('click', (e) => {
-                // Don't trigger if clicking a button or link
-                if (!e.target.closest('button') && !e.target.closest('a')) {
-                    e.preventDefault();
-                    const productId = card.dataset.productId;
-                    const product = this.getProduct(productId);
-                    if (product) {
-                        console.log('Opening quick view for product:', productId);
-                        const modal = new ProductModal();
-                        modal.show(product);
-                    }
-                }
-            });
-        });
+// Populate Featured Products
+function populateFeaturedProducts() {
+    const swiperWrapper = document.querySelector('.featured-swiper .swiper-wrapper');
+    
+    featuredProducts.forEach(product => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `
+            <div class="bg-darker rounded-lg overflow-hidden">
+                <img src="${product.image}" alt="${product.name}" class="w-full h-80 object-cover">
+                <div class="p-6">
+                    <p class="text-accent text-sm mb-2">${product.category}</p>
+                    <h3 class="font-display text-xl mb-2">${product.name}</h3>
+                    <p class="text-light/80">$${product.price}</p>
+                    <button class="btn-primary w-full mt-4 add-to-cart-btn" data-product='{"id":${product.id},"name":"${product.name}","price":${product.price},"image":"${product.image}","category":"${product.category}","color":"Default","size":"M"}'>Add to Cart</button>
+                </div>
+            </div>
+        `;
+        swiperWrapper.appendChild(slide);
+    });
+}
 
-        // Add to cart button click
-        document.querySelectorAll('.add-to-cart, [class*="add-to-cart"]').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const productId = button.closest('[data-product-id]')?.dataset.productId;
-                if (productId) {
-                    const product = this.getProduct(productId);
-                    if (product) {
-                        console.log('Opening modal for add to cart:', productId);
-                        const modal = new ProductModal();
-                        modal.show(product);
-                    }
-                }
-            });
-        });
-    }
+// Populate Testimonials
+function populateTestimonials() {
+    const swiperWrapper = document.querySelector('.testimonial-swiper .swiper-wrapper');
+    
+    testimonials.forEach(testimonial => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.innerHTML = `
+            <div class="bg-dark p-8 rounded-lg">
+                <div class="flex text-accent mb-4">
+                    ${Array(testimonial.rating).fill('★').join('')}
+                </div>
+                <p class="text-light/80 mb-6">"${testimonial.text}"</p>
+                <div>
+                    <p class="font-display text-lg">${testimonial.name}</p>
+                    <p class="text-accent">${testimonial.role}</p>
+                </div>
+            </div>
+        `;
+        swiperWrapper.appendChild(slide);
+    });
+}
 
-    getProduct(id) {
-        return this.products.get(id);
-    }
-
-    getAllProducts() {
-        return Array.from(this.products.values());
-    }
-
-    getProductsByCategory(category) {
-        return Array.from(this.products.values()).filter(product => 
-            product.category === category
-        );
-    }
-
-    getProductsByPriceRange(min, max) {
-        return Array.from(this.products.values()).filter(product => 
-            product.price >= min && product.price <= max
-        );
-    }
-
-    getProductsByColor(color) {
-        return Array.from(this.products.values()).filter(product => 
-            product.colors.includes(color)
-        );
-    }
-} 
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    populateFeaturedProducts();
+    populateTestimonials();
+}); 

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Femmes | Moses Shoes & Clothing Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D1C1C',     // Deep Black
+                        secondary: '#86997B',   // Sage Green
+                        tertiary: '#E1E6C9',    // Light Green
+                        neutral: '#FAFAF0',     // Soft White
+                        dark: '#3B3E3A',        // Dark Gray
+                    },
+                    borderRadius: {
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #3B3E3A;
+            background-color: #FAFAF0;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(134, 153, 123, 0.2);
+        }
+        .product-card {
+            transition: all 0.3s ease;
+            }
+            .filter-btn.active {
+            background-color: #86997B;
+            color: white;
+            }
+        .hero-overlay {
+            background-image: linear-gradient(to right, rgba(29, 28, 28, 0.7) 30%, rgba(29, 28, 28, 0.3));
+        }
+    </style>
+    <!-- Include navbar component -->
+    <script src="components/navbar.js"></script>
+    <!-- Include footer component -->
+    <script src="components/footer.js"></script>
+    <!-- Include global CSS -->
+    <link rel="stylesheet" href="src/css/global.css">
+</head>
+<body class="bg-neutral">
+    <!-- Header/navbar will be injected by navbar.js -->
+
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] flex items-center justify-center text-white">
+        <div class="absolute inset-0 bg-cover bg-center hero-overlay" style="background-image: url('assets/images/women-hero.jpg')"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Feminine Elegance</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Discover our exclusive collection of clothing and accessories that celebrate the grace and confidence of the modern woman.</p>
+            <a href="#collection" class="inline-block bg-secondary hover:bg-opacity-90 text-white px-10 py-4 rounded-button font-medium transition-all">
+                Discover the Collection
+            </a>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="py-16 bg-neutral">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar Filters -->
+                <div class="lg:w-1/4 bg-tertiary p-6 rounded-lg">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-dark">Categories</h3>
+                        <div class="space-y-2">
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded active" data-category="all">All</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-category="robes">Dresses</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-category="tailleurs">Suits</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-category="chaussures">Shoes</button>
+                            <button class="filter-btn w-full text-left px-4 py-2 rounded" data-category="accessoires">Accessories</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-dark">Sizes</h3>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button class="filter-btn" data-size="xs">XS</button>
+                            <button class="filter-btn" data-size="s">S</button>
+                            <button class="filter-btn active" data-size="m">M</button>
+                            <button class="filter-btn" data-size="l">L</button>
+                            <button class="filter-btn" data-size="xl">XL</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-dark">Colors</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="w-8 h-8 rounded-full bg-black border-2 border-transparent hover:border-secondary" aria-label="Black"></button>
+                            <button class="w-8 h-8 rounded-full bg-white border-2 border-transparent hover:border-secondary" aria-label="White"></button>
+                            <button class="w-8 h-8 rounded-full bg-green-700 border-2 border-transparent hover:border-secondary" aria-label="Green"></button>
+                            <button class="w-8 h-8 rounded-full bg-pink-500 border-2 border-transparent hover:border-secondary" aria-label="Pink"></button>
+                            <button class="w-8 h-8 rounded-full bg-blue-700 border-2 border-transparent hover:border-secondary" aria-label="Blue"></button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-dark">Price</h3>
+                        <input type="range" min="0" max="500" value="250" class="w-full accent-secondary" id="priceRange" aria-label="Select price range">
+                        <div class="flex justify-between text-sm text-dark mt-2">
+                            <span>0 €</span>
+                            <span id="priceValue">250 €</span>
+                            <span>500 €</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-primary text-neutral py-3 rounded-button hover:bg-secondary transition-colors">
+                        Apply Filters
+                    </button>
+                </div>
+                
+                <!-- Product Grid -->
+                <div class="lg:w-3/4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Product 1: Elegant Robe -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <div class="relative">
+                                <img src="assets/images/women/robe-elegante.jpg" alt="Elegant Dress" class="w-full h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">New</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-dark">Black Cocktail Dress</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xl font-bold text-secondary">€189</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-half-fill"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-dark text-neutral py-3 rounded-button hover:bg-primary transition-colors"
+                                    onclick="cartManager.addToCart({
+                                        id: 'robe-soiree-verte',
+                                        name: 'Sage Green Evening Dress',
+                                        price: 279,
+                                        image: 'assets/images/women/robe-elegante.jpg',
+                                        size: 'S',
+                                        color: 'Sage Green'
+                                    })">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 2: Women's Tailor -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <div class="relative">
+                                <img src="assets/images/women/tailleur-femme.jpg" alt="Women's Suit" class="w-full h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded">-20%</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-dark">Elegant Beige Suit</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <div>
+                                        <span class="text-xl font-bold text-secondary">€239</span>
+                                        <span class="text-sm text-gray-500 line-through ml-2">€299</span>
+                                    </div>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-dark text-neutral py-3 rounded-button hover:bg-primary transition-colors"
+                                    onclick="cartManager.addToCart({
+                                        id: 'tailleur-beige',
+                                        name: 'Beige Suit',
+                                        price: 299,
+                                        image: 'assets/images/women/tailleur-beige.jpg',
+                                        size: 'M',
+                                        color: 'Beige'
+                                    })">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 3: Pumps -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <div class="relative">
+                                <img src="assets/images/women/escarpins.jpg" alt="Bordeaux Leather Pumps" class="w-full h-80 object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-dark">Bordeaux Leather Pumps</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xl font-bold text-secondary">€165</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-line"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-dark text-neutral py-3 rounded-button hover:bg-primary transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 4: Handbag -->
+                        <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                            <div class="relative">
+                                <img src="assets/images/women/sac-main.jpg" alt="Camel Leather Handbag" class="w-full h-80 object-cover">
+                                <div class="absolute top-4 right-4 bg-secondary text-white text-xs px-2 py-1 rounded">Trend</div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-dark">Camel Leather Handbag</h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xl font-bold text-secondary">€249</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-half-fill"></i>
+                                    </div>
+                                </div>
+                                <button class="w-full bg-dark text-neutral py-3 rounded-button hover:bg-primary transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-12">
+                        <nav class="flex items-center space-x-2">
+                            <button aria-label="Previous Page" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">
+                                <i class="ri-arrow-left-s-line"></i>
+                            </button>
+                            <button aria-label="Page 1" class="w-10 h-10 flex items-center justify-center border border-secondary bg-secondary text-white rounded">1</button>
+                            <button aria-label="Page 2" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">2</button>
+                            <button aria-label="Page 3" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">3</button>
+                            <span class="w-10 h-10 flex items-center justify-center">...</span>
+                            <button aria-label="Next Page" class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded hover:border-secondary hover:text-secondary">
+                                <i class="ri-arrow-right-s-line"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-tertiary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 text-dark">What Our Customers Say</h2>
+                <p class="text-dark max-w-2xl mx-auto">Discover the experiences of women who found their unique style with Moses.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-dark mb-6 italic">"My Moses dresses have become my favorite pieces. Elegance and comfort blend perfectly."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
+                            <img src="assets/images/testimonials/client1.jpg" alt="Sophie M." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-dark">Sophie M.</h4>
+                            <p class="text-sm text-gray-500">Lawyer, Paris</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                    </div>
+                    <p class="text-dark mb-6 italic">"I love the quality and attention to detail. Every piece tells a story of craftsmanship."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
+                            <img src="assets/images/testimonials/client2.jpg" alt="Marie L." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-dark">Marie L.</h4>
+                            <p class="text-sm text-gray-500">Marketing Director, Lyon</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-dark mb-6 italic">"A unique style that celebrates modern femininity. I recommend Moses to all my friends."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
+                            <img src="assets/images/testimonials/client3.jpg" alt="Camille R." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-dark">Camille R.</h4>
+                            <p class="text-sm text-gray-500">Entrepreneur, Bordeaux</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-secondary bg-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-4 text-dark">Stay Informed</h2>
+                <p class="text-dark mb-8">Sign up for our newsletter to discover our latest collections and exclusive offers.</p>
+                <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-1 px-6 py-3 rounded-button border-none focus:ring-2 focus:ring-secondary">
+                    <button type="submit" class="bg-primary hover:bg-dark text-neutral px-8 py-3 rounded-button font-medium transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-secondary text-white px-6 py-3 rounded-button shadow-lg opacity-0 transition-opacity duration-300">Item added to cart!</div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+        <div class="bg-neutral rounded-lg shadow-xl max-w-lg w-full relative p-8" id="productModalContent">
+            <!-- Le contenu du produit sera injecté ici par JS -->
+            <button id="closeProductModal" class="absolute top-4 right-4 text-gray-500 hover:text-secondary text-2xl">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Price Range Slider
+            const priceRange = document.getElementById('priceRange');
+            const priceValue = document.getElementById('priceValue');
+            
+            priceRange.addEventListener('input', function() {
+                priceValue.textContent = this.value + ' €';
+            });
+
+            // Filter Buttons
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                });
+            });
+
+            // Rendre chaque carte produit cliquable pour ouvrir la modale
+            document.querySelectorAll('.product-card').forEach(function(card) {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', function(e) {
+                    // Empêche le clic sur le bouton d'ajout au panier d'ouvrir la modale
+                    if (e.target.closest('button')) return;
+                    const img = card.querySelector('img');
+                    const name = card.querySelector('h3').textContent;
+                    const price = card.querySelector('.text-xl.font-bold, .text-xl.font-display')?.textContent || '';
+                    const category = card.querySelector('.text-accent, .text-secondary')?.textContent || '';
+                    const desc = card.querySelector('p:not([class])')?.textContent || '';
+                    openProductModal({
+                        image: img ? img.src : '',
+                        name,
+                        price,
+                        category,
+                        description: desc
+                    });
+                });
+            });
+            // Fermer la modale si on clique en dehors du contenu
+            const modal = document.getElementById('productModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) modal.classList.add('hidden');
+                });
+            }
+        });
+
+        function openProductModal(product) {
+            const modal = document.getElementById('productModal');
+            const modalContent = document.getElementById('productModalContent');
+            if (!modal || !modalContent) return;
+            modalContent.innerHTML = `
+                <button id='closeProductModal' class='absolute top-4 right-4 text-gray-500 hover:text-secondary text-2xl'>&times;</button>
+                <div class='flex flex-col md:flex-row gap-6'>
+                    <img src='${product.image}' alt='${product.name}' class='w-40 h-40 object-cover rounded-lg mx-auto md:mx-0'>
+                    <div class='flex-1'>
+                        <h2 class='text-2xl font-bold mb-2 text-dark'>${product.name}</h2>
+                        <p class='text-secondary font-semibold mb-2'>${product.category}</p>
+                        <p class='mb-4 text-dark'>${product.description || ''}</p>
+                        <div class='mb-4'>
+                            <span class='text-xl font-bold text-secondary'>${product.price}</span>
+                        </div>
+                        <button class='w-full bg-dark text-neutral py-3 rounded-button hover:bg-primary transition-colors add-to-cart-modal mt-2'>Add to Cart</button>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            document.getElementById('closeProductModal').onclick = () => modal.classList.add('hidden');
+            modalContent.querySelector('.add-to-cart-modal').onclick = () => {
+                if (typeof cartManager !== 'undefined') {
+                    cartManager.addToCart(product);
+                } else if (typeof addToCart === 'function') {
+                    addToCart(product);
+                }
+                modal.classList.add('hidden');
+            };
+        }
+    </script>
+    <script src="src/js/cart.js"></script>
+    <script src="src/js/global.js"></script>
+</body>
+</html>
